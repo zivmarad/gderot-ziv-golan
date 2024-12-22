@@ -188,3 +188,68 @@ body {
 .contact-form button:hover {
     background-color: #89253e;
 }
+/* מבוא */
+.intro {
+    margin: 40px 0;
+    text-align: center;
+}
+
+.intro h2 {
+    font-size: 2rem;
+    color: #89253e;
+    margin-bottom: 10px;
+}
+
+.intro p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* שירותים */
+.services {
+    background: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 40px 0;
+    text-align: center;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.value-item {
+    padding: 20px;
+    background: #f4f4f4;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.value-item h3 {
+    color: #3a6186;
+    margin-bottom: 10px;
+}
+
+/* קריאה לפעולה */
+.cta-section {
+    background: linear-gradient(to right, #3a6186, #89253e);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    border-radius: 8px;
+    margin: 40px 0;
+}
+
+.cta-section h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.cta-section p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
