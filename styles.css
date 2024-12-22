@@ -183,6 +183,16 @@ body {
 
 .contact-form button:hover {
     background-color: #89253e;
+
+    .contact-form input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
 }
 /* מבוא */
 .intro {
