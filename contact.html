@@ -7,10 +7,12 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="header">
+    <header class="header-banner">
         <div class="container">
             <div class="logo-container">
-                <img src="images/גדרות זיו בגולן.png" alt="לוגו גדרות זיו בגולן" class="logo">
+                <a href="index.html">
+                    <img src="images/גדרות זיו בגולן.png" alt="לוגו גדרות זיו בגולן" class="logo">
+                </a>
             </div>
             <nav class="navbar">
                 <ul class="nav-links">
@@ -20,24 +22,25 @@
                     <li><a href="contact.html">צור קשר</a></li>
                 </ul>
             </nav>
+            <h1>צור קשר</h1>
         </div>
     </header>
 
-    <main>
-        <section class="contact">
-            <h1>צור קשר</h1>
-            <p>מוזמנים להשאיר פרטים ואנו נחזור אליכם בהקדם!</p>
-            <form action="#" method="post">
+    <main class="container">
+        <section class="contact-section">
+            <h2>נשמח לעמוד לשירותכם!</h2>
+            <p>אנא מלאו את הפרטים ונחזור אליכם בהקדם.</p>
+            <form action="#" method="POST" class="contact-form">
                 <label for="name">שם מלא:</label>
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name" name="name" placeholder="הכניסו את שמכם" required>
 
                 <label for="email">אימייל:</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" placeholder="הכניסו את כתובת האימייל שלכם" required>
 
                 <label for="message">הודעה:</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
+                <textarea id="message" name="message" rows="5" placeholder="כתבו את ההודעה שלכם כאן" required></textarea>
 
-                <button type="submit" class="cta-button">שלח</button>
+                <button type="submit" class="cta-button">שלח הודעה</button>
             </form>
         </section>
     </main>
