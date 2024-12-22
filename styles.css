@@ -115,12 +115,14 @@ body {
 
 }
 /* טופס צור קשר */
+/* עיצוב טופס צור קשר */
 .contact-section {
     background: white;
     padding: 40px 20px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 40px 0;
+    margin: 40px auto;
+    max-width: 600px;
     text-align: center;
 }
 
@@ -140,11 +142,10 @@ body {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    align-items: center;
+    text-align: right;
 }
 
 .contact-form label {
-    align-self: flex-start;
     font-weight: bold;
     color: #333;
 }
@@ -152,7 +153,6 @@ body {
 .contact-form input,
 .contact-form textarea {
     width: 100%;
-    max-width: 600px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -164,7 +164,6 @@ body {
 }
 
 .contact-form button {
-    max-width: 200px;
     background-color: #3a6186;
     color: white;
     font-weight: bold;
@@ -172,7 +171,14 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.contact-form button:hover {
+    background-color: #89253e;
+    transform: scale(1.05);
+}
+
 }
 
 .contact-form button:hover {
