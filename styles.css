@@ -320,3 +320,124 @@ body {
 .close:hover {
     color: #bbb;
 }
+/* עיצוב כללי */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* כותרת עליונה */
+.header-banner {
+    background: linear-gradient(to right, #3a6186, #89253e);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.header-banner h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+/* ניווט */
+.navbar {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #ffcc00;
+}
+
+/* אזור צור קשר */
+.contact-section {
+    background: white;
+    padding: 40px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 40px auto;
+    max-width: 600px;
+    text-align: center;
+}
+
+.contact-section h2 {
+    color: #89253e;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.contact-section p {
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form label {
+    text-align: right;
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button {
+    background-color: #3a6186;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.contact-form button:hover {
+    background-color: #89253e;
+    transform: scale(1.05);
+}
+
+/* פוטר */
+.footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
