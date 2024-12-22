@@ -441,3 +441,23 @@ body {
     padding: 20px;
     margin-top: 40px;
 }
+/* כותרת טופס */
+.contact-form h3 {
+    text-align: center;
+    color: #3a6186;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+/* תיקון יישור שדות הטופס */
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    text-align: right; /* יישור לימין */
+    direction: rtl;
+}
+
+.contact-form input,
+.contact-form textarea {
+    text-align: right; /* תוכן מיושר לימין */
+    direction: rtl;
+}
