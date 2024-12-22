@@ -1,18 +1,67 @@
-<form action="https://script.google.com/macros/s/AKfycbyUidYGLjD8PSuoV_CYAWl3B7tEn1qEAQZ3oaPdASMZ2MCtVF9q1FXJ-aCTmEfdVPyE/exec" method="POST" class="contact-form" id="contact-form">
-    <label for="name">שם מלא:</label>
-    <input type="text" id="name" name="name" placeholder="הכניסו את שמכם" required>
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>צור קשר - גדרות זיו בגולן</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header-banner">
+        <!-- תוכן הכותרת -->
+    </header>
 
-    <label for="phone">מספר טלפון:</label>
-    <input type="tel" id="phone" name="phone" placeholder="הכניסו את מספר הטלפון שלכם" required>
+    <main class="container">
+        <section class="contact-section">
+            <!-- תוכן הטופס -->
+            <form action="https://script.google.com/macros/s/AKfycbyUidYGLjD8PSuoV_CYAWl3B7tEn1qEAQZ3oaPdASMZ2MCtVF9q1FXJ-aCTmEfdVPyE/exec" method="POST" class="contact-form" id="contact-form">
+                <label for="name">שם מלא:</label>
+                <input type="text" id="name" name="name" placeholder="הכניסו את שמכם" required>
 
-    <label for="email">אימייל:</label>
-    <input type="email" id="email" name="email" placeholder="הכניסו את כתובת האימייל שלכם" required>
+                <label for="phone">מספר טלפון:</label>
+                <input type="tel" id="phone" name="phone" placeholder="הכניסו את מספר הטלפון שלכם" required>
 
-    <label for="message">הודעה:</label>
-    <textarea id="message" name="message" rows="5" placeholder="כתבו את ההודעה שלכם כאן" required></textarea>
+                <label for="email">אימייל:</label>
+                <input type="email" id="email" name="email" placeholder="הכניסו את כתובת האימייל שלכם" required>
 
-    <button type="submit" class="cta-button">שלח הודעה</button>
-</form>
+                <label for="message">הודעה:</label>
+                <textarea id="message" name="message" rows="5" placeholder="כתבו את ההודעה שלכם כאן" required></textarea>
 
-<!-- הודעת הצלחה -->
-<p id="success-message" style="display: none; color: green; font-weight: bold; margin-top: 20px;">תודה! פנייתכם התקבלה ונחזור אליכם בהקדם.</p>
+                <button type="submit" class="cta-button">שלח הודעה</button>
+            </form>
+            <p id="success-message" style="display: none; color: green; font-weight: bold; margin-top: 20px;">תודה! פנייתכם התקבלה ונחזור אליכם בהקדם.</p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <!-- תוכן הפוטר -->
+    </footer>
+
+    <!-- כאן מוסיפים את קוד ה-JavaScript -->
+    <script>
+        const form = document.getElementById("contact-form");
+        const successMessage = document.getElementById("success-message");
+
+        form.addEventListener("submit", async function (event) {
+            event.preventDefault(); // מונע טעינה מחדש של הדף
+
+            // שליחת הנתונים ל-Google Apps Script
+            try {
+                const response = await fetch(form.action, {
+                    method: "POST",
+                    body: new FormData(form),
+                });
+
+                if (response.ok) {
+                    successMessage.style.display = "block"; // הצגת הודעת הצלחה
+                    form.reset(); // איפוס הטופס
+                } else {
+                    alert("אירעה שגיאה בשליחת הטופס. נסה שוב.");
+                }
+            } catch (error) {
+                alert("אירעה שגיאה בשליחת הטופס. נסה שוב.");
+            }
+        });
+    </script>
+</body>
+</html>
