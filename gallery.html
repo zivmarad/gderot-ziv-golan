@@ -2,30 +2,40 @@
 <html lang="he" dir="rtl">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>גלריה - גדרות זיו בגולן</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="images/styles.css">
 </head>
 <body>
-    <header>
-        <h1>גלריה</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">דף הבית</a></li>
-                <li><a href="about.html">אודות</a></li>
-                <li><a href="contact.html">צור קשר</a></li>
-                <li><a href="gallery.html">גלריה</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <h2>דוגמאות לפרויקטים</h2>
-        <div class="gallery">
-            <img src="images/fence1.jpg" alt="גדר אלומיניום אפורה">
-            <img src="images/fence2.jpg" alt="גדר אלומיניום לבנה">
-            <img src="images/fence3.jpg" alt="גדר אלומיניום בעיצוב מודרני">
+    <header class="header">
+        <div class="container">
+            <div class="logo-container">
+                <img src="images/גדרות זיו בגולן.png" alt="לוגו גדרות זיו בגולן" class="logo">
+            </div>
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="index.html">דף הבית</a></li>
+                    <li><a href="about.html">אודות</a></li>
+                    <li><a href="gallery.html">גלריה</a></li>
+                    <li><a href="contact.html">צור קשר</a></li>
+                </ul>
+            </nav>
         </div>
+    </header>
+
+    <main>
+        <section class="gallery">
+            <h1>גלריה</h1>
+            <p>מבחר הגדרות והפרויקטים שלנו:</p>
+            <div class="gallery-grid">
+                <img src="images/470672110_122106598682679962_1230314204217679116_n.jpg" alt="גדר לדוגמה 1">
+                <img src="images/470672110_122106598682679962_1230314204217679116_n.jpg" alt="גדר לדוגמה 2">
+                <img src="images/470672110_122106598682679962_1230314204217679116_n.jpg" alt="גדר לדוגמה 3">
+            </div>
+        </section>
     </main>
-    <footer>
+
+    <footer class="footer">
         <p>© כל הזכויות שמורות - גדרות זיו בגולן</p>
     </footer>
 </body>
