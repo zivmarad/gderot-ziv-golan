@@ -243,3 +243,31 @@ body {
     font-size: 1.1rem;
     margin-bottom: 20px;
 }
+/* גלריה */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.gallery-item {
+    background: white;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.gallery-item img {
+    max-width: 100%; /* התאמת גודל התמונה לרוחב האלמנט */
+    height: auto; /* שמירה על יחס הגובה והרוחב */
+    border-radius: 8px; /* קצוות עגולים */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05); /* הגדלה קלה במעבר עכבר */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
