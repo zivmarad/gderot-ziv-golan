@@ -10,43 +10,31 @@ body {
 
 /* כותרת עליונה */
 .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
     background-color: #2f4f4f;
     color: white;
-    padding: 10px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
 .logo-container {
-    flex: 1;
+    flex: 0 0 auto;
 }
 
 .logo {
-    max-width: 100px;
+    max-width: 80px;
     height: auto;
 }
 
 .navbar {
-    flex: 3;
+    flex: 1;
+    text-align: right;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    justify-content: flex-end;
     gap: 15px;
     margin: 0;
     padding: 0;
@@ -69,7 +57,7 @@ body {
 .hero {
     background: linear-gradient(to bottom, #d3d3d3, #ffffff);
     text-align: center;
-    padding: 80px 20px;
+    padding: 60px 20px;
 }
 
 .hero-content h1 {
