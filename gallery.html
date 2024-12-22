@@ -47,6 +47,22 @@
     <footer class="footer">
         <p>© כל הזכויות שמורות - גדרות זיו בגולן</p>
     </footer>
+<script>
+    function openModal(image) {
+        const modal = document.getElementById("image-modal");
+        const modalImage = document.getElementById("modal-image");
+
+        modal.style.display = "flex";
+        modalImage.src = image.src;
+    }
+
+    function closeModal() {
+        const modal = document.getElementById("image-modal");
+        modal.style.display = "none";
+    }
+</script>
+
+    
 </body>
 </html>
 <div id="image-modal" class="modal">
