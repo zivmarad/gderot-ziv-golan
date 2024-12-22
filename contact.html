@@ -46,29 +46,26 @@
 
     <!-- כאן מוסיפים את קוד ה-JavaScript -->
     <script>
-        const form = document.getElementById("contact-form");
-        const successMessage = document.getElementById("success-message");
-
-        form.addEventListener("submit", async function (event) {
-            event.preventDefault(); // מונע טעינה מחדש של הדף
-
-            // שליחת הנתונים ל-Google Apps Script
-            try {
-                const response = await fetch(form.action, {
-                    method: "POST",
-                    body: new FormData(form),
-                });
-
-                if (response.ok) {
-                    successMessage.style.display = "block"; // הצגת הודעת הצלחה
-                    form.reset(); // איפוס הטופס
-                } else {
-                    alert("אירעה שגיאה בשליחת הטופס. נסה שוב.");
-                }
-            } catch (error) {
-                alert("אירעה שגיאה בשליחת הטופס. נסה שוב.");
-            }
+  const form = document.getElementById("contact-form");
+form.addEventListener("submit", async function (event) {
+    event.preventDefault(); // מונע טעינת דף מחדש
+    try {
+        const response = await fetch(form.action, {
+            method: "POST",
+            body: new FormData(form),
         });
+
+        if (response.ok) {
+            document.getElementById("success-message").style.display = "block";
+            form.reset();
+        } else {
+            alert("אירעה שגיאה בשליחת הטופס. נסה שוב.");
+        }
+    } catch (error) {
+        alert("אירעה שגיאה בשליחת הטופס. נסה שוב.");
+    }
+});
+
     </script>
 </body>
 </html>
