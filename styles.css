@@ -112,3 +112,15 @@ body {
     padding: 20px 0;
     margin-top: 40px;
 }
+/* לוגו בפינה */
+.logo-container {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 10;
+}
+
+.logo {
+    max-width: 80px;
+    height: auto;
+}
