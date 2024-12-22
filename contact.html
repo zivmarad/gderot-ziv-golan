@@ -1,11 +1,49 @@
-<form action="https://formspree.io/f/example" method="POST">
-  <label for="name">שם:</label>
-  <input type="text" id="name" name="name" required>
-  <label for="email">אימייל:</label>
-  <input type="email" id="email" name="email" required>
-  <label for="message">הודעה:</label>
-  <textarea id="message" name="message" required></textarea>
-  <button type="submit">שלח</button>
-</form>
-<<nav>
-  <ul>
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>צור קשר - גדרות זיו בגולן</title>
+    <link rel="stylesheet" href="images/styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo-container">
+                <img src="images/גדרות זיו בגולן.png" alt="לוגו גדרות זיו בגולן" class="logo">
+            </div>
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="index.html">דף הבית</a></li>
+                    <li><a href="about.html">אודות</a></li>
+                    <li><a href="gallery.html">גלריה</a></li>
+                    <li><a href="contact.html">צור קשר</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="contact">
+            <h1>צור קשר</h1>
+            <p>מוזמנים להשאיר פרטים ואנו נחזור אליכם בהקדם!</p>
+            <form action="#" method="post">
+                <label for="name">שם מלא:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">אימייל:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">הודעה:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit" class="cta-button">שלח</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© כל הזכויות שמורות - גדרות זיו בגולן</p>
+    </footer>
+</body>
+</html>
