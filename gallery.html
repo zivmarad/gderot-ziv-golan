@@ -9,7 +9,6 @@
 <body>
     <header class="header-banner">
         <div class="container">
-           
             <nav class="navbar">
                 <ul class="nav-links">
                     <li><a href="index.html">דף הבית</a></li>
@@ -21,112 +20,28 @@
             <h1>גלריה</h1>
         </div>
     </header>
-<div id="image-modal" class="modal">
-    <span class="close" onclick="closeModal()">&times;</span>
-    <img class="modal-content" id="modal-image">
-</div>
 
     <main class="container">
-  <section class="gallery">
-    <h2>מבחר פרויקטים</h2>
-      
-         <div class="gallery-item">
-    <img src="images/IMG_20241031_132755.jpg" alt="פרויקט לדוגמה 1" onclick="openModal(this)">
-    <p>פרויקט לדוגמה 1</p>
-</div>
-
-
-
-        <div class="gallery-item">
-            <img src="images/IMG_20241031_122522.jpg" alt="פרויקט לדוגמה 2" onclick="openModal(this)">
-            <p>פרויקט לדוגמה 2</p>
-        </div>
-        <div class="gallery-item">
-            <img src="images/IMG_20241121_142831.jpg" alt="פרויקט לדוגמה 3" onclick="openModal(this)">
-            <p>פרויקט לדוגמה 3</p>
-        </div>
-    </div>
-</section>
-
+        <section class="gallery">
+            <h2>מבחר פרויקטים</h2>
+            <p>גלריית העבודות שלנו, הכוללת פרויקטים מרשימים ומעוצבים.</p>
+            <div id="gallery-grid" class="gallery-grid">
+                <!-- התמונות ייטענו כאן באופן דינמי -->
+            </div>
+        </section>
     </main>
 
     <footer class="footer">
         <p>© כל הזכויות שמורות - גדרות זיו בגולן</p>
     </footer>
-<script>
-    function openModal(image) {
-        const modal = document.getElementById("image-modal");
-        const modalImage = document.getElementById("modal-image");
 
-        modal.style.display = "flex";
-        modalImage.src = image.src;
-    }
-
-    function closeModal() {
-        const modal = document.getElementById("image-modal");
-        modal.style.display = "none";
-    }
-</script>
-
-    <section class="gallery">
-    <h2>מבחר פרויקטים</h2>
-    <div id="gallery-grid" class="gallery-grid">
-        <!-- התמונות ייטענו כאן אוטומטית -->
+    <!-- מודל להגדלת תמונה -->
+    <div id="image-modal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modal-image">
     </div>
-</section>
 
-    <script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const galleryGrid = document.getElementById("gallery-grid");
-        const imageDirectory = "images/"; // שם התיקייה
-
-        // רשימה של תמונות
-        const images = [
-            "IMG_20241031_132755.jpg",
-            "IMG_20241031_122522.jpg",
-            "IMG_20241121_142831.jpg"
-            "images/1.jpg"
-        
-        ];
-
-        // יצירת תמונות בגלריה
-        images.forEach((image, index) => {
-            const div = document.createElement("div");
-            div.className = "gallery-item";
-
-            const img = document.createElement("img");
-            img.src = `${imageDirectory}${image}`;
-            img.alt = `פרויקט לדוגמה ${index + 1}`;
-            img.onclick = () => openModal(img);
-
-            const p = document.createElement("p");
-            p.textContent = `פרויקט לדוגמה ${index + 1}`;
-
-            div.appendChild(img);
-            div.appendChild(p);
-            galleryGrid.appendChild(div);
-        });
-    });
-
-    // פונקציות מודל
-    function openModal(image) {
-        const modal = document.getElementById("image-modal");
-        const modalImage = document.getElementById("modal-image");
-
-        modal.style.display = "flex";
-        modalImage.src = image.src;
-    }
-
-    function closeModal() {
-        const modal = document.getElementById("image-modal");
-        modal.style.display = "none";
-    }
-</script>
-
-    
+    <!-- קובץ JavaScript -->
+    <script src="gallery.js"></script>
 </body>
 </html>
-<div id="image-modal" class="modal">
-    <span class="close" onclick="closeModal()">&times;</span>
-    <img class="modal-content" id="modal-image">
-</div>
