@@ -1,25 +1,22 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const galleryGrid = document.getElementById("gallery-grid");
-    const imageDirectory = "images/"; // שם התיקייה שבה התמונות נמצאות
+    const galleryGrid = document.querySelector(".gallery-grid");
+    const imageDirectory = "images/";
 
-    // הוסף כאן את שמות התמונות (ללא תלות בשפה)
     const images = [
         "IMG_20241031_132755.jpg",
         "IMG_20241031_122522.jpg",
         "IMG_20241121_142831.jpg",
-        "images/fance.jpg",
-        "images/2.jpg",
-        "images/3.jpg",
+        "new_image1.jpg",
+        "new_image2.jpg"
     ];
 
-    // יצירת אלמנטים בגלריה עבור כל תמונה
-    images.forEach((image, index) => {
+    images.forEach(image => {
         const div = document.createElement("div");
         div.className = "gallery-item";
 
         const img = document.createElement("img");
         img.src = `${imageDirectory}${image}`;
-        img.alt = `תמונה ${index + 1}`;
+        img.alt = `פרויקט בגלריה`;
         img.onclick = () => openModal(img);
 
         div.appendChild(img);
@@ -27,7 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-// פונקציות למודל התמונה
 function openModal(image) {
     const modal = document.getElementById("image-modal");
     const modalImage = document.getElementById("modal-image");
