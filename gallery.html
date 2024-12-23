@@ -22,22 +22,13 @@
     </header>
 
     <main class="container">
-     <section class="gallery">
-    <h2>מבחר פרויקטים</h2>
-    <p>גלריית העבודות שלנו:</p>
-    <div class="gallery-grid">
-        <div class="gallery-item">
-            <img src="images/IMG_20241031_132755.jpg" alt="פרויקט לדוגמה 1" onclick="openModal(this)">
-        </div>
-        <div class="gallery-item">
-            <img src="images/IMG_20241031_122522.jpg" alt="פרויקט לדוגמה 2" onclick="openModal(this)">
-        </div>
-        <div class="gallery-item">
-            <img src="images/IMG_20241121_142831.jpg" alt="פרויקט לדוגמה 3" onclick="openModal(this)">
-        </div>
-    </div>
-</section>
-
+        <section class="gallery">
+            <h2>מבחר פרויקטים</h2>
+            <p>גלריית העבודות שלנו:</p>
+            <div id="gallery-grid" class="gallery-grid">
+                <!-- התמונות ייטענו כאן באופן דינמי -->
+            </div>
+        </section>
     </main>
 
     <footer class="footer">
@@ -50,7 +41,7 @@
         <img class="modal-content" id="modal-image">
     </div>
 
-    <!-- קובץ JavaScript -->
+    <!-- חיבור ל-JavaScript -->
     <script src="gallery.js"></script>
 </body>
 </html>
