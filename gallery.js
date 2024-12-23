@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "IMG_20241031_122522.jpg",
         "IMG_20241121_142831.jpg",
         "fance.jpg",
-        "example2.jpg"
+        "images/IMG_20241121_142831.jpg"
     ];
 
     // יצירת תמונות בגלריה
