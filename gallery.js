@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "IMG_20241031_132755.jpg",
         "IMG_20241031_122522.jpg",
         "IMG_20241121_142831.jpg",
-        "images/1.jpg",
+        "images/fance.jpg",
         "images/2.jpg",
         "images/3.jpg",
     ];
