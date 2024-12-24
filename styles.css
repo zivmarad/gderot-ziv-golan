@@ -886,3 +886,21 @@ body {
         flex-direction: row; /* שמירה על תפריט אופקי */
     }
 }
+/* תיקון לדף הבית */
+.home .navbar {
+    display: flex;
+    flex-direction: row; /* שמירה על תפריט אופקי */
+    justify-content: space-between; /* מרווחים שווים בין הלוגו לתפריט */
+    align-items: center; /* יישור אנכי */
+}
+
+.home .logo {
+    max-width: 100px; /* הגבלת גודל הלוגו */
+    height: auto; /* שמירה על פרופורציות */
+    margin-right: 20px; /* מרווח מהתפריט */
+}
+
+.home .nav-links {
+    flex-direction: row; /* תפריט בשורה אחת */
+    gap: 15px; /* מרווח בין הקישורים */
+}
