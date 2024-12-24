@@ -776,3 +776,18 @@ body {
         margin: 15px auto; /* הגדלת המרווח בין הכפתורים */
     }
 }
+/* מרכז את התוכן של הקונטיינר */
+.cta-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* מרכז את התוכן אופקית */
+    justify-content: center; /* מרכז את התוכן אנכית */
+    text-align: center;
+}
+
+/* יישור מדויק של הכפתורים */
+.cta-section .cta-button,
+.cta-section .whatsapp-button {
+    margin: 15px auto; /* מרווח שווה בין הכפתורים */
+    max-width: 320px; /* מוודא שלא יהיו רחבים מדי */
+}
