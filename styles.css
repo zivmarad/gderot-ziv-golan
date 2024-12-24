@@ -885,3 +885,45 @@ body {
     .nav-links {
         flex-direction: row; /* שמירה על תפריט אופקי */
     }
+.navbar {
+    display: flex;
+    justify-content: space-between; /* מרווח שווה בין הלוגו לתפריט */
+    align-items: center;
+    background: #3a6186; /* צבע רקע כמו בעמודים אחרים */
+    padding: 10px 20px; /* ריווח פנימי */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* הצללה */
+    position: sticky; /* נשאר בחלק העליון */
+    top: 0;
+    z-index: 1000; /* מיקום קדמי */
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px; /* מרווח בין הקישורים */
+}
+
+.nav-links li {
+    margin: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 5px 10px; /* ריווח פנימי */
+    border-radius: 4px; /* קצוות מעוגלים */
+    transition: background-color 0.3s, color 0.3s; /* מעבר חלק */
+}
+
+.nav-links a:hover {
+    background-color: #0056b3; /* רקע בלחיצה */
+    color: #ffcc00; /* צבע טקסט */
+}
+
+.logo {
+    max-width: 120px; /* גודל לוגו */
+    height: auto;
+}
