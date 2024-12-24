@@ -159,19 +159,50 @@
             </div>
         </section>
 
-        <section class="gallery-section">
-            <h2>תמונות מהגלריה</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="images/gallery1.jpg" alt="תמונה 1">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/gallery2.jpg" alt="תמונה 2">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/gallery3.jpg" alt="תמונה 3">
-                </div>
-            </div>
+      <section class="gallery-link-section">
+    <h2>גלריה מעבודותינו</h2>
+    <div class="gallery-preview">
+        <div class="gallery-item">
+            <img src="images/1.jpg" alt="תמונה מהגלריה">
+        </div>
+        <div class="gallery-item">
+            <img src="images/2.jpg" alt="תמונה מהגלריה">
+        </div>
+        <div class="gallery-item">
+            <img src="images/3.jpg" alt="תמונה מהגלריה">
+        </div>
+    </div>
+    <div class="gallery-cta">
+        <a href="gallery.html" class="cta-button">לצפייה בכל הגלריה</a>
+    </div>
+</section>
+
+<style>
+.gallery-link-section {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.gallery-preview {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.gallery-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-cta {
+    margin-top: 20px;
+}
+</style>
+
         </section>
 
         <section class="cta-section">
