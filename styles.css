@@ -872,3 +872,17 @@ body {
 .fab.fa-facebook {
     font-size: 20px;
 }
+@media (max-width: 768px) {
+    .logo {
+        max-width: 120px; /* גודל לוגו מתאים למובייל */
+        height: auto; /* שמירה על פרופורציות */
+    }
+    .navbar {
+        display: flex; /* שמירה על תצוגה בשורה אחת */
+        justify-content: space-between; /* מרווחים בין הלוגו לתפריט */
+        align-items: center; /* יישור אנכי */
+    }
+    .nav-links {
+        flex-direction: row; /* שמירה על תפריט אופקי */
+    }
+}
