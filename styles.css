@@ -653,3 +653,19 @@ body {
 .whatsapp-button:hover {
     background-color: #1da851;
 }
+/* מרווח בין האייקון לטקסט */
+.cta-button i, .whatsapp-button i {
+    margin-right: 8px; /* עבור RTL */
+    vertical-align: middle; /* מוודא שהאייקון מיושר לטקסט */
+}
+
+/* עיצוב נוסף למובייל */
+@media (max-width: 768px) {
+    .cta-button, .whatsapp-button {
+        width: 100%; /* מתיחה מלאה במובייל */
+        text-align: center;
+    }
+    .cta-button i, .whatsapp-button i {
+        margin-right: 5px; /* מרווח קטן יותר במובייל */
+    }
+}
