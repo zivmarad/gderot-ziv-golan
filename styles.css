@@ -849,3 +849,26 @@ body {
     border-radius: 5px; /* מסגרות עגולות */
     text-align: center; /* מיישר את הטקסט */
 }
+/* עיצוב אייקונים ברשתות חברתיות */
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 15px;
+    background-color: #3b5998; /* כחול פייסבוק */
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.social-links a:hover {
+    background-color: #2d4373; /* כחול כהה יותר */
+}
+
+/* עיצוב אייקון פייסבוק */
+.fab.fa-facebook {
+    font-size: 20px;
+}
