@@ -1,108 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="he" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Business Website</title>
+    <title>דף הבית - גדרות זיו בגולן</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-            background-color: #f4f4f4;
-        }
-        header .logo {
-            max-width: 150px;
-            height: auto;
-        }
-        nav ul {
-            display: flex;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-        nav ul li {
-            margin: 0 10px;
-        }
-        nav ul li a {
-            text-decoration: none;
-            color: #333;
-        }
-
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                align-items: center;
-            }
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-            }
-            nav ul li {
-                margin: 5px 0;
-            }
-        }
-    </style>
 </head>
 <body>
-    <header>
-        <img src="images/larana camping.png" alt="Business Logo" class="logo">
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+    <header class="header-banner">
+        <div class="container">
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="images/גדרות זיו בגולן.png" alt="לוגו גדרות זיו בגולן" class="logo">
+                </a>
+            </div>
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="index.html">דף הבית</a></li>
+                    <li><a href="about.html">אודות</a></li>
+                    <li><a href="gallery.html">גלריה</a></li>
+                    <li><a href="contact.html">צור קשר</a></li>
+                </ul>
+            </nav>
+            <h1>ברוכים הבאים לגדרות זיו בגולן</h1>
+        </div>
     </header>
 
-    <main>
-        <section id="home">
-            <div class="hero">
-                <h1>Welcome to Our Business</h1>
-                <p>Providing top-notch services in the Golan Heights.</p>
-                <a href="#services" class="btn">Learn More</a>
+    <main class="container">
+        <section class="intro">
+            <h2>מי אנחנו?</h2>
+            <p>
+                "גדרות זיו בגולן" מספקים פתרונות עיצוב וייצור גדרות באיכות הגבוהה ביותר, בהתאמה אישית לצרכים שלכם.
+                עם שילוב של טכנולוגיות מתקדמות ועבודה כחול-לבן, אנו מביאים לכם את הטוב ביותר.
+            </p>
+        </section>
+
+        <section class="services">
+            <h2>השירותים שלנו</h2>
+            <div class="values-grid">
+                <div class="value-item">
+                    <h3>ייצור גדרות</h3>
+                    <p>ייצור גדרות בעיצוב מותאם אישית, עם חומרים באיכות בלתי מתפשרת.</p>
+                </div>
+                <div class="value-item">
+                    <h3>התקנה מקצועית</h3>
+                    <p>התקנה מקצועית ומדויקת, שמבטיחה עמידות לאורך זמן.</p>
+                </div>
+                <div class="value-item">
+                    <h3>ייעוץ אישי</h3>
+                    <p>ליווי מקצועי משלב התכנון ועד לסיום הפרויקט.</p>
+                </div>
             </div>
         </section>
 
-        <section id="about">
-            <h2>About Us</h2>
-            <p>We specialize in aluminum fences with high-quality finishing, including oven painting for durability.</p>
-        </section>
-
-        <section id="services">
-            <h2>Our Services</h2>
-            <ul>
-                <li>Custom Fence Design</li>
-                <li>Professional Installation</li>
-                <li>Durable Oven Painting</li>
-            </ul>
-        </section>
-
-        <section id="contact">
-            <h2>Contact Us</h2>
-            <form action="submit_form.php" method="POST">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" required></textarea>
-
-                <button type="submit">Send</button>
-            </form>
+        <section class="cta-section">
+            <h2>בואו לעבוד איתנו</h2>
+            <p>צרו קשר היום ותנו לנו להפוך את החזון שלכם למציאות.</p>
+            <a href="contact.html" class="cta-button">דברו איתנו</a>
         </section>
     </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Gaderot Ziv BaGolan. All rights reserved.</p>
-        </div>
+    <footer class="footer">
+        <p>© כל הזכויות שמורות - גדרות זיו בגולן</p>
     </footer>
 </body>
 </html>
