@@ -806,3 +806,24 @@ body {
     max-width: 300px; /* רוחב קבוע לכפתורים */
     width: 100%; /* מתיחה לרוחב הקונטיינר */
 }
+/* יישור הכפתורים במרכז בתוך ה-CTA */
+.cta-section {
+    display: flex;
+    flex-direction: column; /* מסדר את התוכן בעמודה */
+    align-items: center; /* ממרכז אופקית */
+    justify-content: center; /* ממרכז אנכית */
+    text-align: center;
+    padding: 20px 0; /* ריווח פנימי בתוך הקונטיינר */
+}
+
+.cta-section .cta-button,
+.cta-section .whatsapp-button {
+    display: inline-flex; /* מוודא שהכפתורים שומרים על תוכן מיושר */
+    justify-content: center; /* מיישר את התוכן בתוך הכפתור */
+    align-items: center; /* מוודא שהאייקון והטקסט מיושרים */
+    margin: 15px auto; /* מרווח אנכי ומיקום מרכזי */
+    max-width: 300px; /* רוחב מקסימלי לכפתורים */
+    width: 100%; /* מתיחה מלאה בתוך ההורה */
+    padding: 10px 20px; /* ריווח פנימי בכפתורים */
+    border-radius: 5px; /* מסגרות עגולות */
+}
