@@ -711,3 +711,47 @@ body {
         padding: 12px;
     }
 }
+/* סגנון בסיסי לכפתורים */
+.cta-button, .whatsapp-button {
+    display: flex; /* מאפשר יישור בין האייקון לטקסט */
+    align-items: center; /* מיישר את האייקון והטקסט אנכית */
+    justify-content: center; /* ממרכז את האייקון והטקסט בתוך הכפתור */
+    gap: 10px; /* מרווח בין האייקון לטקסט */
+    width: 100%; /* מתיחה מלאה במובייל */
+    max-width: 300px; /* מוודא שהכפתור לא יהיה רחב מדי */
+    padding: 10px 20px;
+    margin: 10px auto; /* מוסיף מרווח בין הכפתורים */
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+/* סגנון כפתור טלפון */
+.cta-button {
+    background-color: #007bff;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+}
+
+/* סגנון כפתור וואטסאפ */
+.whatsapp-button {
+    background-color: #25d366;
+}
+
+.whatsapp-button:hover {
+    background-color: #1da851;
+}
+
+/* התאמה למובייל */
+@media (max-width: 768px) {
+    .cta-button, .whatsapp-button {
+        width: 90%; /* מתיחה עד 90% מרוחב המסך */
+        margin: 10px auto; /* מרווח בין הכפתורים */
+        max-width: 320px; /* מוודא שהכפתור לא רחב מדי */
+    }
+}
