@@ -827,3 +827,25 @@ body {
     padding: 10px 20px; /* ריווח פנימי בכפתורים */
     border-radius: 5px; /* מסגרות עגולות */
 }
+/* יישור מדויק של הכפתורים בתוך ה-CTA */
+.cta-section {
+    display: flex; /* הופך את הקונטיינר ל-Flexbox */
+    flex-direction: column; /* מסדר את התוכן בעמודה */
+    align-items: center; /* ממרכז את התוכן אופקית */
+    justify-content: center; /* ממרכז את התוכן אנכית */
+    text-align: center; /* מיישר טקסט */
+    padding: 20px; /* מוסיף רווח פנימי */
+}
+
+.cta-section .cta-button,
+.cta-section .whatsapp-button {
+    display: flex; /* הופך את הכפתורים ל-Flexbox */
+    justify-content: center; /* ממרכז את התוכן בתוך הכפתור */
+    align-items: center; /* מיישר אייקון וטקסט אנכית */
+    margin: 15px 0; /* מרווח אנכי בין הכפתורים */
+    max-width: 320px; /* מגביל את הרוחב המקסימלי */
+    width: 90%; /* מתאים את הרוחב לרוחב המסך */
+    padding: 10px 20px; /* מוסיף רווח פנימי */
+    border-radius: 5px; /* מסגרות עגולות */
+    text-align: center; /* מיישר את הטקסט */
+}
