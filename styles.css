@@ -755,3 +755,24 @@ body {
         max-width: 320px; /* מוודא שהכפתור לא רחב מדי */
     }
 }
+/* עדכון יישור כפתורים במובייל */
+.cta-button, .whatsapp-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%; /* מתיחה מלאה */
+    max-width: 320px;
+    padding: 10px 20px;
+    margin: 10px auto; /* מרווח בין הכפתורים */
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .cta-button, .whatsapp-button {
+        margin: 15px auto; /* הגדלת המרווח בין הכפתורים */
+    }
+}
