@@ -6,103 +6,66 @@
     <title>דף הבית - גדרות זיו בגולן</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="images/larana camping.png" type="image/png">
-    <head>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
     <style>
-        /* עיצוב אחיד לכפתורים */
-        .cta-button, .whatsapp-button {
-            display: inline-block;
-            width: 200px; /* רוחב קבוע */
-            padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
-            color: white;
-            font-size: 16px;
-            font-weight: bold;
-            border-radius: 5px;
-            transition: background-color 0.3s;
+        /* עיצוב כללי */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
         }
 
-        .cta-button {
-            background-color: #007bff;
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        .cta-button:hover {
-            background-color: #0056b3;
-        }
-
-        .whatsapp-button {
-            background-color: #25d366;
-        }
-
-        .whatsapp-button:hover {
-            background-color: #1da851;
-        }
-
-        /* רספונסיביות למובייל */
-        @media (max-width: 768px) {
-            .cta-button, .whatsapp-button {
-                width: 100%; /* מתיחה מלאה */
-            }
-        }
-    </style>
-</head>
-
-
-    <style>
-        /* Header Styling */
         .header-banner {
             background-color: #f4f4f4;
             padding: 20px 0;
             text-align: center;
             border-bottom: 2px solid #ddd;
         }
-        .logo-container {
-            margin-bottom: 15px;
-        }
-        .logo {
-            max-width: 150px;
-            height: auto;
-        }
-        .navbar {
-            margin-top: 10px;
-        }
+
         .nav-links {
             list-style: none;
             padding: 0;
-            margin: 0;
             display: flex;
             justify-content: center;
+            gap: 20px;
         }
-        .nav-links li {
-            margin: 0 15px;
-        }
+
         .nav-links a {
             text-decoration: none;
             color: #333;
             font-weight: bold;
             transition: color 0.3s;
         }
+
         .nav-links a:hover {
             color: #007bff;
         }
 
-        /* Main Content Styling */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
+        .services {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 40px 0;
+            text-align: center;
         }
-        .intro, .services, .cta-section {
-            margin-bottom: 40px;
-        }
+
         .values-grid {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
             justify-content: center;
         }
+
         .value-item {
             flex: 1 1 calc(33.333% - 20px);
             background-color: #f9f9f9;
@@ -111,9 +74,31 @@
             border-radius: 5px;
             text-align: center;
         }
-        .cta-section {
+
+        .gallery-section {
+            margin-top: 40px;
             text-align: center;
         }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .gallery-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-section {
+            text-align: center;
+            margin-top: 40px;
+        }
+
         .cta-button {
             background-color: #007bff;
             color: #fff;
@@ -122,47 +107,22 @@
             border-radius: 5px;
             transition: background-color 0.3s;
         }
+
         .cta-button:hover {
             background-color: #0056b3;
         }
 
-        /* Footer Styling */
         .footer {
             background-color: #333;
             color: #fff;
             text-align: center;
             padding: 20px;
         }
-        .footer p {
-            margin: 0;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-links {
-                flex-direction: column;
-                align-items: center;
-            }
-            .nav-links li {
-                margin: 10px 0;
-            }
-            .value-item {
-                flex: 1 1 100%;
-            }
-            .logo {
-                max-width: 120px;
-            }
-        }
     </style>
 </head>
 <body>
     <header class="header-banner">
         <div class="container">
-            <div class="logo-container">
-                <a href="index.html">
-                  
-                </a>
-            </div>
             <nav class="navbar">
                 <ul class="nav-links">
                     <li><a href="index.html">דף הבית</a></li>
@@ -170,11 +130,10 @@
                     <li><a href="gallery.html">גלריה</a></li>
                     <li><a href="contact.html">צור קשר</a></li>
                     <li>
-    <a href="https://www.facebook.com/profile.php?id=61570398886746" target="_blank">
-        <i class="fab fa-facebook"></i> facebook
-    </a>
-</li>
-
+                        <a href="https://www.facebook.com/profile.php?id=61570398886746" target="_blank">
+                            <i class="fab fa-facebook"></i> facebook
+                        </a>
+                    </li>
                 </ul>
             </nav>
             <h1>ברוכים הבאים לגדרות זיו בגולן</h1>
@@ -182,15 +141,6 @@
     </header>
 
     <main class="container">
-        <section class="intro">
-            <h2>מי אנחנו?</h2>
-            <p>
-              "ברוכים הבאים ל'גדרות זיו בגולן' – הבחירה המובילה להתקנת גדרות אלומיניום איכותיות באזור הגולן וקצרין.
-אנו מתמחים ביצירת פתרונות גידור בהתאמה אישית, תוך שילוב של עיצוב עכשווי, חומרים איכותיים, וגימור מדויק ברמה הגבוהה ביותר.
-עם ניסיון רב בליווי לקוחות פרטיים ועסקיים, אנו מבטיחים שירות אישי, אמין ומקצועי – כל הדרך, מהתכנון ועד ההתקנה המושלמת."
-            </p>
-        </section>
-
         <section class="services">
             <h2>השירותים שלנו</h2>
             <div class="values-grid">
@@ -206,34 +156,43 @@
                     <h3>צביעה בתנור</h3>
                     <p>שירות צביעה בתנור בגימור איכותי המבטיח עמידות מפני פגעי מזג האוויר.</p>
                 </div>
-                <div class="value-item">
-                    <h3>שירות אישי</h3>
-                    <p>ליווי צמוד ואישי לכל אורך הפרויקט, משלב התכנון ועד לסיום.</p>
+            </div>
+        </section>
+
+        <section class="gallery-section">
+            <h2>תמונות מהגלריה</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/gallery1.jpg" alt="תמונה 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery2.jpg" alt="תמונה 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery3.jpg" alt="תמונה 3">
                 </div>
             </div>
         </section>
 
         <section class="cta-section">
-    <h2>מוכנים לעשות את הצעד הבא?</h2>
-    <p>צרו קשר עוד היום ותנו לנו לעזור לכם לשדרג את הבית או העסק שלכם עם גדרות ברמה אחרת.</p>
-    <a href="contact.html" class="cta-button">
-        <i class="fas fa-phone"></i> דברו איתנו
-    </a>
-    <a href="https://wa.me/972502218880" class="whatsapp-button" target="_blank">
-        <i class="fab fa-whatsapp"></i> דברו איתנו בוואטסאפ
-    </a>
-</section>
-
+            <h2>מוכנים לעשות את הצעד הבא?</h2>
+            <p>צרו קשר עוד היום ותנו לנו לעזור לכם לשדרג את הבית או העסק שלכם עם גדרות ברמה אחרת.</p>
+            <a href="contact.html" class="cta-button">
+                <i class="fas fa-phone"></i> דברו איתנו
+            </a>
+            <a href="https://wa.me/972502218880" class="whatsapp-button" target="_blank">
+                <i class="fab fa-whatsapp"></i> דברו איתנו בוואטסאפ
+            </a>
+        </section>
     </main>
 
     <footer class="footer">
         <p>© כל הזכויות שמורות - גדרות זיו בגולן</p>
         <div class="social-links">
-    <a href="https://www.facebook.com/profile.php?id=61570398886746" target="_blank">
-        <i class="fab fa-facebook"></i> בקרו אותנו בפייסבוק
-    </a>
-</div>
-
+            <a href="https://www.facebook.com/profile.php?id=61570398886746" target="_blank">
+                <i class="fab fa-facebook"></i> בקרו אותנו בפייסבוק
+            </a>
+        </div>
     </footer>
 </body>
 </html>
