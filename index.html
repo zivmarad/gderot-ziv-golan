@@ -159,49 +159,73 @@
             </div>
         </section>
 
-      <section class="gallery-link-section">
-    <h2>גלריה מעבודותינו</h2>
-    <div class="gallery-preview">
-        <div class="gallery-item">
-            <img src="images/1.jpg" alt="תמונה מהגלריה">
+     <section class="services">
+    <h2>השירותים שלנו</h2>
+    <div class="services-list">
+        <div class="service-item">
+            <h3>עיצוב בהתאמה אישית</h3>
+            <p>מתאימים את הגדר בדיוק לצרכים ולעיצוב שלכם, תוך הקפדה על אסתטיקה ותפקוד מיטבי.</p>
         </div>
-        <div class="gallery-item">
-            <img src="images/2.jpg" alt="תמונה מהגלריה">
+        <div class="service-item">
+            <h3>התקנה מקצועית</h3>
+            <p>צוות מיומן מבצע התקנות ברמת גימור גבוהה ובדיוק מושלם.</p>
         </div>
-        <div class="gallery-item">
-            <img src="images/3.jpg" alt="תמונה מהגלריה">
+        <div class="service-item">
+            <h3>צביעה בתנור</h3>
+            <p>שירות צביעה בתנור בגימור איכותי המבטיח עמידות מפני פגעי מזג האוויר.</p>
         </div>
     </div>
-    <div class="gallery-cta">
-        <a href="gallery.html" class="cta-button">לצפייה בכל הגלריה</a>
+</section>
+
+<section class="gallery-section">
+    <h2>תמונות מהגלריה</h2>
+    <div class="gallery-grid">
+        <img src="images/1.jpg" alt="תמונה 1">
+        <img src="images/2.jpg" alt="תמונה 2">
+        <img src="images/3.jpg" alt="תמונה 3">
+        <img src="images/4.jpg" alt="תמונה 4">
+        <img src="images/470672110_122106598682679962_1230314204217679116_n.jpg" alt="תמונה 5">
+        <img src="images/IMG_20241031_122522.jpg" alt="תמונה 6">
+        <img src="images/IMG_20241031_132755.jpg" alt="תמונה 7">
+        <img src="images/IMG_20241103_115628.jpg" alt="תמונה 8">
+        <img src="images/IMG_20241121_142831.jpg" alt="תמונה 9">
+        <img src="images/IMG_20241121_142836.jpg" alt="תמונה 10">
+        <img src="images/fance.jpg" alt="תמונה 11">
     </div>
 </section>
 
 <style>
-.gallery-link-section {
-    text-align: center;
-    margin: 40px 0;
-}
-
-.gallery-preview {
+/* שירותים */
+.services-list {
     display: flex;
-    justify-content: center;
-    gap: 15px;
+    flex-direction: column;
+    gap: 20px;
     margin: 20px 0;
 }
 
-.gallery-item img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
+.service-item {
+    background: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
     border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
-.gallery-cta {
+/* גלריה */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
     margin-top: 20px;
 }
+
+.gallery-grid img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 </style>
+
 
         </section>
 
