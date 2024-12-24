@@ -13,7 +13,7 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #ffffff;
             color: #333;
             line-height: 1.6;
         }
@@ -24,38 +24,64 @@
             margin: 0 auto;
         }
 
+        /* כותרת עליונה */
         .header-banner {
-            background-color: #f4f4f4;
-            padding: 20px 0;
+            background: linear-gradient(to right, #3a6186, #89253e);
+            color: white;
             text-align: center;
-            border-bottom: 2px solid #ddd;
+            padding: 20px 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
         }
 
         .nav-links {
             list-style: none;
             padding: 0;
             display: flex;
-            justify-content: center;
-            gap: 20px;
+        }
+
+        .nav-links li {
+            margin: 0 15px;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: #333;
+            color: white;
             font-weight: bold;
             transition: color 0.3s;
         }
 
         .nav-links a:hover {
-            color: #007bff;
+            color: #ffcc00;
         }
 
-        .services {
-            background: white;
-            padding: 40px;
+        /* עיצוב גלריה */
+        .gallery-section {
+            padding: 20px;
+            background: #f9f9f9;
+            text-align: center;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .gallery-item img {
+            max-width: 100%;
+            height: auto;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            margin: 40px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* שירותים */
+        .services {
+            margin: 20px 0;
             text-align: center;
         }
 
@@ -67,171 +93,108 @@
         }
 
         .value-item {
-            flex: 1 1 calc(33.333% - 20px);
-            background-color: #f9f9f9;
-            padding: 20px;
+            background: #ffffff;
             border: 1px solid #ddd;
             border-radius: 5px;
+            padding: 15px;
             text-align: center;
-        }
-
-        .gallery-section {
-            margin-top: 40px;
-            text-align: center;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            padding: 20px;
-        }
-
-        .gallery-item img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 5px;
+            flex: 1 1 calc(33.333% - 20px);
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
+        /* קריאה לפעולה */
         .cta-section {
+            background: #3a6186;
+            color: white;
             text-align: center;
-            margin-top: 40px;
+            padding: 30px 0;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .cta-button, .whatsapp-button {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
         }
 
         .cta-button {
             background-color: #007bff;
-            color: #fff;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
         }
 
         .cta-button:hover {
             background-color: #0056b3;
         }
 
+        .whatsapp-button {
+            background-color: #25d366;
+        }
+
+        .whatsapp-button:hover {
+            background-color: #1da851;
+        }
+
+        /* פוטר */
         .footer {
-            background-color: #333;
-            color: #fff;
+            background: #333;
+            color: white;
             text-align: center;
-            padding: 20px;
+            padding: 15px 0;
         }
     </style>
 </head>
 <body>
     <header class="header-banner">
-        <div class="container">
-            <nav class="navbar">
-                <ul class="nav-links">
-                    <li><a href="index.html">דף הבית</a></li>
-                    <li><a href="about.html">אודות</a></li>
-                    <li><a href="gallery.html">גלריה</a></li>
-                    <li><a href="contact.html">צור קשר</a></li>
-                    <li>
-                        <a href="https://www.facebook.com/profile.php?id=61570398886746" target="_blank">
-                            <i class="fab fa-facebook"></i> facebook
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-            <h1>ברוכים הבאים לגדרות זיו בגולן</h1>
-        </div>
+        <h1>ברוכים הבאים לגדרות זיו בגולן</h1>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="index.html">דף הבית</a></li>
+                <li><a href="about.html">אודות</a></li>
+                <li><a href="gallery.html">גלריה</a></li>
+                <li><a href="contact.html">צור קשר</a></li>
+                <li>
+                    <a href="https://www.facebook.com/profile.php?id=61570398886746" target="_blank">
+                        <i class="fab fa-facebook"></i> Facebook
+                    </a>
+                </li>
+            </ul>
+        </nav>
     </header>
 
     <main class="container">
-       
+        <section class="gallery-section">
+            <h2>תמונות מהגלריה</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="images/1.jpg" alt="תמונה 1"></div>
+                <div class="gallery-item"><img src="images/2.jpg" alt="תמונה 2"></div>
+                <div class="gallery-item"><img src="images/3.jpg" alt="תמונה 3"></div>
+                <div class="gallery-item"><img src="images/4.jpg" alt="תמונה 4"></div>
+                <div class="gallery-item"><img src="images/fance.jpg" alt="תמונה 5"></div>
+            </div>
+        </section>
 
-     <section class="services">
-    <h2>השירותים שלנו</h2>
-    <div class="services-list">
-        <div class="service-item">
-            <h3>עיצוב בהתאמה אישית</h3>
-            <p>מתאימים את הגדר בדיוק לצרכים ולעיצוב שלכם, תוך הקפדה על אסתטיקה ותפקוד מיטבי.</p>
-        </div>
-        <div class="service-item">
-            <h3>התקנה מקצועית</h3>
-            <p>צוות מיומן מבצע התקנות ברמת גימור גבוהה ובדיוק מושלם.</p>
-        </div>
-        <div class="service-item">
-            <h3>צביעה בתנור</h3>
-            <p>שירות צביעה בתנור בגימור איכותי המבטיח עמידות מפני פגעי מזג האוויר.</p>
-        </div>
-    </div>
-</section>
-
-<section class="gallery-section">
-    <h2>תמונות מהגלריה</h2>
-    <div class="gallery-grid">
-        <img src="images/1.jpg" alt="תמונה 1">
-        <img src="images/2.jpg" alt="תמונה 2">
-        <img src="images/3.jpg" alt="תמונה 3">
-        <img src="images/4.jpg" alt="תמונה 4">
-        <img src="images/470672110_122106598682679962_1230314204217679116_n.jpg" alt="תמונה 5">
-        <img src="images/IMG_20241031_122522.jpg" alt="תמונה 6">
-        <img src="images/IMG_20241031_132755.jpg" alt="תמונה 7">
-        <img src="images/IMG_20241103_115628.jpg" alt="תמונה 8">
-        <img src="images/IMG_20241121_142831.jpg" alt="תמונה 9">
-        <img src="images/IMG_20241121_142836.jpg" alt="תמונה 10">
-        <img src="images/fance.jpg" alt="תמונה 11">
-    </div>
-</section>
-
-<style>
-/* שירותים */
-.services-list {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    margin: 20px 0;
-}
-
-.service-item {
-    background: #f9f9f9;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    text-align: center;
-}
-
-/* גלריה */
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    margin-top: 20px;
-}
-
-.gallery-grid img {
-    width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-</style>
-
-
+        <section class="services">
+            <h2>השירותים שלנו</h2>
+            <div class="values-grid">
+                <div class="value-item"><h3>עיצוב בהתאמה אישית</h3></div>
+                <div class="value-item"><h3>התקנה מקצועית</h3></div>
+                <div class="value-item"><h3>צביעה בתנור</h3></div>
+            </div>
         </section>
 
         <section class="cta-section">
             <h2>מוכנים לעשות את הצעד הבא?</h2>
-            <p>צרו קשר עוד היום ותנו לנו לעזור לכם לשדרג את הבית או העסק שלכם עם גדרות ברמה אחרת.</p>
-            <a href="contact.html" class="cta-button">
-                <i class="fas fa-phone"></i> דברו איתנו
-            </a>
-            <a href="https://wa.me/972502218880" class="whatsapp-button" target="_blank">
-                <i class="fab fa-whatsapp"></i> דברו איתנו בוואטסאפ
-            </a>
+            <a href="contact.html" class="cta-button">דברו איתנו</a>
+            <a href="https://wa.me/972502218880" class="whatsapp-button">וואטסאפ</a>
         </section>
     </main>
 
     <footer class="footer">
         <p>© כל הזכויות שמורות - גדרות זיו בגולן</p>
-        <div class="social-links">
-            <a href="https://www.facebook.com/profile.php?id=61570398886746" target="_blank">
-                <i class="fab fa-facebook"></i> בקרו אותנו בפייסבוק
-            </a>
-        </div>
     </footer>
 </body>
 </html>
