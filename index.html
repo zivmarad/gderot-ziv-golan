@@ -29,23 +29,31 @@
             background: linear-gradient(to right, #3a6186, #89253e);
             color: white;
             text-align: center;
-            padding: 20px 0;
+            padding: 10px 0;
         }
 
         .navbar {
             display: flex;
-            justify-content: center;
-            gap: 20px;
+            justify-content: space-between;
+            align-items: center;
+            background: #3a6186;
+            padding: 10px 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         .nav-links {
             list-style: none;
             padding: 0;
+            margin: 0;
             display: flex;
+            gap: 20px;
         }
 
         .nav-links li {
-            margin: 0 15px;
+            margin: 0;
         }
 
         .nav-links a {
@@ -57,6 +65,11 @@
 
         .nav-links a:hover {
             color: #ffcc00;
+        }
+
+        .logo {
+            max-width: 120px;
+            height: auto;
         }
 
         /* עיצוב גלריה */
@@ -149,8 +162,8 @@
 </head>
 <body>
     <header class="header-banner">
-        <h1>ברוכים הבאים לגדרות זיו בגולן</h1>
         <nav class="navbar">
+            <a href="index.html"><img src="images/logo.png" alt="גדרות זיו בגולן" class="logo"></a>
             <ul class="nav-links">
                 <li><a href="index.html">דף הבית</a></li>
                 <li><a href="about.html">אודות</a></li>
@@ -163,6 +176,7 @@
                 </li>
             </ul>
         </nav>
+        <h1>ברוכים הבאים לגדרות זיו בגולן</h1>
     </header>
 
     <main class="container">
