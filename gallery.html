@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +8,67 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link rel="icon" href="images/larana_camping.png" type="image/png">
     <style>
+        /* עיצוב כללי */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* כותרת עליונה */
+        .header-banner {
+            background: linear-gradient(to right, #3a6186, #89253e);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .header-banner h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        /* תפריט ניווט */
+        .navbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #3a6186;
+            padding: 10px 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .nav-links li a:hover {
+            color: #ffcc00;
+        }
+
         /* עיצוב גלריה */
         .gallery-section {
             padding: 20px;
@@ -16,50 +76,85 @@
             text-align: center;
         }
 
-        .gallery-section h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: #333;
+        .gallery-section h2, .gallery-section p {
+            margin: 0 auto 20px;
+            max-width: 800px;
+            text-align: center;
+            display: block; /* מרכז את הכותרות */
         }
 
         .gallery-grid {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 30px;
+            padding: 20px;
             align-items: center;
         }
 
         .gallery-item {
-            border: 2px solid #ccc;
+            background: white;
             border-radius: 8px;
-            overflow: hidden;
-            width: 90%;
-            max-width: 800px;
-            margin: 0 auto;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+            width: 100%;
+            max-width: 800px;
         }
 
         .gallery-item img {
             width: 100%;
             height: auto;
-            max-height: 500px;
-            object-fit: cover;
+            transition: transform 0.3s ease;
         }
 
-        @media (min-width: 1024px) {
-            .gallery-item {
-                max-width: 700px;
-            }
-
-            .gallery-item img {
-                max-height: 400px;
-            }
+        .gallery-item img:hover {
+            transform: scale(1.05);
         }
 
-        @media (max-width: 768px) {
-            .gallery-item {
-                max-width: 100%;
-            }
+        .gallery-item p {
+            margin-top: 10px;
+            font-size: 1rem;
+            color: #555;
+        }
+
+        /* חלון קופץ עבור הגדלת תמונות */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 5px 10px;
+            border-radius: 50%;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .modal-close:hover {
+            background: rgba(255, 255, 255, 0.8);
+            color: black;
         }
 
         /* כפתורים קבועים */
@@ -100,9 +195,7 @@
         }
     </style>
 </head>
-
 <body>
-    <!-- כותרת עליונה -->
     <header class="header-banner">
         <div class="container">
             <nav class="navbar">
@@ -122,13 +215,17 @@
         </div>
     </header>
 
-    <!-- גלריה -->
     <main class="container">
         <section class="gallery">
     <h2>מבחר פרויקטים</h2>
     <p>גלריית העבודות שלנו:</p>
     <div id="gallery-grid" class="gallery-grid">
         <!-- התמונות ייטענו כאן באופן אוטומטי -->
+        <div class="gallery-item"><img src="images/1.jpg" alt="תמונה 1"></div>
+        <div class="gallery-item"><img src="images/2.jpg" alt="תמונה 2"></div>
+        <div class="gallery-item"><img src="images/3.jpg" alt="תמונה 3"></div>
+        <div class="gallery-item"><img src="images/4.jpg" alt="תמונה 4"></div>
+        <div class="gallery-item"><img src="images/fance.jpg" alt="תמונה 5"></div>
     </div>
 </section>
 
