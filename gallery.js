@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const galleryGrid = document.getElementById("gallery-grid");
-    const imageDirectory = "images/"; // תיקיית התמונות
+    const imageDirectory = "images/";
 
     // רשימת התמונות בגלריה
     const images = [
@@ -28,17 +28,22 @@ document.addEventListener("DOMContentLoaded", () => {
         div.appendChild(img);
         galleryGrid.appendChild(div);
     });
-});
 
-function openModal(image) {
     const modal = document.getElementById("image-modal");
     const modalImage = document.getElementById("modal-image");
+    const modalClose = document.getElementById("modal-close");
 
-    modal.style.display = "flex";
-    modalImage.src = image.src;
-}
+    modalClose.addEventListener("click", () => closeModal());
+    modal.addEventListener("click", (e) => {
+        if (e.target === modal) closeModal();
+    });
 
-function closeModal() {
-    const modal = document.getElementById("image-modal");
-    modal.style.display = "none";
-}
+    function openModal(image) {
+        modal.style.display = "flex";
+        modalImage.src = image.src;
+    }
+
+    function closeModal() {
+        modal.style.display = "none";
+    }
+});
