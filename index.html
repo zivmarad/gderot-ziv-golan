@@ -8,6 +8,42 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="images/larana_camping.png" type="image/png">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        /* עיצוב גלריה */
+        .gallery-section {
+            padding: 20px;
+            background: #f9f9f9;
+            text-align: center;
+        }
+
+        .gallery-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .gallery-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .gallery-item {
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            overflow: hidden;
+            width: 90%;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
 </head>
 
 <body>
@@ -34,7 +70,7 @@
     <!-- גלריה -->
     <main class="container">
         <section class="gallery-section">
-            <h2>תמונות מהגלריה</h2>
+            <h2>תמונות מפרויקטים</h2>
             <div class="gallery-grid">
                 <div class="gallery-item"><img src="images/1.jpg" alt="תמונה 1"></div>
                 <div class="gallery-item"><img src="images/2.jpg" alt="תמונה 2"></div>
