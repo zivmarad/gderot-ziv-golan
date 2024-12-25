@@ -6,8 +6,7 @@
     <title>גלריה - גדרות זיו בגולן</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <link rel="icon" href="images/larana camping.png" type="image/png">
-
+    <link rel="icon" href="images/larana_camping.png" type="image/png">
 </head>
 <body>
     <header class="header-banner">
@@ -19,11 +18,10 @@
                     <li><a href="gallery.html">גלריה</a></li>
                     <li><a href="contact.html">צור קשר</a></li>
                     <li>
-    <a href="https://www.facebook.com/profile.php?id=61570398886746" target="_blank">
-        <i class="fab fa-facebook"></i> facebook
-    </a>
-</li>
-
+                        <a href="https://www.facebook.com/profile.php?id=61570398886746" target="_blank">
+                            <i class="fab fa-facebook"></i> Facebook
+                        </a>
+                    </li>
                 </ul>
             </nav>
             <h1>גלריה</h1>
@@ -34,9 +32,7 @@
         <section class="gallery">
             <h2>מבחר פרויקטים</h2>
             <p>גלריית העבודות שלנו:</p>
-            <div id="gallery-grid" class="gallery-grid">
-                <!-- התמונות ייטענו כאן באופן אוטומטי -->
-            </div>
+            <div id="gallery-grid" class="gallery-grid"></div>
         </section>
     </main>
 
@@ -46,8 +42,8 @@
 
     <!-- מודל להגדלת תמונה -->
     <div id="image-modal" class="modal">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <img class="modal-content" id="modal-image">
+        <span class="close" id="modal-close">&times;</span>
+        <img class="modal-content" id="modal-image" alt="תמונה מוגדלת">
     </div>
 
     <!-- קובץ JavaScript -->
