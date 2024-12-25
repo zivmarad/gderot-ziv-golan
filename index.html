@@ -42,6 +42,64 @@
         .gallery-item img {
             width: 100%;
             height: auto;
+            max-height: 500px;
+            object-fit: cover;
+        }
+
+        @media (min-width: 1024px) {
+            .gallery-item {
+                max-width: 700px;
+            }
+
+            .gallery-item img {
+                max-height: 400px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .gallery-item {
+                max-width: 100%;
+            }
+        }
+
+        /* עיצוב שירותים */
+        .services {
+            padding: 20px;
+            background: #fff;
+            text-align: center;
+        }
+
+        .services h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .values-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .value-item {
+            background: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 300px;
+            text-align: center;
+        }
+
+        .value-item h3 {
+            color: #3a6186;
+            margin-bottom: 10px;
+        }
+
+        .value-item p {
+            color: #555;
+            font-size: 1rem;
+            line-height: 1.5;
         }
     </style>
 </head>
@@ -86,9 +144,18 @@
         <section class="services">
             <h2>השירותים שלנו</h2>
             <div class="values-grid">
-                <div class="value-item"><h3>עיצוב בהתאמה אישית</h3></div>
-                <div class="value-item"><h3>התקנה מקצועית</h3></div>
-                <div class="value-item"><h3>צביעה בתנור</h3></div>
+                <div class="value-item">
+                    <h3>עיצוב בהתאמה אישית</h3>
+                    <p>אנו מציעים עיצוב גדרות מותאם אישית לצרכים ולסגנון שלכם, תוך שימת דגש על יופי ופונקציונליות.</p>
+                </div>
+                <div class="value-item">
+                    <h3>התקנה מקצועית</h3>
+                    <p>צוות מומחים מיומן ידאג להתקנה מדויקת ומקצועית, לשביעות רצונכם המלאה.</p>
+                </div>
+                <div class="value-item">
+                    <h3>צביעה בתנור</h3>
+                    <p>שירותי צביעה בתנור באיכות גבוהה, להבטחת עמידות ויופי לטווח ארוך.</p>
+                </div>
             </div>
         </section>
 
