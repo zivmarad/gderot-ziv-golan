@@ -64,16 +64,15 @@ body {
 .gallery-section p {
     margin: 0 auto 20px;
     max-width: 800px;
-    text-align: center;
-    padding: 10px 0; /* רווח פנימי מעל ומתחת */
+    text-align: center !important; /* מבטיח יישור למרכז */
+    padding: 10px 0; /* רווח פנימי */
     font-size: 1.5rem; /* גודל טקסט */
     color: #333; /* צבע טקסט */
-}
+    display: block; /* מוודא שהתוכן בלוק */
 
 }
 
 
-}
 
 .gallery-grid {
     display: grid;
