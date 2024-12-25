@@ -66,11 +66,13 @@ body {
     text-align: center;
 }
 
+/* גלריה - עיצוב מעודכן */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 15px;
     padding: 20px;
+    justify-items: center; /* ממרכז את התמונות */
 }
 
 .gallery-item {
@@ -78,15 +80,23 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    width: 100%; /* תמלא את העמודה */
+    max-width: 250px; /* מגבילה את הרוחב */
+    text-align: center;
 }
 
 .gallery-item img {
     width: 100%;
     height: auto; /* שומר על יחס התמונה */
-    max-height: 200px; /* מגביל את הגובה המרבי */
+    border-radius: 8px;
     object-fit: cover;
     transition: transform 0.3s ease;
 }
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+}
+
 
 .gallery-item img:hover {
     transform: scale(1.05);
