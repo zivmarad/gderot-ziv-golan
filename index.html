@@ -101,6 +101,20 @@
             font-size: 1rem;
             line-height: 1.5;
         }
+
+        /* אנימציית fade-out */
+        .fade-out {
+            animation: fadeOut 0.5s forwards;
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
     </style>
 </head>
 
@@ -206,11 +220,18 @@
                 }
             });
 
-            // גלילה רציפה
+            // גלילה רציפה עם אנימציה
+            let isScrolling = false;
+
             window.addEventListener("scroll", () => {
-                if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-                    const nextPage = "gallery.html"; // דף הבא
-                    window.location.href = nextPage;
+                if (!isScrolling && window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+                    isScrolling = true;
+                    document.body.classList.add("fade-out");
+
+                    setTimeout(() => {
+                        const nextPage = "gallery.html"; // דף הבא
+                        window.location.href = nextPage;
+                    }, 500); // זמן האנימציה ב-milliseconds
                 }
             });
         });
