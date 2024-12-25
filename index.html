@@ -205,6 +205,14 @@
                     modal.style.display = "none";
                 }
             });
+
+            // גלילה רציפה
+            window.addEventListener("scroll", () => {
+                if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+                    const nextPage = "gallery.html"; // דף הבא
+                    window.location.href = nextPage;
+                }
+            });
         });
     </script>
 </body>
