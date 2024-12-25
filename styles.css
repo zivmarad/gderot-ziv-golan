@@ -60,10 +60,16 @@ body {
 }
 
 /* עיצוב גלריה */
-.gallery-section {
-            padding: 20px;
-            background: #f9f9f9;
-            text-align: center;
+.gallery-section h2,
+.gallery-section p {
+    margin: 0 auto 20px;
+    max-width: 800px;
+    text-align: center;
+    padding: 10px 0; /* רווח פנימי מעל ומתחת */
+    font-size: 1.5rem; /* גודל טקסט */
+    color: #333; /* צבע טקסט */
+}
+
 }
 
 
