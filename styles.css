@@ -60,15 +60,19 @@ body {
 }
 
 /* עיצוב גלריה */
-.gallery-section h2,
-.gallery-section p {
+.gallery-section h2, .gallery-section p {
     margin: 0 auto 20px;
     max-width: 800px;
-    text-align: center !important; /* מבטיח יישור למרכז */
-    padding: 10px 0; /* רווח פנימי */
+    text-align: center; /* מבטיח יישור למרכז */
+    padding: 10px 0; /* ריווח פנימי */
     font-size: 1.5rem; /* גודל טקסט */
     color: #333; /* צבע טקסט */
-    display: block; /* מוודא שהתוכן בלוק */
+    line-height: 1.5; /* מרווח בין השורות */
+    display: flex; /* שימוש בפלקס */
+    justify-content: center; /* יישור אופקי */
+    align-items: center; /* יישור אנכי */
+}
+
 
 }
 
