@@ -6,7 +6,7 @@
     <title>גלריה - גדרות זיו בגולן</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <link rel="icon" href="images/larana_camping.png" type="image/png">
+    <link rel="icon" href="images/larana camping.png" type="image/png">
     <style>
         /* עיצוב כללי */
         body {
@@ -77,8 +77,8 @@
         }
 
         .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            display: flex;
+            flex-direction: column;
             gap: 15px;
             padding: 20px;
         }
@@ -88,7 +88,6 @@
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             overflow: hidden;
-            text-align: center;
         }
 
         .gallery-item img {
@@ -216,28 +215,27 @@
                 div.appendChild(img);
                 galleryGrid.appendChild(div);
             });
+        });
 
-            // אירועים לסגירת המודל
+        function openModal(image) {
             const modal = document.getElementById("image-modal");
             const modalImage = document.getElementById("modal-image");
-            const modalClose = document.querySelector(".modal-close");
 
-            function openModal(image) {
-                modal.style.display = "flex";
-                modalImage.src = image.src;
+            modal.style.display = "flex";
+            modalImage.src = image.src;
+        }
+
+        function closeModal() {
+            const modal = document.getElementById("image-modal");
+            modal.style.display = "none";
+        }
+
+        // Close modal on click outside the image
+        document.addEventListener("click", (e) => {
+            const modal = document.getElementById("image-modal");
+            if (e.target === modal) {
+                closeModal();
             }
-
-            function closeModal() {
-                modal.style.display = "none";
-            }
-
-            modal.addEventListener("click", (event) => {
-                if (event.target === modal) {
-                    closeModal();
-                }
-            });
-
-            modalClose.addEventListener("click", closeModal);
         });
     </script>
 </body>
