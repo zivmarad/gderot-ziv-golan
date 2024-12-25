@@ -14,11 +14,11 @@ body {
     margin: 0 auto;
 }
 
-/* עיצוב כותרת עליונה */
+/* כותרת עליונה */
 .header-banner {
     background: linear-gradient(to right, #3a6186, #89253e);
     color: white;
-    padding: 50px 0;
+    padding: 20px 0;
     text-align: center;
 }
 
@@ -27,207 +27,73 @@ body {
     margin: 0;
 }
 
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: #3a6186;
-            padding: 10px 20px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .nav-links {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            gap: 20px;
-        }
-
-        .nav-links li {
-            margin: 0;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: #ffcc00;
-        }
-
-/* עיצוב תוכן עמוד */
-.intro {
-    margin: 40px 0;
-    text-align: center;
+/* תפריט ניווט */
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #3a6186;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-.intro h2 {
-    color: #89253e;
-    font-size: 2rem;
-    margin-bottom: 10px;
-}
-
-.values {
-    background: white;
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 40px 0;
-    text-align: center;
-}
-
-.values-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
     gap: 20px;
 }
 
-.value-item {
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #ffcc00;
+}
+
+/* עיצוב גלריה */
+.gallery-section {
     padding: 20px;
-    background: #f4f4f4;
-    border-radius: 8px;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.value-item h3 {
-    color: #3a6186;
-    margin-bottom: 10px;
-}
-
-.team {
-    margin: 40px 0;
+    background: #f9f9f9;
     text-align: center;
 }
 
-.team-image {
-    width: 100%;
-    max-width: 600px;
-    border-radius: 8px;
-    margin-top: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* פוטר */
-.footer {
-    background: #333;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: 40px;
-}
-
-}
-/* טופס צור קשר */
-/* עיצוב טופס צור קשר */
-.contact-section {
-    background: white;
-    padding: 40px 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 40px auto;
-    max-width: 600px;
-    text-align: center;
-}
-
-.contact-section h2 {
-    font-size: 2rem;
-    color: #89253e;
-    margin-bottom: 10px;
-}
-
-.contact-section p {
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 20px;
-}
-
-.contact-form {
-    display: flex;
-    flex-direction: column;
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 15px;
-    text-align: right;
+    padding: 20px;
 }
 
-.contact-form label {
-    font-weight: bold;
-    color: #333;
+.gallery-item {
+    background: white;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.contact-form input,
-.contact-form textarea {
+.gallery-item img {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
 }
 
-.contact-form textarea {
-    resize: vertical;
-}
-
-.contact-form button {
-    background-color: #3a6186;
-    color: white;
-    font-weight: bold;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.contact-form button:hover {
-    background-color: #89253e;
+.gallery-item img:hover {
     transform: scale(1.05);
-}
-
-}
-
-.contact-form button:hover {
-    background-color: #89253e;
-
-    .contact-form input[type="tel"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-    margin-bottom: 15px;
-}
-
-}
-/* מבוא */
-.intro {
-    margin: 40px 0;
-    text-align: center;
-}
-
-.intro h2 {
-    font-size: 2rem;
-    color: #89253e;
-    margin-bottom: 10px;
-}
-
-.intro p {
-    font-size: 1.1rem;
-    color: #555;
 }
 
 /* שירותים */
 .services {
-    background: white;
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin: 40px 0;
     text-align: center;
 }
@@ -240,7 +106,7 @@ body {
 
 .value-item {
     padding: 20px;
-    background: #f4f4f4;
+    background: #ffffff;
     border-radius: 8px;
     text-align: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -253,195 +119,42 @@ body {
 
 /* קריאה לפעולה */
 .cta-section {
-    background: linear-gradient(to right, #3a6186, #89253e);
+    background: #3a6186;
     color: white;
     text-align: center;
-    padding: 40px 20px;
+    padding: 30px 0;
     border-radius: 8px;
-    margin: 40px 0;
 }
 
-.cta-section h2 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-}
-
-.cta-section p {
-    font-size: 1.1rem;
-    margin-bottom: 20px;
-}
-/* גלריה */
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    margin: 20px 0;
-}
-
-.gallery-item {
-    background: white;
-    border-radius: 8px;
-    padding: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-.gallery-item img {
-    max-width: 100%; /* התאמת גודל התמונה לרוחב האלמנט */
-    height: auto; /* שמירה על יחס הגובה והרוחב */
-    border-radius: 8px; /* קצוות עגולים */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.gallery-item img:hover {
-    transform: scale(1.05); /* הגדלה קלה במעבר עכבר */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-/* עיצוב חלון קופץ */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 10;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    justify-content: center;
+.cta-button,
+.whatsapp-button {
+    display: inline-flex;
     align-items: center;
-}
-
-.modal-content {
-    max-width: 90%;
-    max-height: 90%;
-    border-radius: 8px;
-}
-
-.close {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    color: white;
-    font-size: 30px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.close:hover {
-    color: #bbb;
-}
-/* עיצוב כללי */
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
-    line-height: 1.6;
-}
-
-/* כותרת עליונה */
-.header-banner {
-    background: linear-gradient(to right, #3a6186, #89253e);
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
-
-.header-banner h1 {
-    margin: 0;
-    font-size: 2.5rem;
-}
-
-/* ניווט */
-.navbar {
-    display: flex;
     justify-content: center;
-    gap: 20px;
-}
-
-.nav-links {
-    list-style: none;
-    padding: 0;
-    margin: 10px 0;
-}
-
-.nav-links li {
-    display: inline;
-}
-
-.nav-links li a {
+    padding: 10px 20px;
+    margin: 10px;
     color: white;
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-.nav-links li a:hover {
-    color: #ffcc00;
-}
-
-/* אזור צור קשר */
-.contact-section {
-    background: white;
-    padding: 40px 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 40px auto;
-    max-width: 600px;
-    text-align: center;
-}
-
-.contact-section h2 {
-    color: #89253e;
-    font-size: 2rem;
-    margin-bottom: 10px;
-}
-
-.contact-section p {
-    margin-bottom: 20px;
-    color: #555;
-}
-
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.contact-form label {
-    text-align: right;
-    font-weight: bold;
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
+    font-size: 16px;
     border-radius: 5px;
-    font-size: 1rem;
+    transition: background-color 0.3s;
 }
 
-.contact-form textarea {
-    resize: vertical;
+.cta-button {
+    background-color: #007bff;
 }
 
-.contact-form button {
-    background-color: #3a6186;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+.cta-button:hover {
+    background-color: #0056b3;
 }
 
-.contact-form button:hover {
-    background-color: #89253e;
-    transform: scale(1.05);
+.whatsapp-button {
+    background-color: #25d366;
+}
+
+.whatsapp-button:hover {
+    background-color: #1da851;
 }
 
 /* פוטר */
@@ -449,497 +162,19 @@ body {
     background: #333;
     color: white;
     text-align: center;
-    padding: 20px;
-    margin-top: 40px;
-}
-/* כותרת טופס */
-.contact-form h3 {
-    text-align: center;
-    color: #3a6186;
-    font-size: 1.5rem;
-    margin-bottom: 20px;
+    padding: 15px 0;
 }
 
-/* תיקון יישור שדות הטופס */
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
-    text-align: right; /* יישור לימין */
-    direction: rtl;
-}
-
-.contact-form input,
-.contact-form textarea {
-    text-align: right; /* תוכן מיושר לימין */
-    direction: rtl;
-}
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-    padding: 20px;
-}
-
-.gallery-item img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.gallery-item img:hover {
-    transform: scale(1.05);
-}
-
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    justify-content: center;
-    align-items: center;
-}
-
-.modal-content {
-    max-width: 80%;
-    max-height: 80%;
-    border-radius: 5px;
-}
-
-.close {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    color: white;
-    font-size: 30px;
-    font-weight: bold;
-    cursor: pointer;
-}
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-    padding: 20px;
-}
-
-.gallery-item img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.gallery-item img:hover {
-    transform: scale(1.05);
-}
-
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    justify-content: center;
-    align-items: center;
-}
-
-.modal-content {
-    max-width: 80%;
-    max-height: 80%;
-    border-radius: 5px;
-}
-
-.close {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    color: white;
-    font-size: 30px;
-    font-weight: bold;
-    cursor: pointer;
-}
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f9f9f9;
-    color: #333;
-    line-height: 1.6;
-}
-
-.header-banner {
-    background: linear-gradient(to right, #3a6186, #89253e);
-    color: white;
-    padding: 20px 0;
-    text-align: center;
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 0;
-    margin: 10px 0;
-}
-
-.nav-links li a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-    padding: 20px;
-}
-
-.gallery-item {
-    overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.gallery-item img {
-    width: 100%;
-    height: auto;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.gallery-item img:hover {
-    transform: scale(1.05);
-}
-
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    justify-content: center;
-    align-items: center;
-}
-
-.modal-content {
-    max-width: 80%;
-    max-height: 80%;
-    border-radius: 5px;
-}
-
-.close {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    color: white;
-    font-size: 30px;
-    font-weight: bold;
-    cursor: pointer;
-}
-.whatsapp-button {
-    display: inline-block;
-    background-color: #25d366;
-    color: white;
-    text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-weight: bold;
-    font-size: 16px;
-    text-align: center;
-    transition: background-color 0.3s;
-}
-.whatsapp-button:hover {
-    background-color: #1da851;
-}
-/* מרווח בין האייקון לטקסט */
-.cta-button i, .whatsapp-button i {
-    margin-right: 8px; /* עבור RTL */
-    vertical-align: middle; /* מוודא שהאייקון מיושר לטקסט */
-}
-
-/* עיצוב נוסף למובייל */
+/* גלובלי למובייל */
 @media (max-width: 768px) {
-    .cta-button, .whatsapp-button {
-        width: 100%; /* מתיחה מלאה במובייל */
-        text-align: center;
-    }
-    .cta-button i, .whatsapp-button i {
-        margin-right: 5px; /* מרווח קטן יותר במובייל */
-    }
-}
-/* עיצוב בסיסי לכפתורים */
-.cta-button, .whatsapp-button {
-    display: flex; /* מאפשר יישור של אייקון וטקסט יחד */
-    align-items: center; /* מיישר את האייקון והטקסט אנכית */
-    justify-content: center; /* מיישר אופקית */
-    gap: 10px; /* מוסיף מרווח קבוע בין האייקון לטקסט */
-    width: 200px; /* גודל אחיד */
-    padding: 10px 20px;
-    text-decoration: none;
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-/* עיצוב כפתור CTA */
-.cta-button {
-    background-color: #007bff;
-}
-
-.cta-button:hover {
-    background-color: #0056b3;
-}
-
-/* עיצוב כפתור WhatsApp */
-.whatsapp-button {
-    background-color: #25d366;
-}
-
-.whatsapp-button:hover {
-    background-color: #1da851;
-}
-
-/* התאמה למובייל */
-@media (max-width: 768px) {
-    .cta-button, .whatsapp-button {
-        width: 100%; /* נמתח למלוא רוחב המסך */
-        text-align: center;
-        padding: 12px;
-    }
-}
-/* סגנון בסיסי לכפתורים */
-.cta-button, .whatsapp-button {
-    display: flex; /* מאפשר יישור בין האייקון לטקסט */
-    align-items: center; /* מיישר את האייקון והטקסט אנכית */
-    justify-content: center; /* ממרכז את האייקון והטקסט בתוך הכפתור */
-    gap: 10px; /* מרווח בין האייקון לטקסט */
-    width: 100%; /* מתיחה מלאה במובייל */
-    max-width: 300px; /* מוודא שהכפתור לא יהיה רחב מדי */
-    padding: 10px 20px;
-    margin: 10px auto; /* מוסיף מרווח בין הכפתורים */
-    text-decoration: none;
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-/* סגנון כפתור טלפון */
-.cta-button {
-    background-color: #007bff;
-}
-
-.cta-button:hover {
-    background-color: #0056b3;
-}
-
-/* סגנון כפתור וואטסאפ */
-.whatsapp-button {
-    background-color: #25d366;
-}
-
-.whatsapp-button:hover {
-    background-color: #1da851;
-}
-
-/* התאמה למובייל */
-@media (max-width: 768px) {
-    .cta-button, .whatsapp-button {
-        width: 90%; /* מתיחה עד 90% מרוחב המסך */
-        margin: 10px auto; /* מרווח בין הכפתורים */
-        max-width: 320px; /* מוודא שהכפתור לא רחב מדי */
-    }
-}
-/* עדכון יישור כפתורים במובייל */
-.cta-button, .whatsapp-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    width: 100%; /* מתיחה מלאה */
-    max-width: 320px;
-    padding: 10px 20px;
-    margin: 10px auto; /* מרווח בין הכפתורים */
-    border-radius: 5px;
-    font-size: 16px;
-    font-weight: bold;
-    text-align: center;
-}
-
-@media (max-width: 768px) {
-    .cta-button, .whatsapp-button {
-        margin: 15px auto; /* הגדלת המרווח בין הכפתורים */
-    }
-}
-/* מרכז את התוכן של הקונטיינר */
-.cta-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* מרכז את התוכן אופקית */
-    justify-content: center; /* מרכז את התוכן אנכית */
-    text-align: center;
-}
-
-/* יישור מדויק של הכפתורים */
-.cta-section .cta-button,
-.cta-section .whatsapp-button {
-    margin: 15px auto; /* מרווח שווה בין הכפתורים */
-    max-width: 320px; /* מוודא שלא יהיו רחבים מדי */
-}
-/* יישור כפתורים בתוך הקונטיינר */
-.cta-section {
-    display: flex;
-    flex-direction: column; /* מסדר את התוכן בעמודה */
-    align-items: center; /* ממרכז את הכפתורים והטקסט */
-    justify-content: center; /* מוודא יישור אנכי */
-    text-align: center; /* מיישר את הטקסט */
-}
-
-.cta-section .cta-button,
-.cta-section .whatsapp-button {
-    margin: 15px 0; /* מוסיף ריווח אנכי בין הכפתורים */
-    max-width: 300px; /* רוחב קבוע לכפתורים */
-    width: 100%; /* מתיחה לרוחב הקונטיינר */
-}
-/* יישור הכפתורים במרכז בתוך ה-CTA */
-.cta-section {
-    display: flex;
-    flex-direction: column; /* מסדר את התוכן בעמודה */
-    align-items: center; /* ממרכז אופקית */
-    justify-content: center; /* ממרכז אנכית */
-    text-align: center;
-    padding: 20px 0; /* ריווח פנימי בתוך הקונטיינר */
-}
-
-.cta-section .cta-button,
-.cta-section .whatsapp-button {
-    display: inline-flex; /* מוודא שהכפתורים שומרים על תוכן מיושר */
-    justify-content: center; /* מיישר את התוכן בתוך הכפתור */
-    align-items: center; /* מוודא שהאייקון והטקסט מיושרים */
-    margin: 15px auto; /* מרווח אנכי ומיקום מרכזי */
-    max-width: 300px; /* רוחב מקסימלי לכפתורים */
-    width: 100%; /* מתיחה מלאה בתוך ההורה */
-    padding: 10px 20px; /* ריווח פנימי בכפתורים */
-    border-radius: 5px; /* מסגרות עגולות */
-}
-/* יישור מדויק של הכפתורים בתוך ה-CTA */
-.cta-section {
-    display: flex; /* הופך את הקונטיינר ל-Flexbox */
-    flex-direction: column; /* מסדר את התוכן בעמודה */
-    align-items: center; /* ממרכז את התוכן אופקית */
-    justify-content: center; /* ממרכז את התוכן אנכית */
-    text-align: center; /* מיישר טקסט */
-    padding: 20px; /* מוסיף רווח פנימי */
-}
-
-.cta-section .cta-button,
-.cta-section .whatsapp-button {
-    display: flex; /* הופך את הכפתורים ל-Flexbox */
-    justify-content: center; /* ממרכז את התוכן בתוך הכפתור */
-    align-items: center; /* מיישר אייקון וטקסט אנכית */
-    margin: 15px 0; /* מרווח אנכי בין הכפתורים */
-    max-width: 320px; /* מגביל את הרוחב המקסימלי */
-    width: 90%; /* מתאים את הרוחב לרוחב המסך */
-    padding: 10px 20px; /* מוסיף רווח פנימי */
-    border-radius: 5px; /* מסגרות עגולות */
-    text-align: center; /* מיישר את הטקסט */
-}
-/* עיצוב אייקונים ברשתות חברתיות */
-.social-links a {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    padding: 10px 15px;
-    background-color: #3b5998; /* כחול פייסבוק */
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.social-links a:hover {
-    background-color: #2d4373; /* כחול כהה יותר */
-}
-
-/* עיצוב אייקון פייסבוק */
-.fab.fa-facebook {
-    font-size: 20px;
-}
-@media (max-width: 768px) {
-    .logo {
-        max-width: 120px; /* גודל לוגו מתאים למובייל */
-        height: auto; /* שמירה על פרופורציות */
-    }
-    .navbar {
-        display: flex; /* שמירה על תצוגה בשורה אחת */
-        justify-content: space-between; /* מרווחים בין הלוגו לתפריט */
-        align-items: center; /* יישור אנכי */
-    }
-    .nav-links {
-        flex-direction: row; /* שמירה על תפריט אופקי */
-    }
-<style>
-    /* תפריט מותאם */
-    .nav-links a {
-        text-decoration: none;
-        color: #fff;
-        font-weight: bold;
-        padding: 10px 15px;
-        border-radius: 5px;
-        transition: background-color 0.3s ease, color 0.3s ease;
-    }
-
-    .nav-links a:hover {
-        background-color: #ffcc00;
-        color: #333;
-    }
-
-    /* גלריה - התאמת גודל תמונות */
-    .gallery-item img {
+    .cta-button,
+    .whatsapp-button {
         width: 100%;
-        height: 200px; /* גובה אחיד */
-        object-fit: cover; /* שמירה על תוכן התמונה */
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 12px;
+        text-align: center;
     }
-</style>
-.header-banner {
-    background: linear-gradient(to right, #3a6186, #89253e);
-    color: white;
-    padding: 20px 0;
-    text-align: center;
-}
 
-.nav-links {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 0;
-    margin: 10px 0;
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
 }
-
-.nav-links li a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-}
-
