@@ -7,6 +7,142 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link rel="icon" href="images/larana camping.png" type="image/png">
+    <style>
+        /* עיצוב כללי */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* כותרת עליונה */
+        .header-banner {
+            background: linear-gradient(to right, #3a6186, #89253e);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .header-banner h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        /* תפריט ניווט */
+        .navbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #3a6186;
+            padding: 10px 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .nav-links li a:hover {
+            color: #ffcc00;
+        }
+
+        /* עיצוב גלריה */
+        .gallery-section {
+            padding: 20px;
+            background: #f9f9f9;
+            text-align: center;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            padding: 20px;
+        }
+
+        .gallery-item {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item img:hover {
+            transform: scale(1.05);
+        }
+
+        /* חלון קופץ עבור הגדלת תמונות */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 5px 10px;
+            border-radius: 50%;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .modal-close:hover {
+            background: rgba(255, 255, 255, 0.8);
+            color: black;
+        }
+    </style>
 </head>
 <body>
     <header class="header-banner">
@@ -44,7 +180,7 @@
 
     <!-- מודל להגדלת תמונה -->
     <div id="image-modal" class="modal">
-        <span class="modal-close" id="modal-close">&times;</span>
+        <span class="modal-close" onclick="closeModal()">&times;</span>
         <img class="modal-content" id="modal-image">
     </div>
 
@@ -52,11 +188,9 @@
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const galleryGrid = document.getElementById("gallery-grid");
-            const imageDirectory = "images/";
-            const modal = document.getElementById("image-modal");
-            const modalImage = document.getElementById("modal-image");
-            const modalClose = document.getElementById("modal-close");
+            const imageDirectory = "images/"; // תיקיית התמונות
 
+            // רשימת התמונות בגלריה
             const images = [
                 "IMG_20241031_132755.jpg",
                 "IMG_20241031_122522.jpg",
@@ -69,6 +203,7 @@
                 "4.jpg",
             ];
 
+            // יצירת תמונות בגלריה
             images.forEach((image, index) => {
                 const div = document.createElement("div");
                 div.className = "gallery-item";
@@ -76,25 +211,25 @@
                 const img = document.createElement("img");
                 img.src = `${imageDirectory}${image}`;
                 img.alt = `תמונה ${index + 1}`;
-                img.addEventListener("click", () => {
-                    modal.style.display = "flex";
-                    modalImage.src = img.src;
-                });
+                img.onclick = () => openModal(img);
 
                 div.appendChild(img);
                 galleryGrid.appendChild(div);
             });
-
-            modalClose.addEventListener("click", closeModal);
-            modal.addEventListener("click", (e) => {
-                if (e.target === modal) closeModal();
-            });
-
-            function closeModal() {
-                modal.style.display = "none";
-                modalImage.src = "";
-            }
         });
+
+        function openModal(image) {
+            const modal = document.getElementById("image-modal");
+            const modalImage = document.getElementById("modal-image");
+
+            modal.style.display = "flex";
+            modalImage.src = image.src;
+        }
+
+        function closeModal() {
+            const modal = document.getElementById("image-modal");
+            modal.style.display = "none";
+        }
     </script>
 </body>
 </html>
