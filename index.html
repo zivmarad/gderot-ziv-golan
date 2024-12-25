@@ -6,164 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>דף הבית - גדרות זיו בגולן</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="images/larana camping.png" type="image/png">
+    <link rel="icon" href="images/larana_camping.png" type="image/png">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <style>
-        /* עיצוב כללי */
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #ffffff;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        /* כותרת עליונה */
-        .header-banner {
-            background: linear-gradient(to right, #3a6186, #89253e);
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: #3a6186;
-            padding: 10px 20px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .nav-links {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            gap: 20px;
-        }
-
-        .nav-links li {
-            margin: 0;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: #ffcc00;
-        }
-
-        .logo {
-            max-width: 120px;
-            height: auto;
-        }
-
-        /* עיצוב גלריה */
-        .gallery-section {
-            padding: 20px;
-            background: #f9f9f9;
-            text-align: center;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-        }
-
-        .gallery-item img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        /* שירותים */
-        .services {
-            margin: 20px 0;
-            text-align: center;
-        }
-
-        .values-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
-
-        .value-item {
-            background: #ffffff;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 15px;
-            text-align: center;
-            flex: 1 1 calc(33.333% - 20px);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        /* קריאה לפעולה */
-        .cta-section {
-            background: #3a6186;
-            color: white;
-            text-align: center;
-            padding: 30px 0;
-            border-radius: 8px;
-            margin-top: 20px;
-        }
-
-        .cta-button,
-        .whatsapp-button {
-            display: inline-block;
-            margin: 10px;
-            padding: 10px 20px;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-
-        .cta-button {
-            background-color: #007bff;
-        }
-
-        .cta-button:hover {
-            background-color: #0056b3;
-        }
-
-        .whatsapp-button {
-            background-color: #25d366;
-        }
-
-        .whatsapp-button:hover {
-            background-color: #1da851;
-        }
-
-        /* פוטר */
-        .footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 15px 0;
-        }
-    </style>
 </head>
 
 <body>
+    <!-- כותרת עליונה -->
     <header class="header-banner">
         <div class="container">
             <nav class="navbar">
@@ -174,7 +22,7 @@
                     <li><a href="contact.html">צור קשר</a></li>
                     <li>
                         <a href="https://www.facebook.com/profile.php?id=61570398886746" target="_blank">
-                            <i class="fab fa-facebook"></i> facebook
+                            <i class="fab fa-facebook"></i> Facebook
                         </a>
                     </li>
                 </ul>
@@ -183,6 +31,7 @@
         </div>
     </header>
 
+    <!-- גלריה -->
     <main class="container">
         <section class="gallery-section">
             <h2>תמונות מהגלריה</h2>
@@ -197,6 +46,7 @@
             </div>
         </section>
 
+        <!-- שירותים -->
         <section class="services">
             <h2>השירותים שלנו</h2>
             <div class="values-grid">
@@ -206,13 +56,19 @@
             </div>
         </section>
 
+        <!-- קריאה לפעולה -->
         <section class="cta-section">
             <h2>מוכנים לעשות את הצעד הבא?</h2>
-            <a href="contact.html" class="cta-button">דברו איתנו</a>
-            <a href="https://wa.me/972502218880" class="whatsapp-button">וואטסאפ</a>
+            <a href="contact.html" class="cta-button">
+                <i class="fas fa-phone-alt"></i> דברו איתנו
+            </a>
+            <a href="https://wa.me/972502218880" class="whatsapp-button">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
         </section>
     </main>
 
+    <!-- פוטר -->
     <footer class="footer">
         <p>© כל הזכויות שמורות - גדרות זיו בגולן</p>
     </footer>
