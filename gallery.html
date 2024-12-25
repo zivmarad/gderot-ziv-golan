@@ -79,27 +79,36 @@
         .gallery-grid {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 30px;
             padding: 20px;
         }
 
         .gallery-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             background: white;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             overflow: hidden;
+            padding: 10px;
         }
 
         .gallery-item img {
-            width: 100%;
+            max-width: 100%;
             height: auto;
-            object-fit: cover;
             border-radius: 8px;
             transition: transform 0.3s ease;
         }
 
         .gallery-item img:hover {
             transform: scale(1.05);
+        }
+
+        .gallery-item p {
+            margin-top: 10px;
+            font-size: 1rem;
+            color: #555;
         }
 
         /* חלון קופץ עבור הגדלת תמונות */
@@ -212,7 +221,11 @@
                 img.alt = `תמונה ${index + 1}`;
                 img.onclick = () => openModal(img);
 
+                const caption = document.createElement("p");
+                caption.innerText = `תמונה ${index + 1}`;
+
                 div.appendChild(img);
+                div.appendChild(caption);
                 galleryGrid.appendChild(div);
             });
         });
