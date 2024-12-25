@@ -66,7 +66,6 @@ body {
     text-align: center;
 }
 
-/* גלריה - עיצוב מעודכן */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -81,22 +80,18 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     width: 100%; /* תמלא את העמודה */
-    max-width: 250px; /* מגבילה את הרוחב */
+    max-width: 300px; /* מגבילה את הרוחב */
+    aspect-ratio: 4 / 3; /* יחס גובה-רוחב */
     text-align: center;
 }
 
 .gallery-item img {
     width: 100%;
-    height: auto; /* שומר על יחס התמונה */
-    border-radius: 8px;
-    object-fit: cover;
+    height: 100%;
+    object-fit: cover; /* מכסה את המסגרת */
+    border-radius: 8px; /* שומר על פינות עגולות */
     transition: transform 0.3s ease;
 }
-
-.gallery-item img:hover {
-    transform: scale(1.05);
-}
-
 
 .gallery-item img:hover {
     transform: scale(1.05);
