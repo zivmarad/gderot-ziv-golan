@@ -30,7 +30,7 @@ body {
 /* תפריט ניווט */
 .navbar {
     display: flex;
-    justify-content: center;
+    justify-content: center; /* מרכז את הפריטים */
     align-items: center;
     background: #3a6186;
     padding: 10px 20px;
