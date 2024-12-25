@@ -6,7 +6,7 @@
     <title>גלריה - גדרות זיו בגולן</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <link rel="icon" href="images/larana camping.png" type="image/png">
+    <link rel="icon" href="images/larana_camping.png" type="image/png">
     <style>
         /* עיצוב כללי */
         body {
@@ -185,63 +185,60 @@
     </div>
 
     <!-- קובץ JavaScript -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const galleryGrid = document.getElementById("gallery-grid");
-        const imageDirectory = "images/"; // תיקיית התמונות
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const galleryGrid = document.getElementById("gallery-grid");
+            const imageDirectory = "images/"; // תיקיית התמונות
 
-        // רשימת התמונות בגלריה
-        const images = [
-            "IMG_20241031_132755.jpg",
-            "IMG_20241031_122522.jpg",
-            "IMG_20241121_142831.jpg",
-            "fance.jpg",
-            "1.jpg",
-            "wood.jpg",
-            "2.jpg",
-            "3.jpg",
-            "4.jpg",
-        ];
+            // רשימת התמונות בגלריה
+            const images = [
+                "IMG_20241031_132755.jpg",
+                "IMG_20241031_122522.jpg",
+                "IMG_20241121_142831.jpg",
+                "fance.jpg",
+                "1.jpg",
+                "wood.jpg",
+                "2.jpg",
+                "3.jpg",
+                "4.jpg",
+            ];
 
-        // יצירת תמונות בגלריה
-        images.forEach((image, index) => {
-            const div = document.createElement("div");
-            div.className = "gallery-item";
+            // יצירת תמונות בגלריה
+            images.forEach((image, index) => {
+                const div = document.createElement("div");
+                div.className = "gallery-item";
 
-            const img = document.createElement("img");
-            img.src = `${imageDirectory}${image}`;
-            img.alt = `תמונה ${index + 1}`;
-            img.onclick = () => openModal(img);
+                const img = document.createElement("img");
+                img.src = `${imageDirectory}${image}`;
+                img.alt = `תמונה ${index + 1}`;
+                img.onclick = () => openModal(img);
 
-            div.appendChild(img);
-            galleryGrid.appendChild(div);
-        });
+                div.appendChild(img);
+                galleryGrid.appendChild(div);
+            });
 
-        // הוספת אירועים למודל
-        const modal = document.getElementById("image-modal");
-        const modalImage = document.getElementById("modal-image");
-        const modalClose = document.querySelector(".modal-close");
+            // אירועים לסגירת המודל
+            const modal = document.getElementById("image-modal");
+            const modalImage = document.getElementById("modal-image");
+            const modalClose = document.querySelector(".modal-close");
 
-        function openModal(image) {
-            modal.style.display = "flex";
-            modalImage.src = image.src;
-        }
-
-        function closeModal() {
-            modal.style.display = "none";
-        }
-
-        // סגירה בלחיצה מחוץ לתמונה
-        modal.addEventListener("click", (event) => {
-            if (event.target === modal) {
-                closeModal();
+            function openModal(image) {
+                modal.style.display = "flex";
+                modalImage.src = image.src;
             }
+
+            function closeModal() {
+                modal.style.display = "none";
+            }
+
+            modal.addEventListener("click", (event) => {
+                if (event.target === modal) {
+                    closeModal();
+                }
+            });
+
+            modalClose.addEventListener("click", closeModal);
         });
-
-        // סגירה בלחיצה על האיקס
-        modalClose.addEventListener("click", closeModal);
-    });
-</script>
-
+    </script>
 </body>
 </html>
