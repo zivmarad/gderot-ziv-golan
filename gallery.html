@@ -1,74 +1,14 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>גלריה - גדרות זיו בגולן</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images/larana_camping.png" type="image/png">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <link rel="icon" href="images/larana camping.png" type="image/png">
     <style>
-        /* עיצוב כללי */
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        /* כותרת עליונה */
-        .header-banner {
-            background: linear-gradient(to right, #3a6186, #89253e);
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-        }
-
-        .header-banner h1 {
-            font-size: 2.5rem;
-            margin: 0;
-        }
-
-        /* תפריט ניווט */
-        .navbar {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: #3a6186;
-            padding: 10px 20px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .nav-links {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            gap: 20px;
-        }
-
-        .nav-links li a {
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-
-        .nav-links li a:hover {
-            color: #ffcc00;
-        }
-
         /* עיצוב גלריה */
         .gallery-section {
             padding: 20px;
@@ -76,89 +16,93 @@
             text-align: center;
         }
 
-        .gallery-section h2, .gallery-section p {
-            margin: 0 auto 20px;
-            max-width: 800px;
-            text-align: center;
-            display: block; /* מרכז את הכותרות */
+        .gallery-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #333;
         }
 
         .gallery-grid {
             display: flex;
             flex-direction: column;
-            gap: 30px;
-            padding: 20px;
+            gap: 20px;
             align-items: center;
         }
 
         .gallery-item {
-            background: white;
+            border: 2px solid #ccc;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             overflow: hidden;
-            text-align: center;
-            width: 100%;
+            width: 90%;
             max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .gallery-item img {
             width: 100%;
             height: auto;
-            transition: transform 0.3s ease;
+            max-height: 500px;
+            object-fit: cover;
         }
 
-        .gallery-item img:hover {
-            transform: scale(1.05);
+        @media (min-width: 1024px) {
+            .gallery-item {
+                max-width: 700px;
+            }
+
+            .gallery-item img {
+                max-height: 400px;
+            }
         }
 
-        .gallery-item p {
-            margin-top: 10px;
-            font-size: 1rem;
-            color: #555;
+        @media (max-width: 768px) {
+            .gallery-item {
+                max-width: 100%;
+            }
         }
 
-        /* חלון קופץ עבור הגדלת תמונות */
-        .modal {
-            display: none;
+        /* כפתורים קבועים */
+        .fixed-buttons {
             position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
             z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            justify-content: center;
+        }
+
+        .fixed-buttons a {
+            display: flex;
             align-items: center;
-        }
-
-        .modal img {
-            max-width: 90%;
-            max-height: 90%;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            color: white;
-            font-size: 2rem;
-            font-weight: bold;
-            cursor: pointer;
-            background: rgba(0, 0, 0, 0.6);
-            padding: 5px 10px;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            text-decoration: none;
+            color: white;
+            font-size: 24px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease;
         }
 
-        .modal-close:hover {
-            background: rgba(255, 255, 255, 0.8);
-            color: black;
+        .fixed-buttons a:hover {
+            transform: scale(1.1);
+        }
+
+        .fixed-buttons .phone-button {
+            background: #3a6186;
+        }
+
+        .fixed-buttons .whatsapp-button {
+            background: #25d366;
         }
     </style>
 </head>
+
 <body>
+    <!-- כותרת עליונה -->
     <header class="header-banner">
         <div class="container">
             <nav class="navbar">
@@ -178,85 +122,68 @@
         </div>
     </header>
 
+    <!-- גלריה -->
     <main class="container">
-        <section class="gallery">
-    <h2>מבחר פרויקטים</h2>
-    <p>גלריית העבודות שלנו:</p>
-    <div id="gallery-grid" class="gallery-grid">
-        <!-- התמונות ייטענו כאן באופן אוטומטי -->
-    </div>
-</section>
-
+        <section class="gallery-section">
+            <h2>תמונות מפרויקטים</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="images/1.jpg" alt="תמונה 1"></div>
+                <div class="gallery-item"><img src="images/2.jpg" alt="תמונה 2"></div>
+                <div class="gallery-item"><img src="images/3.jpg" alt="תמונה 3"></div>
+                <div class="gallery-item"><img src="images/4.jpg" alt="תמונה 4"></div>
+                <div class="gallery-item"><img src="images/fance.jpg" alt="תמונה 5"></div>
+                <div class="gallery-item"><img src="images/IMG_20241121_142831.jpg" alt="תמונה 6"></div>
+                <div class="gallery-item"><img src="images/IMG_20241121_142836.jpg" alt="תמונה 7"></div>
+            </div>
+        </section>
     </main>
 
+    <!-- כפתורים קבועים -->
+    <div class="fixed-buttons">
+        <a href="tel:+972502218880" class="phone-button" aria-label="Call">
+            <i class="fas fa-phone-alt"></i>
+        </a>
+        <a href="https://wa.me/972502218880" class="whatsapp-button" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- פוטר -->
     <footer class="footer">
         <p>© כל הזכויות שמורות - גדרות זיו בגולן</p>
     </footer>
 
-    <!-- מודל להגדלת תמונה -->
-    <div id="image-modal" class="modal">
-        <span class="modal-close" onclick="closeModal()">&times;</span>
-        <img class="modal-content" id="modal-image">
+    <!-- חלון קופץ להגדלת תמונות -->
+    <div class="modal" id="imageModal">
+        <span class="modal-close" id="modalClose">&times;</span>
+        <img id="modalImage" alt="תמונה מוגדלת">
     </div>
 
-    <!-- קובץ JavaScript -->
+    <!-- סקריפט -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            const galleryGrid = document.getElementById("gallery-grid");
-            const imageDirectory = "images/"; // תיקיית התמונות
+            const modal = document.getElementById("imageModal");
+            const modalImage = document.getElementById("modalImage");
+            const modalClose = document.getElementById("modalClose");
 
-            // רשימת התמונות בגלריה
-            const images = [
-                "IMG_20241031_132755.jpg",
-                "IMG_20241031_122522.jpg",
-                "IMG_20241121_142831.jpg",
-                "fance.jpg",
-                "1.jpg",
-                "wood.jpg",
-                "2.jpg",
-                "3.jpg",
-                "4.jpg",
-            ];
-
-            // יצירת תמונות בגלריה
-            images.forEach((image, index) => {
-                const div = document.createElement("div");
-                div.className = "gallery-item";
-
-                const img = document.createElement("img");
-                img.src = `${imageDirectory}${image}`;
-                img.alt = `תמונה ${index + 1}`;
-                img.onclick = () => openModal(img);
-
-                const caption = document.createElement("p");
-                caption.innerText = `תמונה ${index + 1}`;
-
-                div.appendChild(img);
-                div.appendChild(caption);
-                galleryGrid.appendChild(div);
+            document.querySelectorAll(".gallery-item img").forEach(img => {
+                img.addEventListener("click", () => {
+                    modal.style.display = "flex";
+                    modalImage.src = img.src;
+                });
             });
-        });
 
-        function openModal(image) {
-            const modal = document.getElementById("image-modal");
-            const modalImage = document.getElementById("modal-image");
+            modalClose.addEventListener("click", () => {
+                modal.style.display = "none";
+            });
 
-            modal.style.display = "flex";
-            modalImage.src = image.src;
-        }
-
-        function closeModal() {
-            const modal = document.getElementById("image-modal");
-            modal.style.display = "none";
-        }
-
-        // Close modal on click outside the image
-        document.addEventListener("click", (e) => {
-            const modal = document.getElementById("image-modal");
-            if (e.target === modal) {
-                closeModal();
-            }
+            modal.addEventListener("click", (e) => {
+                if (e.target === modal) {
+                    modal.style.display = "none";
+                }
+            });
         });
     </script>
 </body>
+
 </html>
