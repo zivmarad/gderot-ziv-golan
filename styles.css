@@ -82,7 +82,8 @@ body {
 
 .gallery-item img {
     width: 100%;
-    height: 200px;
+    height: auto; /* שומר על יחס התמונה */
+    max-height: 200px; /* מגביל את הגובה המרבי */
     object-fit: cover;
     transition: transform 0.3s ease;
 }
