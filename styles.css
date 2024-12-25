@@ -885,3 +885,28 @@ body {
     .nav-links {
         flex-direction: row; /* שמירה על תפריט אופקי */
     }
+<style>
+    /* תפריט מותאם */
+    .nav-links a {
+        text-decoration: none;
+        color: #fff;
+        font-weight: bold;
+        padding: 10px 15px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+        background-color: #ffcc00;
+        color: #333;
+    }
+
+    /* גלריה - התאמת גודל תמונות */
+    .gallery-item img {
+        width: 100%;
+        height: 200px; /* גובה אחיד */
+        object-fit: cover; /* שמירה על תוכן התמונה */
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+</style>
