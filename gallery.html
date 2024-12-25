@@ -6,7 +6,7 @@
     <title>גלריה - גדרות זיו בגולן</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <link rel="icon" href="images/larana_camping.png" type="image/png">
+    <link rel="icon" href="images/larana camping.png" type="image/png">
 </head>
 <body>
     <header class="header-banner">
@@ -32,7 +32,9 @@
         <section class="gallery">
             <h2>מבחר פרויקטים</h2>
             <p>גלריית העבודות שלנו:</p>
-            <div id="gallery-grid" class="gallery-grid"></div>
+            <div id="gallery-grid" class="gallery-grid">
+                <!-- התמונות ייטענו כאן באופן אוטומטי -->
+            </div>
         </section>
     </main>
 
@@ -42,11 +44,57 @@
 
     <!-- מודל להגדלת תמונה -->
     <div id="image-modal" class="modal">
-        <span class="close" id="modal-close">&times;</span>
-        <img class="modal-content" id="modal-image" alt="תמונה מוגדלת">
+        <span class="modal-close" id="modal-close">&times;</span>
+        <img class="modal-content" id="modal-image">
     </div>
 
     <!-- קובץ JavaScript -->
-    <script src="gallery.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const galleryGrid = document.getElementById("gallery-grid");
+            const imageDirectory = "images/";
+            const modal = document.getElementById("image-modal");
+            const modalImage = document.getElementById("modal-image");
+            const modalClose = document.getElementById("modal-close");
+
+            const images = [
+                "IMG_20241031_132755.jpg",
+                "IMG_20241031_122522.jpg",
+                "IMG_20241121_142831.jpg",
+                "fance.jpg",
+                "1.jpg",
+                "wood.jpg",
+                "2.jpg",
+                "3.jpg",
+                "4.jpg",
+            ];
+
+            images.forEach((image, index) => {
+                const div = document.createElement("div");
+                div.className = "gallery-item";
+
+                const img = document.createElement("img");
+                img.src = `${imageDirectory}${image}`;
+                img.alt = `תמונה ${index + 1}`;
+                img.addEventListener("click", () => {
+                    modal.style.display = "flex";
+                    modalImage.src = img.src;
+                });
+
+                div.appendChild(img);
+                galleryGrid.appendChild(div);
+            });
+
+            modalClose.addEventListener("click", closeModal);
+            modal.addEventListener("click", (e) => {
+                if (e.target === modal) closeModal();
+            });
+
+            function closeModal() {
+                modal.style.display = "none";
+                modalImage.src = "";
+            }
+        });
+    </script>
 </body>
 </html>
