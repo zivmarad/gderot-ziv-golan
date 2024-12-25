@@ -60,11 +60,10 @@ body {
 }
 
 /* עיצוב גלריה */
-.gallery-section h2, .gallery-section p {
-    margin: 0 auto 20px;
-    max-width: 800px;
-    text-align: center;
-    display: block; /* אין צורך ב-flex עבור כותרות */
+.gallery-section {
+            padding: 20px;
+            background: #f9f9f9;
+            text-align: center;
 }
 
 
