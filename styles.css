@@ -1,239 +1,303 @@
-<!DOCTYPE html>
-<html lang="he" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>גלריה - גדרות זיו בגולן</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <link rel="icon" href="images/larana camping.png" type="image/png">
-    <style>
-        /* עיצוב כללי */
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-            line-height: 1.6;
-        }
+/* עיצוב כללי */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
 
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
-        /* כותרת עליונה */
-        .header-banner {
-            background: linear-gradient(to right, #3a6186, #89253e);
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-        }
+/* כותרת עליונה */
+.header-banner {
+    background: linear-gradient(to right, #3a6186, #89253e);
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
 
-        .header-banner h1 {
-            font-size: 2.5rem;
-            margin: 0;
-        }
+.header-banner h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
 
-        /* תפריט ניווט */
-        .navbar {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: #3a6186;
-            padding: 10px 20px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+/* תפריט ניווט */
+.navbar {
+    display: flex;
+    justify-content: center; /* מרכז את הפריטים */
+    align-items: center;
+    background: #3a6186;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 
-        .nav-links {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            gap: 20px;
-        }
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
 
-        .nav-links li a {
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
+}
 
-        .nav-links li a:hover {
-            color: #ffcc00;
-        }
+.nav-links li a:hover {
+    color: #ffcc00;
+}
 
-        /* עיצוב גלריה */
-        .gallery-section {
-            padding: 20px;
-            background: #f9f9f9;
-            text-align: center;
-        }
+/* עיצוב גלריה */
+.gallery-section {
+    padding: 20px;
+    background: #f9f9f9;
+    text-align: center;
+}
 
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            padding: 20px;
-            justify-items: center;
-        }
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 20px;
+    justify-items: center; /* ממרכז את התמונות */
+}
 
-        .gallery-item {
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            width: 100%;
-            max-width: 300px;
-            aspect-ratio: 4 / 3;
-            text-align: center;
-        }
+.gallery-item {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 100%; /* תמלא את העמודה */
+    max-width: 300px; /* מגבילה את הרוחב */
+    aspect-ratio: 4 / 3; /* יחס גובה-רוחב */
+    text-align: center;
+}
 
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 8px;
-            transition: transform 0.3s ease;
-        }
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* מכסה את המסגרת */
+    border-radius: 8px; /* שומר על פינות עגולות */
+    transition: transform 0.3s ease;
+}
 
-        .gallery-item img:hover {
-            transform: scale(1.05);
-        }
+.gallery-item img:hover {
+    transform: scale(1.05);
+}
 
-        /* חלון קופץ עבור הגדלת תמונות */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            justify-content: center;
-            align-items: center;
-        }
+/* שירותים */
+.services {
+    margin: 40px 0;
+    text-align: center;
+}
 
-        .modal img {
-            max-width: 90%;
-            max-height: 90%;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-        }
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
 
-        .modal-close {
-            position: absolute;
-            top: 10%;
-            right: 5%;
-            color: white;
-            font-size: 2rem;
-            font-weight: bold;
-            cursor: pointer;
-            background: rgba(0, 0, 0, 0.6);
-            padding: 5px 10px;
-            border-radius: 50%;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
+.value-item {
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
-        .modal-close:hover {
-            background: rgba(255, 255, 255, 0.8);
-            color: black;
-        }
-    </style>
-</head>
-<body>
-    <header class="header-banner">
-        <div class="container">
-            <nav class="navbar">
-                <ul class="nav-links">
-                    <li><a href="index.html">דף הבית</a></li>
-                    <li><a href="about.html">אודות</a></li>
-                    <li><a href="gallery.html">גלריה</a></li>
-                    <li><a href="contact.html">צור קשר</a></li>
-                    <li>
-                        <a href="https://www.facebook.com/profile.php?id=61570398886746" target="_blank">
-                            <i class="fab fa-facebook"></i> Facebook
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-            <h1>גלריה</h1>
-        </div>
-    </header>
+.value-item h3 {
+    color: #3a6186;
+    margin-bottom: 10px;
+}
 
-    <main class="container">
-        <section class="gallery">
-            <h2>מבחר פרויקטים</h2>
-            <p>גלריית העבודות שלנו:</p>
-            <div id="gallery-grid" class="gallery-grid">
-                <!-- התמונות ייטענו כאן באופן אוטומטי -->
-            </div>
-        </section>
-    </main>
+/* קריאה לפעולה */
+.cta-section {
+    background: #3a6186;
+    color: white;
+    text-align: center;
+    padding: 30px 20px; /* התאמת רווח פנימי */
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 600px; /* מגביל את הרוחב של המסגרת */
+    margin: 20px auto; /* מרכז את המסגרת */
+}
 
-    <footer class="footer">
-        <p>© כל הזכויות שמורות - גדרות זיו בגולן</p>
-    </footer>
+.cta-button,
+.whatsapp-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    margin: 10px 0; /* רווח אנכי אחיד */
+    max-width: 300px; /* מגביל את רוחב הכפתורים */
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
 
-    <!-- מודל להגדלת תמונה -->
-    <div id="image-modal" class="modal">
-        <span class="modal-close" onclick="closeModal()">&times;</span>
-        <img class="modal-content" id="modal-image">
-    </div>
+.cta-button {
+    background-color: #007bff;
+}
 
-    <!-- קובץ JavaScript -->
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const galleryGrid = document.getElementById("gallery-grid");
-            const imageDirectory = "images/"; // תיקיית התמונות
+.cta-button:hover {
+    background-color: #0056b3;
+}
 
-            // רשימת התמונות בגלריה
-            const images = [
-                "IMG_20241031_132755.jpg",
-                "IMG_20241031_122522.jpg",
-                "IMG_20241121_142831.jpg",
-                "fance.jpg",
-                "1.jpg",
-                "wood.jpg",
-                "2.jpg",
-                "3.jpg",
-                "4.jpg",
-            ];
+.whatsapp-button {
+    background-color: #25d366;
+}
 
-            // יצירת תמונות בגלריה
-            images.forEach((image, index) => {
-                const div = document.createElement("div");
-                div.className = "gallery-item";
+.whatsapp-button:hover {
+    background-color: #1da851;
+}
 
-                const img = document.createElement("img");
-                img.src = `${imageDirectory}${image}`;
-                img.alt = `תמונה ${index + 1}`;
-                img.onclick = () => openModal(img);
+.cta-button i,
+.whatsapp-button i {
+    margin-left: 8px;
+    font-size: 18px;
+}
 
-                div.appendChild(img);
-                galleryGrid.appendChild(div);
-            });
-        });
+/* טופס יצירת קשר */
+.contact-section {
+    background: white;
+    padding: 40px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 40px auto;
+    max-width: 600px;
+    text-align: center;
+}
 
-        function openModal(image) {
-            const modal = document.getElementById("image-modal");
-            const modalImage = document.getElementById("modal-image");
+.contact-section h2 {
+    font-size: 2rem;
+    color: #89253e;
+    margin-bottom: 20px;
+}
 
-            modal.style.display = "flex";
-            modalImage.src = image.src;
-        }
+.contact-section p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+}
 
-        function closeModal() {
-            const modal = document.getElementById("image-modal");
-            modal.style.display = "none";
-        }
-    </script>
-</body>
-</html>
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: right;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.contact-form button {
+    background-color: #3a6186;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.contact-form button:hover {
+    background-color: #89253e;
+    transform: scale(1.05);
+}
+
+/* פוטר */
+.footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+}
+
+/* גלובלי למובייל */
+@media (max-width: 768px) {
+    .cta-button,
+    .whatsapp-button {
+        width: 100%;
+        padding: 12px;
+        text-align: center;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .navbar {
+        justify-content: center;
+    }
+}
+
+/* חלון קופץ עבור הגדלת תמונות */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.modal-close {
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 5px 10px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.modal-close:hover {
+    background: rgba(255, 255, 255, 0.8);
+    color: black;
+}
