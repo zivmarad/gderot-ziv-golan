@@ -226,25 +226,25 @@ body {
 }
 
 
-    .fixed-buttons .whatsapp-button {
-    background-color: #25d366; /* צבע רקע ירוק */
-    width: 70px; /* גודל כפתור */
-    height: 70px;
-    border-radius: 50%; /* צורה עגולה */
+  .fixed-buttons .whatsapp-button {
+    background: none; /* אין רקע */
+    border: none; /* אין גבול */
+    font-size: 70px; /* גודל האייקון */
+    color: #25d366; /* צבע האייקון */
+    width: auto; /* גודל מותאם לאייקון בלבד */
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white; /* צבע האייקון */
-    font-size: 40px; /* גודל האייקון */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* הצללה */
-    transition: transform 0.3s ease, background-color 0.3s ease;
-    border: 2px solid #25d366; /* מסגרת ירוקה */
+    line-height: 1; /* יישור לאמצע */
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .fixed-buttons .whatsapp-button:hover {
-    background-color: #1da851; /* שינוי צבע במעבר עכבר */
-    transform: scale(1.1); /* הגדלה קלה */
+    transform: scale(1.1); /* אפקט מעבר */
+    color: #1da851; /* שינוי צבע בהצבעה */
 }
+
 
 }
 
