@@ -73,10 +73,6 @@ body {
     align-items: center; /* יישור אנכי */
 }
 
-
-}
-
-
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -222,6 +218,9 @@ body {
 .fixed-buttons .whatsapp-button {
     background: #25d366;
     font-size: 34px; /* הגדלת האייקון */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* טופס יצירת קשר */
