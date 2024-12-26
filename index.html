@@ -102,27 +102,32 @@
             line-height: 1.5;
         }
 
-        /* אנימציית fade-out */
-        .fade-out {
-            animation: fadeOut 0.5s forwards;
+        /* עיצוב תפריט */
+        .navbar {
+            background-color: #fff;
+            padding: 10px;
         }
 
-        @keyframes fadeOut {
-            from {
-                opacity: 1;
-            }
-            to {
-                opacity: 0;
-            }
+        .nav-links a {
+            color: #000;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1rem;
         }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
         body {
-    opacity: 1;
-    transition: opacity 0.5s ease-in-out;
-}
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
+            background-color: #fff;
+        }
 
-body.fade-out {
-    opacity: 0;
-}
+        body.fade-out {
+            opacity: 0;
+        }
 
     </style>
 </head>
