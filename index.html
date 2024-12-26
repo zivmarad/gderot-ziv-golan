@@ -120,8 +120,9 @@
             padding: 0;
             margin: 0;
             display: flex;
-            justify-content: space-around;
+            justify-content: space-evenly;
             gap: 20px;
+            flex-wrap: wrap;
         }
 
         .nav-links a {
@@ -143,16 +144,16 @@
         /* התאמה למובייל */
         @media (max-width: 768px) {
             .nav-links {
-                flex-direction: column;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
                 gap: 10px;
-                align-items: center;
             }
 
             .nav-links a {
                 font-size: 1rem;
-                padding: 10px 20px;
-                width: 100%;
-                text-align: center;
+                padding: 10px 15px;
+                width: auto;
             }
         }
 
