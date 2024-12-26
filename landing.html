@@ -1,40 +1,101 @@
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+<html lang="he">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>גדרות בהתאמה אישית</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>גדרות זיו בגולן</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #2d3e50;
+            padding: 20px;
+            text-align: center;
+        }
+        header img {
+            max-width: 200px;
+            height: auto;
+        }
+        .main-content {
+            padding: 40px;
+            text-align: center;
+        }
+        .main-content h1 {
+            font-size: 36px;
+            color: #2d3e50;
+            margin-bottom: 20px;
+        }
+        .main-content p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        .service {
+            display: inline-block;
+            width: 30%;
+            margin: 15px;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .service img {
+            max-width: 100%;
+            height: auto;
+        }
+        .cta {
+            background-color: #f39c12;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+            margin-top: 30px;
+            cursor: pointer;
+            border: none;
+        }
+        .cta:hover {
+            background-color: #e67e22;
+        }
+        footer {
+            background-color: #2d3e50;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
-    <header class="header-banner">
-        <div class="container">
-            <h1>הגדר המושלמת מחכה לך</h1>
-        </div>
+    <header>
+        <img src="images/larana camping2.png" alt="לוגו גדרות זיו בגולן">
     </header>
-
-    <main class="container">
-        <section class="intro">
-            <h2>התאמה אישית, עמידות, ועיצוב ללא פשרות</h2>
-            <p>בואו להפוך את החזון שלכם למציאות עם גדרות אלומיניום איכותיות בהתאמה אישית.</p>
-        </section>
-
-        <section class="cta-section">
-            <h2>השאירו פרטים ונחזור אליכם</h2>
-            <form action="send-data.php" method="POST">
-                <label for="name">שם מלא:</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="phone">טלפון:</label>
-                <input type="tel" id="phone" name="phone" required>
-
-                <button type="submit">שלח עכשיו</button>
-            </form>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <p>© כל הזכויות שמורות - גדרות זיו בגולן</p>
+    <div class="main-content">
+        <h1>הגדרות איכותיות לבית ולעסק בגולן</h1>
+        <p>גדרות בהתאמה אישית, התקנה מקצועית וצביעה בתנור לפי דרישת הלקוח. אל תהססו לפנות אלינו לקבלת הצעת מחיר משתלמת!</p>
+        <div class="service">
+            <h3>התקנת גדרות איכותיות</h3>
+            <img src="your-image-path.jpg" alt="התקנת גדרות">
+            <p>התקנה מקצועית ומדויקת לכל סוגי הגדרות, מבית ובחוץ.</p>
+        </div>
+        <div class="service">
+            <h3>צביעה בתנור</h3>
+            <img src="your-image-path.jpg" alt="צביעה בתנור">
+            <p>צביעה בתנור למראה מרהיב ומוגן לאורך זמן.</p>
+        </div>
+        <div class="service">
+            <h3>עיצוב מותאם אישית</h3>
+            <img src="your-image-path.jpg" alt="עיצוב גדרות">
+            <p>עיצובים אישיים שמתאימים לכל סגנון ודרישה.</p>
+        </div>
+        <button class="cta" onclick="window.location.href='tel:+972000000000'">התקשרו עכשיו לקבלת הצעת מחיר!</button>
+    </div>
+    <footer>
+        <p>© 2024 גדרות זיו בגולן - כל הזכויות שמורות</p>
     </footer>
 </body>
 </html>
