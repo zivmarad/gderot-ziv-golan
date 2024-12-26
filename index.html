@@ -206,34 +206,28 @@ body.fade-out {
     </div>
 
     <!-- סקריפט -->
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-    const galleryLink = document.querySelector("a[href='gallery.html']");
+   
+        <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const links = document.querySelectorAll("a");
 
-    let lastScrollTop = 0;
-    let debounceTimeout;
+        links.forEach(link => {
+            link.addEventListener("click", (event) => {
+                const href = link.getAttribute("href");
 
-    window.addEventListener("scroll", () => {
-        clearTimeout(debounceTimeout);
+                // בדיקה אם זו קפיצה לדף חיצוני
+                if (!href.includes(".html")) return;
 
-        debounceTimeout = setTimeout(() => {
-            const scrollTop = window.scrollY || document.documentElement.scrollTop;
-            const scrollHeight = document.documentElement.scrollHeight;
-            const windowHeight = window.innerHeight;
+                event.preventDefault();
+                document.body.classList.add("fade-out");
 
-            // בדיקה אם המשתמש הגיע לסוף העמוד
-            if (scrollTop + windowHeight >= scrollHeight - 10) {
-                // ווידוא שהתנועה הייתה כלפי מטה
-                if (scrollTop > lastScrollTop) {
-                    galleryLink.click(); // מעבר לעמוד הגלריה
-                }
-            }
-
-            lastScrollTop = scrollTop; // עדכון המיקום האחרון
-        }, 100); // עיכוב קצר למניעת קריאות מיותרות
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 500); // משך האנימציה (חייב להתאים ל-CSS)
+            });
+        });
     });
-});
-
+</script>
 
     </script>
 </body>
