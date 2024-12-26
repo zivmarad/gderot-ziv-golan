@@ -136,6 +136,24 @@
                 font-size: 24px; /* גודל אייקון מופחת */
             }
         }
+
+        <style>
+    .gallery-title {
+        font-size: 3rem; /* גודל הטקסט */
+        font-weight: bold; /* טקסט מודגש */
+        text-align: center; /* יישור למרכז */
+        margin: 20px 0; /* ריווח מסביב */
+        color: #3a6186; /* צבע בולט */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* צל לטקסט */
+    }
+
+    @media (max-width: 768px) {
+        .gallery-title {
+            font-size: 2.5rem; /* התאמה למסכים קטנים */
+        }
+    }
+</style>
+
     </style>
 </head>
 <body>
@@ -154,7 +172,7 @@
                     </li>
                 </ul>
             </nav>
-            <h1>גלריה</h1>
+            <h1 class="gallery-title">גלריה</h1>
         </div>
     </header>
 
