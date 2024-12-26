@@ -12,7 +12,8 @@
         .gallery-item img {
             border: 2px solid #ccc; /* מסגרת דקה */
             border-radius: 5px; /* פינות עגולות */
-            max-width: 80%; /* הקטנת גודל תמונות */
+            width: 100%; /* גודל אחיד */
+            max-width: 600px; /* התאמה לגודל מסך */
             height: auto; /* שמירה על יחס תמונה */
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* הצללה קלה */
             transition: transform 0.3s ease, border-color 0.3s ease;
@@ -52,6 +53,10 @@
         @media (min-width: 768px) {
             .gallery-item img {
                 max-width: 50%; /* התאמה לגודל מסך מחשב */
+            }
+
+            .gallery-grid {
+                gap: 30px; /* ריווח גדול יותר במחשב */
             }
         }
 
