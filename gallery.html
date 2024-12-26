@@ -106,6 +106,44 @@
             height: 70px;
             line-height: 1; /* יישור האייקון למרכז */
         }
+        .fixed-buttons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px; /* גודל כפתור אחיד */
+    height: 60px;
+    border-radius: 50%; /* צורה עגולה */
+    text-decoration: none;
+    background-color: #3a6186; /* צבע טלפון */
+    color: white;
+    font-size: 30px; /* גודל אייקון */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* הצללה */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.fixed-buttons a:hover {
+    transform: scale(1.1);
+    background-color: #555; /* שינוי צבע במעבר עכבר */
+}
+
+.fixed-buttons .phone-button {
+    background-color: #3a6186;
+}
+
+.fixed-buttons .whatsapp-button {
+    background-color: #25d366;
+    font-size: 30px; /* התאמת גודל אייקון */
+}
+
+/* התאמות רספונסיביות */
+@media (max-width: 768px) {
+    .fixed-buttons a {
+        width: 50px; /* כפתורים קטנים יותר במובייל */
+        height: 50px;
+        font-size: 24px; /* גודל אייקון מופחת */
+    }
+}
+
     </style>
 </head>
 <body>
