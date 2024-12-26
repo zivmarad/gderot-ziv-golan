@@ -6,20 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>דף הבית - גדרות זיו בגולן</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="images/larana_camping.png" type="image/png">
+    <link rel="icon" href="images/larana camping.png" type="image/png">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <style>
-        /* עיצוב Fade-out */
-        body {
-            opacity: 1;
-            transition: opacity 0.5s ease-in-out;
-        }
-
-        body.fade-out {
-            opacity: 0;
-        }
-
-        /* עיצוב כללי */
+        /* עיצוב גלריה */
         .gallery-section {
             padding: 20px;
             background: #f9f9f9;
@@ -71,6 +61,69 @@
                 max-width: 100%;
             }
         }
+
+        /* עיצוב שירותים */
+        .services {
+            padding: 20px;
+            background: #fff;
+            text-align: center;
+        }
+
+        .services h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .values-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .value-item {
+            background: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 300px;
+            text-align: center;
+        }
+
+        .value-item h3 {
+            color: #3a6186;
+            margin-bottom: 10px;
+        }
+
+        .value-item p {
+            color: #555;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        /* אנימציית fade-out */
+        .fade-out {
+            animation: fadeOut 0.5s forwards;
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
+        body {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+body.fade-out {
+    opacity: 0;
+}
+
     </style>
 </head>
 
@@ -104,7 +157,40 @@
                 <div class="gallery-item"><img src="images/2.jpg" alt="תמונה 2"></div>
                 <div class="gallery-item"><img src="images/3.jpg" alt="תמונה 3"></div>
                 <div class="gallery-item"><img src="images/4.jpg" alt="תמונה 4"></div>
+                <div class="gallery-item"><img src="images/fance.jpg" alt="תמונה 5"></div>
+                <div class="gallery-item"><img src="images/IMG_20241121_142831.jpg" alt="תמונה 6"></div>
+                <div class="gallery-item"><img src="images/IMG_20241121_142836.jpg" alt="תמונה 7"></div>
             </div>
+        </section>
+
+        <!-- שירותים -->
+        <section class="services">
+            <h2>השירותים שלנו</h2>
+            <div class="values-grid">
+                <div class="value-item">
+                    <h3>עיצוב בהתאמה אישית</h3>
+                    <p>אנו מציעים עיצוב גדרות מותאם אישית לצרכים ולסגנון שלכם, תוך שימת דגש על יופי ופונקציונליות.</p>
+                </div>
+                <div class="value-item">
+                    <h3>התקנה מקצועית</h3>
+                    <p>צוות מומחים מיומן ידאג להתקנה מדויקת ומקצועית, לשביעות רצונכם המלאה.</p>
+                </div>
+                <div class="value-item">
+                    <h3>צביעה בתנור</h3>
+                    <p>שירותי צביעה בתנור באיכות גבוהה, להבטחת עמידות ויופי לטווח ארוך.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- קריאה לפעולה -->
+        <section class="cta-section">
+            <h2>מוכנים לעשות את הצעד הבא?</h2>
+            <a href="contact.html" class="cta-button">
+                <i class="fas fa-phone-alt"></i> דברו איתנו
+            </a>
+            <a href="https://wa.me/972502218880" class="whatsapp-button">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
         </section>
     </main>
 
@@ -113,50 +199,36 @@
         <p>© כל הזכויות שמורות - גדרות זיו בגולן</p>
     </footer>
 
+    <!-- חלון קופץ להגדלת תמונות -->
+    <div class="modal" id="imageModal">
+        <span class="modal-close" id="modalClose">&times;</span>
+        <img id="modalImage" alt="תמונה מוגדלת">
+    </div>
+
     <!-- סקריפט -->
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const links = document.querySelectorAll("a[href$='.html']");
-            const pages = {
-                "index.html": "gallery.html",
-                "gallery.html": "about.html",
-                "about.html": "contact.html"
-            };
+   
+        <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const links = document.querySelectorAll("a");
 
-            // מעבר אנימציה לקישור פנימי
-            links.forEach(link => {
-                link.addEventListener("click", (event) => {
-                    const href = link.getAttribute("href");
+        links.forEach(link => {
+            link.addEventListener("click", (event) => {
+                const href = link.getAttribute("href");
 
-                    if (!href.includes(".html")) return;
+                // בדיקה אם זו קפיצה לדף חיצוני
+                if (!href.includes(".html")) return;
 
-                    event.preventDefault();
-                    document.body.classList.add("fade-out");
+                event.preventDefault();
+                document.body.classList.add("fade-out");
 
-                    setTimeout(() => {
-                        window.location.href = href;
-                    }, 500);
-                });
-            });
-
-            // מעבר עמוד בגלילה
-            let isScrolling = false;
-            window.addEventListener("scroll", () => {
-                if (!isScrolling && window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-                    isScrolling = true;
-
-                    // מעבר לעמוד הבא ברשימה
-                    const currentPage = window.location.pathname.split("/").pop();
-                    const nextPage = pages[currentPage] || "index.html";
-
-                    document.body.classList.add("fade-out");
-
-                    setTimeout(() => {
-                        window.location.href = nextPage;
-                    }, 500);
-                }
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 500); // משך האנימציה (חייב להתאים ל-CSS)
             });
         });
+    });
+</script>
+
     </script>
 </body>
 
