@@ -33,6 +33,44 @@
             color: #555;
             margin: 10px 0 0;
         }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .nav-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ffcc00;
+        }
+
+        .nav-links .facebook-link {
+            display: flex;
+            align-items: center;
+            color: #3b5998;
+        }
+
+        .nav-links .facebook-link i {
+            margin-left: 5px;
+        }
     </style>
 </head>
 
@@ -40,17 +78,17 @@
     <!-- כותרת עליונה -->
     <header class="header-banner">
         <div class="container">
-            <img src="images/larana_camping2.png" alt="לוגו">
-            <h1>גלריית פרויקטים</h1>
-            <p>הצצה לעבודות שלנו בגולן</p>
             <nav class="navbar">
                 <ul class="nav-links">
                     <li><a href="index.html">דף הבית</a></li>
                     <li><a href="about.html">אודות</a></li>
                     <li><a href="gallery.html">גלריה</a></li>
                     <li><a href="contact.html">צור קשר</a></li>
+                    <li><a href="https://www.facebook.com/profile.php?id=61570398886746" target="_blank" class="facebook-link"><i class="fab fa-facebook"></i> Facebook</a></li>
                 </ul>
             </nav>
+            <img src="images/larana_camping2.png" alt="לוגו">
+            <h1>גלריית פרויקטים</h1>
         </div>
     </header>
 
