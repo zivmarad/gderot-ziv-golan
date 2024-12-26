@@ -9,14 +9,18 @@
     <link rel="icon" href="images/larana_camping.png" type="image/png">
     <style>
         /* עיצוב הכותרת */
-        .header-banner h1 {
+        .gallery-title {
             font-size: 3rem;
-            margin: 0;
-            padding: 20px 0;
+            margin: 20px 0;
             text-align: center;
-            background: linear-gradient(to right, #3a6186, #89253e);
+            background: linear-gradient(to right, #89253e, #3a6186);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            font-weight: bold;
+        }
+
+        .header-banner {
+            padding-bottom: 0;
         }
 
         /* עיצוב כללי */
@@ -78,7 +82,6 @@
 </head>
 <body>
     <header class="header-banner">
-        <h1>גלריה - גדרות זיו בגולן</h1>
         <div class="container">
             <nav class="navbar">
                 <ul class="nav-links">
@@ -97,6 +100,9 @@
     </header>
 
     <main class="container">
+        <!-- הכותרת -->
+        <div class="gallery-title">גלריה</div>
+
         <section class="gallery-section">
             <h2>מבחר פרויקטים</h2>
             <p>גלריית העבודות שלנו:</p>
