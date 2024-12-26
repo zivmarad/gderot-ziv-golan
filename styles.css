@@ -77,7 +77,6 @@ body {
 }
 
 
-
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -185,6 +184,44 @@ body {
 .whatsapp-button i {
     margin-left: 8px;
     font-size: 18px;
+}
+
+/* כפתורים קבועים */
+.fixed-buttons {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 1000;
+}
+
+.fixed-buttons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-decoration: none;
+    color: white;
+    font-size: 28px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+}
+
+.fixed-buttons a:hover {
+    transform: scale(1.1);
+}
+
+.fixed-buttons .phone-button {
+    background: #3a6186;
+}
+
+.fixed-buttons .whatsapp-button {
+    background: #25d366;
+    font-size: 34px; /* הגדלת האייקון */
 }
 
 /* טופס יצירת קשר */
