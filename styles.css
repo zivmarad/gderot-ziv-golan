@@ -356,3 +356,41 @@ body {
     background: rgba(255, 255, 255, 0.8);
     color: black;
 }
+.fixed-buttons {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    z-index: 1000;
+}
+
+.fixed-buttons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px; /* גודל אחיד לכפתור */
+    height: 60px;
+    border-radius: 50%; /* צורה עגולה */
+    text-decoration: none;
+    background-color: #3a6186; /* צבע בסיס */
+    color: white;
+    font-size: 24px; /* גודל אייקון */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.fixed-buttons a:hover {
+    transform: scale(1.1);
+    background-color: #555; /* שינוי צבע במעבר עכבר */
+}
+
+.fixed-buttons .phone-button {
+    background-color: #3a6186;
+}
+
+.fixed-buttons .whatsapp-button {
+    background-color: #25d366;
+}
