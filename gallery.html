@@ -9,62 +9,27 @@
     <link rel="icon" href="images/larana_camping.png" type="image/png">
     <style>
         /* עיצוב כללי */
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-            line-height: 1.6;
+        .gallery-item img {
+            border: 2px solid #ccc; /* מסגרת דקה */
+            border-radius: 5px; /* פינות עגולות */
+            width: 100%; /* גודל אחיד */
+            max-width: 600px; /* התאמה לגודל מסך */
+            height: auto; /* שמירה על יחס תמונה */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* הצללה קלה */
+            transition: transform 0.3s ease, border-color 0.3s ease;
         }
 
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
+        .gallery-item img:hover {
+            transform: scale(1.05); /* אפקט הגדלה קל */
+            border-color: #3a6186; /* שינוי צבע מסגרת בהצבעה */
         }
 
-        .header-banner {
-            background: linear-gradient(to right, #3a6186, #89253e);
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-        }
-
-        .header-banner h1 {
-            font-size: 2.5rem;
-            margin: 0;
-        }
-
-        .navbar {
+        .gallery-grid {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            background: #3a6186;
-            padding: 10px 20px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .nav-links {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            gap: 20px;
-        }
-
-        .nav-links li a {
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-
-        .nav-links li a:hover {
-            color: #ffcc00;
+            gap: 20px; /* ריווח בין התמונות */
+            padding: 10px;
         }
 
         .gallery-section {
@@ -85,45 +50,27 @@
             margin-bottom: 20px;
         }
 
-        .gallery-grid {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-            padding: 10px;
+        @media (min-width: 768px) {
+            .gallery-item img {
+                max-width: 50%; /* התאמה לגודל מסך מחשב */
+            }
+
+            .gallery-grid {
+                gap: 30px; /* ריווח גדול יותר במחשב */
+            }
         }
 
-        .gallery-item {
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            width: 100%;
-            max-width: 800px;
-            text-align: center;
+        html {
+            scroll-behavior: smooth; /* גלילה חלקה */
         }
 
-        .gallery-item img {
-            border: 2px solid #ddd;
-            border-radius: 5px;
-            max-width: 90%;
-            height: auto;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, border-color 0.3s ease;
-        }
-
-        .gallery-item img:hover {
-            transform: scale(1.05);
-            border-color: #3a6186;
-        }
-
+        /* כפתורים קבועים */
         .fixed-buttons {
             position: fixed;
             bottom: 20px;
             left: 20px;
             display: flex;
             flex-direction: column;
-            align-items: center;
             gap: 15px;
             z-index: 1000;
         }
@@ -132,49 +79,61 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
+            width: 70px; /* גודל כפתור אחיד */
+            height: 70px;
+            border-radius: 50%; /* צורה עגולה */
             text-decoration: none;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
+            background-color: #3a6186; /* צבע בסיס */
+            color: white;
+            font-size: 28px; /* גודל אייקון */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* הצללה קלה */
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .fixed-buttons a:hover {
+            transform: scale(1.1);
+            background-color: #555; /* שינוי צבע במעבר עכבר */
         }
 
         .fixed-buttons .phone-button {
             background-color: #3a6186;
-            color: white;
-            font-size: 24px;
-        }
-
-        .fixed-buttons .phone-button:hover {
-            background-color: #555;
         }
 
         .fixed-buttons .whatsapp-button {
             background: none;
             border: none;
-            font-size: 60px;
+            font-size: 70px; /* גודל האייקון */
             color: #25d366;
+            width: auto; /* גודל מותאם לאייקון בלבד */
+            height: auto;
             display: flex;
             align-items: center;
             justify-content: center;
+            line-height: 1; /* יישור לאמצע */
             transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .fixed-buttons .whatsapp-button i {
+            width: 100%;
+            height: 100%;
+            font-size: 100%; /* האייקון יתפוס 100% */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: inherit;
         }
 
         .fixed-buttons .whatsapp-button:hover {
             transform: scale(1.1);
-            color: #1da851;
+            color: #1da851; /* שינוי צבע במעבר עכבר */
         }
 
+        /* התאמות רספונסיביות */
         @media (max-width: 768px) {
             .fixed-buttons a {
-                width: 50px;
+                width: 50px; /* כפתורים קטנים יותר במובייל */
                 height: 50px;
-                font-size: 20px;
-            }
-
-            .fixed-buttons .whatsapp-button {
-                font-size: 50px;
+                font-size: 24px; /* גודל אייקון מופחת */
             }
         }
     </style>
@@ -213,6 +172,7 @@
         </section>
     </main>
 
+    <!-- כפתורים קבועים -->
     <div class="fixed-buttons">
         <a href="tel:+972502218880" class="phone-button" aria-label="Call">
             <i class="fas fa-phone-alt"></i>
@@ -226,11 +186,13 @@
         <p>© כל הזכויות שמורות - גדרות זיו בגולן</p>
     </footer>
 
+    <!-- חלון קופץ להגדלת תמונות -->
     <div class="modal" id="imageModal">
         <span class="modal-close" id="modalClose">&times;</span>
         <img id="modalImage" alt="תמונה מוגדלת">
     </div>
 
+    <!-- קובץ JavaScript -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const modal = document.getElementById("imageModal");
