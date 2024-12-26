@@ -1,162 +1,177 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>גלריה - גדרות זיו בגולן</title>
+    <title>דף הבית - גדרות זיו בגולן</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images/larana camping.png" type="image/png">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <link rel="icon" href="images/larana_camping.png" type="image/png">
     <style>
-        /* עיצוב כללי */
-        .gallery-item img {
-            border: 2px solid #ccc; /* מסגרת דקה */
-            border-radius: 5px; /* פינות עגולות */
-            width: 100%; /* גודל אחיד */
-            max-width: 600px; /* התאמה לגודל מסך */
-            height: auto; /* שמירה על יחס תמונה */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* הצללה קלה */
-            transition: transform 0.3s ease, border-color 0.3s ease;
+        /* עיצוב גלריה */
+        .gallery-section {
+            padding: 20px;
+            background: #f9f9f9;
+            text-align: center;
         }
 
-        .gallery-item img:hover {
-            transform: scale(1.05); /* אפקט הגדלה קל */
-            border-color: #3a6186; /* שינוי צבע מסגרת בהצבעה */
+        .gallery-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #333;
         }
 
         .gallery-grid {
             display: flex;
             flex-direction: column;
+            gap: 20px;
             align-items: center;
-            gap: 20px; /* ריווח בין התמונות */
-            padding: 10px;
         }
 
-        .gallery-section {
+        .gallery-item {
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            overflow: hidden;
+            width: 90%;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            max-height: 500px;
+            object-fit: cover;
+        }
+
+        @media (min-width: 1024px) {
+            .gallery-item {
+                max-width: 700px;
+            }
+
+            .gallery-item img {
+                max-height: 400px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .gallery-item {
+                max-width: 100%;
+            }
+        }
+
+        /* עיצוב שירותים */
+        .services {
             padding: 20px;
+            background: #fff;
             text-align: center;
-            background-color: #f9f9f9;
         }
 
-        .gallery-section h2 {
+        .services h2 {
             font-size: 2rem;
+            margin-bottom: 20px;
             color: #333;
+        }
+
+        .values-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .value-item {
+            background: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 300px;
+            text-align: center;
+        }
+
+        .value-item h3 {
+            color: #3a6186;
             margin-bottom: 10px;
         }
 
-        .gallery-section p {
-            font-size: 1.2rem;
-            color: #666;
-            margin-bottom: 20px;
+        .value-item p {
+            color: #555;
+            font-size: 1rem;
+            line-height: 1.5;
         }
 
-        @media (min-width: 768px) {
-            .gallery-item img {
-                max-width: 50%; /* התאמה לגודל מסך מחשב */
-            }
-
-            .gallery-grid {
-                gap: 30px; /* ריווח גדול יותר במחשב */
-            }
+        /* עיצוב תפריט וכותרת */
+        .header-banner {
+            background-color: #fff !important;
+            padding: 20px 0;
+            text-align: center;
         }
 
-        html {
-            scroll-behavior: smooth; /* גלילה חלקה */
+        .navbar {
+            background-color: #fff;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
         }
 
-        /* כפתורים קבועים */
-        .fixed-buttons {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
+        .nav-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
             display: flex;
-            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 15px;
-            z-index: 1000;
         }
 
-        .fixed-buttons a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 70px; /* גודל כפתור אחיד */
-            height: 70px;
-            border-radius: 50%; /* צורה עגולה */
+        .nav-links a {
+            color: #333;
             text-decoration: none;
-            background-color: #3a6186; /* צבע בסיס */
-            color: white;
-            font-size: 28px; /* גודל אייקון */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* הצללה קלה */
-            transition: transform 0.3s ease, background-color 0.3s ease;
+            font-size: 1.2rem;
+            font-weight: bold;
+            padding: 10px 25px;
+            background-color: #e0e0e0;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
-        .fixed-buttons a:hover {
-            transform: scale(1.1);
-            background-color: #555; /* שינוי צבע במעבר עכבר */
-        }
-
-        .fixed-buttons .phone-button {
+        .nav-links a:hover {
             background-color: #3a6186;
+            color: #fff;
         }
 
-        .fixed-buttons .whatsapp-button {
-            background: none;
-            border: none;
-            font-size: 60px; /* גודל האייקון */
-            color: #25d366;
-            width: auto; /* גודל מותאם לאייקון בלבד */
-            height: auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            line-height: 1; /* יישור לאמצע */
-            transition: transform 0.3s ease, color 0.3s ease;
-        }
-
-        .fixed-buttons .whatsapp-button i {
-            width: 100%;
-            height: 100%;
-            font-size: 100%; /* האייקון יתפוס 100% */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: inherit;
-        }
-
-        .fixed-buttons .whatsapp-button:hover {
-            transform: scale(1.1);
-            color: #1da851; /* שינוי צבע במעבר עכבר */
-        }
-
-        /* התאמות רספונסיביות */
+        /* התאמה למובייל */
         @media (max-width: 768px) {
-            .fixed-buttons a {
-                width: 50px; /* כפתורים קטנים יותר במובייל */
-                height: 50px;
-                font-size: 24px; /* גודל אייקון מופחת */
+            .nav-links {
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
+            }
+
+            .nav-links a {
+                font-size: 1rem;
+                padding: 10px 20px;
+                width: 90%;
+                text-align: center;
             }
         }
 
-        <style>
-    .gallery-title {
-        font-size: 3rem; /* גודל הטקסט */
-        font-weight: bold; /* טקסט מודגש */
-        text-align: center; /* יישור למרכז */
-        margin: 20px 0; /* ריווח מסביב */
-        color: #3a6186; /* צבע בולט */
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* צל לטקסט */
-    }
-
-    @media (max-width: 768px) {
-        .gallery-title {
-            font-size: 2.5rem; /* התאמה למסכים קטנים */
+        body {
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
+            background-color: #fff;
         }
-    }
-</style>
+
+        body.fade-out {
+            opacity: 0;
+        }
 
     </style>
 </head>
+
 <body>
+    <!-- כותרת עליונה -->
     <header class="header-banner">
         <div class="container">
             <nav class="navbar">
@@ -172,45 +187,57 @@
                     </li>
                 </ul>
             </nav>
-            <h1 class="gallery-title">גלריה</h1>
+            <img src="images/larana camping2.png" alt="ברוכים הבאים לגדרות זיו בגולן" style="max-width: 100%; height: auto; margin-top: 10px;">
         </div>
     </header>
 
+    <!-- גלריה -->
     <main class="container">
         <section class="gallery-section">
-            <h2>מבחר פרויקטים</h2>
-            <p>גלריית העבודות שלנו:</p>
-            <div id="gallery-grid" class="gallery-grid">
+            <h2>תמונות מפרויקטים</h2>
+            <div class="gallery-grid">
                 <div class="gallery-item"><img src="images/1.jpg" alt="תמונה 1"></div>
                 <div class="gallery-item"><img src="images/2.jpg" alt="תמונה 2"></div>
                 <div class="gallery-item"><img src="images/3.jpg" alt="תמונה 3"></div>
                 <div class="gallery-item"><img src="images/4.jpg" alt="תמונה 4"></div>
                 <div class="gallery-item"><img src="images/fance.jpg" alt="תמונה 5"></div>
-                <div class="gallery-item"><img src="images/470672110_122106598682679962_1230314204217679116_n.jpg" alt="תמונה 6"></div>
-                <div class="gallery-item"><images/IMG_20241031_122522.jpg" alt="תמונה 7"></div>
-                <div class="gallery-item"><images/IMG_20241031_132755.jpg" alt="תמונה 8"></div>
-                <div class="gallery-item"><img src="images/IMG_20241103_115628.jpg" alt="תמונה 9"></div>
-                <div class="gallery-item"><img src="images/IMG_20241121_142831.jpg" alt="תמונה 10"></div>
-                <div class="gallery-item"><img src="images/IMG_20241121_142836.jpg" alt="תמונה 11"></div>
-                <div class="gallery-item"><img src="images/wood.jpg" alt="תמונה 11"></div>
-                <div class="gallery-item"><img src="images/IMG_20241121_142836.jpg" alt="תמונה 11"></div>
-                <div class="gallery-item"><img src="images/larana camping.png" alt="תמונה 11"></div>
-
-                
+                <div class="gallery-item"><img src="images/IMG_20241121_142831.jpg" alt="תמונה 6"></div>
+                <div class="gallery-item"><img src="images/IMG_20241121_142836.jpg" alt="תמונה 7"></div>
             </div>
+        </section>
+
+        <!-- שירותים -->
+        <section class="services">
+            <h2>השירותים שלנו</h2>
+            <div class="values-grid">
+                <div class="value-item">
+                    <h3>עיצוב בהתאמה אישית</h3>
+                    <p>אנו מציעים עיצוב גדרות מותאם אישית לצרכים ולסגנון שלכם, תוך שימת דגש על יופי ופונקציונליות.</p>
+                </div>
+                <div class="value-item">
+                    <h3>התקנה מקצועית</h3>
+                    <p>צוות מומחים מיומן ידאג להתקנה מדויקת ומקצועית, לשביעות רצונכם המלאה.</p>
+                </div>
+                <div class="value-item">
+                    <h3>צביעה בתנור</h3>
+                    <p>שירותי צביעה בתנור באיכות גבוהה, להבטחת עמידות ויופי לטווח ארוך.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- קריאה לפעולה -->
+        <section class="cta-section">
+            <h2>מוכנים לעשות את הצעד הבא?</h2>
+            <a href="contact.html" class="cta-button">
+                <i class="fas fa-phone-alt"></i> דברו איתנו
+            </a>
+            <a href="https://wa.me/972502218880" class="whatsapp-button">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
         </section>
     </main>
 
-    <!-- כפתורים קבועים -->
-    <div class="fixed-buttons">
-        <a href="tel:+972502218880" class="phone-button" aria-label="Call">
-            <i class="fas fa-phone-alt"></i>
-        </a>
-        <a href="https://wa.me/972502218880" class="whatsapp-button" aria-label="WhatsApp">
-            <i class="fab fa-whatsapp"></i>
-        </a>
-    </div>
-
+    <!-- פוטר -->
     <footer class="footer">
         <p>© כל הזכויות שמורות - גדרות זיו בגולן</p>
     </footer>
@@ -221,30 +248,30 @@
         <img id="modalImage" alt="תמונה מוגדלת">
     </div>
 
-    <!-- קובץ JavaScript -->
+    <!-- סקריפט -->
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const modal = document.getElementById("imageModal");
-            const modalImage = document.getElementById("modalImage");
-            const modalClose = document.getElementById("modalClose");
+    document.addEventListener("DOMContentLoaded", () => {
+        const links = document.querySelectorAll("a");
 
-            document.querySelectorAll(".gallery-item img").forEach(img => {
-                img.addEventListener("click", () => {
-                    modal.style.display = "flex";
-                    modalImage.src = img.src;
-                });
-            });
+        links.forEach(link => {
+            link.addEventListener("click", (event) => {
+                const href = link.getAttribute("href");
 
-            modalClose.addEventListener("click", () => {
-                modal.style.display = "none";
-            });
+                // בדיקה אם זו קפיצה לדף חיצוני
+                if (!href.includes(".html")) return;
 
-            modal.addEventListener("click", (e) => {
-                if (e.target === modal) {
-                    modal.style.display = "none";
-                }
+                event.preventDefault();
+                document.body.classList.add("fade-out");
+
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 500); // משך האנימציה (חייב להתאים ל-CSS)
             });
         });
+    });
     </script>
+
 </body>
+
 </html>
+
