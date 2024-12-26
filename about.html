@@ -6,8 +6,64 @@
     <title>אודות - גדרות זיו בגולן</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <link rel="icon" href="images/larana camping.png" type="image/png">
+    <link rel="icon" href="images/larana_camping.png" type="image/png">
+    <style>
+        .about-section {
+            padding: 20px;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
 
+        .about-section h2 {
+            font-size: 2rem;
+            color: #3a6186;
+            margin-bottom: 15px;
+        }
+
+        .about-section p {
+            font-size: 1.2rem;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .values-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .value-item {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            flex: 1 1 300px;
+            max-width: 300px;
+        }
+
+        .value-item h3 {
+            font-size: 1.5rem;
+            color: #3a6186;
+            margin-bottom: 10px;
+        }
+
+        .value-item p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .team-section img {
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
 <body>
     <header class="header-banner">
@@ -19,11 +75,10 @@
                     <li><a href="gallery.html">גלריה</a></li>
                     <li><a href="contact.html">צור קשר</a></li>
                     <li>
-    <a href="https://www.facebook.com/profile.php?id=61570398886746" target="_blank">
-        <i class="fab fa-facebook"></i> facebook
-    </a>
-</li>
-
+                        <a href="https://www.facebook.com/profile.php?id=61570398886746" target="_blank">
+                            <i class="fab fa-facebook"></i> Facebook
+                        </a>
+                    </li>
                 </ul>
             </nav>
             <h1>אודות גדרות זיו בגולן</h1>
@@ -31,39 +86,43 @@
     </header>
 
     <main class="container">
-        <section class="intro">
+        <section class="about-section">
             <h2>מי אנחנו?</h2>
             <p>
-                "גדרות זיו בגולן" מתמחה בייצור, עיצוב והתקנת גדרות אלומיניום באיכות הגבוהה ביותר.
-                אנו משקיעים בחומרים הטובים ביותר, בטכנולוגיות המתקדמות ביותר ובעיצוב ייחודי שמותאם לצרכים שלכם.
+                "גדרות זיו בגולן" היא חברה המתמחה בתכנון, עיצוב והתקנה של גדרות אלומיניום באיכות הגבוהה ביותר.
+                אנחנו גאים לספק פתרונות יצירתיים, עמידים ומעוצבים ללקוחות פרטיים ועסקיים כאחד, תוך התאמה אישית לכל צורך.
+            </p>
+            <p>
+                כחברה מקומית בגולן, אנו מחויבים לשמירה על סטנדרטים גבוהים של מקצועיות, שירות וחדשנות. כל גדר שאנו מייצרים היא
+                ביטוי של תשומת הלב לפרטים, עמידות לשנים קדימה ושירות אישי לאורך כל הדרך.
             </p>
         </section>
 
-        <section class="values">
+        <section class="about-section">
             <h2>הערכים שלנו</h2>
             <div class="values-grid">
                 <div class="value-item">
                     <h3>איכות</h3>
-                    <p>שימוש בחומרים מובחרים ובקרת איכות קפדנית.</p>
+                    <p>אנו משתמשים בחומרים הטובים ביותר ובתהליכי עבודה מתקדמים על מנת להבטיח עמידות לאורך זמן.</p>
                 </div>
                 <div class="value-item">
                     <h3>עיצוב</h3>
-                    <p>גדרות מודרניות המותאמות לסגנון הבית והחצר.</p>
+                    <p>שילוב של חדשנות ואסתטיקה בעיצוב הגדרות, המתאימות לכל סגנון ולכל מטרה.</p>
                 </div>
                 <div class="value-item">
-                    <h3>שירות אישי</h3>
-                    <p>ליווי אישי וצמוד בכל שלב, מייעוץ ראשוני ועד להתקנה.</p>
+                    <h3>שירות</h3>
+                    <p>יחס אישי, ייעוץ מקצועי וליווי מלא מהשלב הראשון ועד השלמת הפרויקט.</p>
                 </div>
             </div>
         </section>
 
-        <section class="team">
+        <section class="team-section">
             <h2>הצוות שלנו</h2>
             <p>
-                הצוות המיומן שלנו מורכב ממומחים בתחום האלומיניום, בעלי ניסיון רב במתן פתרונות איכותיים
-                לכל סוגי הלקוחות.
+                הצוות שלנו כולל מומחים מנוסים בתחום האלומיניום, המביאים עמם ידע, ניסיון ותשוקה לספק את הטוב ביותר לכל לקוח.
+                אנו דוגלים בשיתוף פעולה, יצירתיות וחדשנות בעבודתנו היומיומית.
             </p>
-            <img src="images/team.jpg" alt="צוות העובדים שלנו" class="team-image">
+            <img src="images/team.jpg" alt="תמונת הצוות של גדרות זיו בגולן">
         </section>
     </main>
 
