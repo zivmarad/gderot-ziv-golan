@@ -201,15 +201,30 @@
         document.addEventListener("DOMContentLoaded", () => {
     const galleryLink = document.querySelector("a[href='gallery.html']");
 
-    let isScrolling = false;
+    let lastScrollTop = 0;
+    let debounceTimeout;
 
     window.addEventListener("scroll", () => {
-        if (!isScrolling && window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-            isScrolling = true;
-            galleryLink.click(); // מבצע מעבר לעמוד הגלריה
-        }
+        clearTimeout(debounceTimeout);
+
+        debounceTimeout = setTimeout(() => {
+            const scrollTop = window.scrollY || document.documentElement.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight;
+            const windowHeight = window.innerHeight;
+
+            // בדיקה אם המשתמש הגיע לסוף העמוד
+            if (scrollTop + windowHeight >= scrollHeight - 10) {
+                // ווידוא שהתנועה הייתה כלפי מטה
+                if (scrollTop > lastScrollTop) {
+                    galleryLink.click(); // מעבר לעמוד הגלריה
+                }
+            }
+
+            lastScrollTop = scrollTop; // עדכון המיקום האחרון
+        }, 100); // עיכוב קצר למניעת קריאות מיותרות
     });
 });
+
 
     </script>
 </body>
