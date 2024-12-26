@@ -60,17 +60,24 @@ body {
 }
 
 /* עיצוב גלריה */
-.gallery-section h2, .gallery-section p {
+.gallery-section h2 {
     margin: 0 auto 20px;
     max-width: 800px;
     text-align: center; /* מבטיח יישור למרכז */
     padding: 10px 0; /* ריווח פנימי */
-    font-size: 1.5rem; /* גודל טקסט */
+    font-size: 2rem; /* גודל טקסט */
     color: #333; /* צבע טקסט */
     line-height: 1.5; /* מרווח בין השורות */
-    display: flex; /* שימוש בפלקס */
-    justify-content: center; /* יישור אופקי */
-    align-items: center; /* יישור אנכי */
+}
+
+.gallery-section p {
+    margin: 0 auto 20px;
+    max-width: 800px;
+    text-align: center; /* מבטיח יישור למרכז */
+    padding: 5px 0; /* ריווח פנימי */
+    font-size: 1.2rem; /* גודל טקסט */
+    color: #555; /* צבע טקסט */
+    line-height: 1.4; /* מרווח בין השורות */
 }
 
 .gallery-grid {
@@ -319,70 +326,4 @@ body {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    justify-content: center;
-    align-items: center;
-}
-
-.modal img {
-    max-width: 90%;
-    max-height: 90%;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-}
-
-.modal-close {
-    position: absolute;
-    top: 10%;
-    right: 5%;
-    color: white;
-    font-size: 2rem;
-    font-weight: bold;
-    cursor: pointer;
-    background: rgba(0, 0, 0, 0.6);
-    padding: 5px 10px;
-    border-radius: 50%;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.modal-close:hover {
-    background: rgba(255, 255, 255, 0.8);
-    color: black;
-}
-/* כפתורים קבועים */
-.fixed-buttons {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    z-index: 1000;
-}
-
-.fixed-buttons a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    text-decoration: none;
-    color: white;
-    font-size: 28px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    transition: transform 0.2s ease;
-}
-
-.fixed-buttons a:hover {
-    transform: scale(1.1);
-}
-
-.fixed-buttons .phone-button {
-    background: #3a6186;
-}
-
-.fixed-buttons .whatsapp-button {
-    background: #25d366;
-    font-size: 34px; /* הגדלת האייקון */
-}
+    background-color: rgba(0, 0, 0, 0.8
