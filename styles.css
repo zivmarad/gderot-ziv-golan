@@ -356,3 +356,32 @@ body {
     background: rgba(255, 255, 255, 0.8);
     color: black;
 }
+.fixed-buttons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-decoration: none;
+    color: white;
+    font-size: 28px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.7); /* מסגרת עדינה */
+    transition: transform 0.2s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fixed-buttons a:hover {
+    transform: scale(1.2);
+    background-color: rgba(255, 255, 255, 0.2); /* אפקט מעבר */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.fixed-buttons .phone-button {
+    background: linear-gradient(135deg, #3a6186, #89253e);
+}
+
+.fixed-buttons .whatsapp-button {
+    background: linear-gradient(135deg, #25d366, #128c7e);
+    font-size: 34px; /* הגדלת האייקון ל-WhatsApp */
+}
