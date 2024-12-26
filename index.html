@@ -144,7 +144,7 @@ body.fade-out {
                     </li>
                 </ul>
             </nav>
-            <h1>ברוכים הבאים לגדרות זיו בגולן</h1>
+            <img src="images/larana camping2.png" alt="ברוכים הבאים לגדרות זיו בגולן" style="max-width: 100%; height: auto;">
         </div>
     </header>
 
@@ -206,8 +206,7 @@ body.fade-out {
     </div>
 
     <!-- סקריפט -->
-   
-        <script>
+    <script>
     document.addEventListener("DOMContentLoaded", () => {
         const links = document.querySelectorAll("a");
 
@@ -227,51 +226,9 @@ body.fade-out {
             });
         });
     });
-</script>
-
     </script>
-
-        </main>
-    <!-- סקריפט -->
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const links = document.querySelectorAll("a");
-
-            links.forEach(link => {
-                link.addEventListener("click", (event) => {
-                    const href = link.getAttribute("href");
-
-                    // בדיקה אם זו קפיצה לדף חיצוני
-                    if (!href.includes(".html")) return;
-
-                    event.preventDefault();
-                    document.body.classList.add("fade-out");
-
-                    setTimeout(() => {
-                        window.location.href = href;
-                    }, 500); // משך האנימציה (חייב להתאים ל-CSS)
-                });
-            });
-        });
-
-        // גלילה לסוף העמוד
-        document.addEventListener("DOMContentLoaded", () => {
-            let isScrolling = false;
-
-            window.addEventListener("scroll", () => {
-                if (!isScrolling && window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-                    isScrolling = true;
-                    document.body.classList.add("fade-out");
-
-                    setTimeout(() => {
-                        window.location.href = "gallery.html"; // קישור לעמוד הגלריה
-                    }, 500); // זמן התואם לאנימציית ה-fade-out
-                }
-            });
-        });
-    </script>
-</body>
 
 </body>
 
 </html>
+
