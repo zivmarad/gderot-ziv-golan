@@ -81,11 +81,12 @@ body {
 }
 
 .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    display: flex;
+    flex-direction: column;
     gap: 15px;
     padding: 20px;
     justify-items: center; /* ממרכז את התמונות */
+    align-items: center; /* ליישור מרכזי */
 }
 
 .gallery-item {
@@ -94,15 +95,14 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     width: 100%; /* תמלא את העמודה */
-    max-width: 300px; /* מגבילה את הרוחב */
-    aspect-ratio: 4 / 3; /* יחס גובה-רוחב */
+    max-width: 800px; /* התאמה לגודל הדף */
     text-align: center;
 }
 
 .gallery-item img {
     width: 100%;
-    height: 100%;
-    object-fit: cover; /* מכסה את המסגרת */
+    height: auto;
+    object-fit: contain; /* שמירה על הגודל הטבעי */
     border-radius: 8px; /* שומר על פינות עגולות */
     transition: transform 0.3s ease;
 }
@@ -204,30 +204,30 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 60px;
-    height: 60px;
+    width: 70px; /* גודל כפתור אחיד */
+    height: 70px;
     border-radius: 50%;
     text-decoration: none;
     color: white;
     font-size: 28px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    transition: transform 0.2s ease;
+    border: 2px solid rgba(255, 255, 255, 0.7); /* מסגרת עדינה */
+    transition: transform 0.2s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .fixed-buttons a:hover {
     transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 0.2); /* אפקט מעבר */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 .fixed-buttons .phone-button {
-    background: #3a6186;
+    background: linear-gradient(135deg, #3a6186, #89253e);
 }
 
 .fixed-buttons .whatsapp-button {
-    background: #25d366;
-    font-size: 34px; /* הגדלת האייקון */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background: linear-gradient(135deg, #25d366, #128c7e);
+    font-size: 34px; /* התאמת גודל האייקון */
 }
 
 /* טופס יצירת קשר */
@@ -309,7 +309,7 @@ body {
     }
 
     .gallery-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        flex-direction: column;
     }
 
     .navbar {
@@ -355,33 +355,4 @@ body {
 .modal-close:hover {
     background: rgba(255, 255, 255, 0.8);
     color: black;
-}
-.fixed-buttons a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    text-decoration: none;
-    color: white;
-    font-size: 28px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border: 2px solid rgba(255, 255, 255, 0.7); /* מסגרת עדינה */
-    transition: transform 0.2s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.fixed-buttons a:hover {
-    transform: scale(1.2);
-    background-color: rgba(255, 255, 255, 0.2); /* אפקט מעבר */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-}
-
-.fixed-buttons .phone-button {
-    background: linear-gradient(135deg, #3a6186, #89253e);
-}
-
-.fixed-buttons .whatsapp-button {
-    background: linear-gradient(135deg, #25d366, #128c7e);
-    font-size: 34px; /* הגדלת האייקון ל-WhatsApp */
 }
