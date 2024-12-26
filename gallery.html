@@ -10,15 +10,16 @@
     <style>
         /* עיצוב כללי */
         .gallery-item img {
-            border: 3px solid #ccc; /* מסגרת לתמונות */
-            border-radius: 8px; /* פינות עגולות */
-            max-width: 60%; /* הקטנת גודל תמונות */
+            border: 2px solid #ccc; /* מסגרת דקה */
+            border-radius: 5px; /* פינות עגולות */
+            max-width: 80%; /* הקטנת גודל תמונות */
             height: auto; /* שמירה על יחס תמונה */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* הצללה קלה */
             transition: transform 0.3s ease, border-color 0.3s ease;
         }
 
         .gallery-item img:hover {
-            transform: scale(1.03); /* הגדלה קלה בהצבעה */
+            transform: scale(1.05); /* אפקט הגדלה קל */
             border-color: #3a6186; /* שינוי צבע מסגרת בהצבעה */
         }
 
@@ -26,7 +27,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 15px;
+            gap: 20px; /* ריווח בין התמונות */
             padding: 10px;
         }
 
@@ -46,6 +47,16 @@
             font-size: 1.2rem;
             color: #666;
             margin-bottom: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .gallery-item img {
+                max-width: 50%; /* התאמה לגודל מסך מחשב */
+            }
+        }
+
+        html {
+            scroll-behavior: smooth; /* גלילה חלקה */
         }
     </style>
 </head>
