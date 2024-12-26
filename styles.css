@@ -16,8 +16,8 @@ body {
 
 /* כותרת עליונה */
 .header-banner {
-    background: linear-gradient(to right, #3a6186, #89253e);
-    color: white;
+    background-color: #fff; /* הפיכת הרקע ללבן מלא */
+    color: black;
     padding: 20px 0;
     text-align: center;
 }
@@ -32,7 +32,7 @@ body {
     display: flex;
     justify-content: center; /* מרכז את הפריטים */
     align-items: center;
-    background: #3a6186;
+    background: #fff; /* שינוי רקע ללבן */
     padding: 10px 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: sticky;
@@ -50,13 +50,13 @@ body {
 
 .nav-links li a {
     text-decoration: none;
-    color: white;
+    color: #333; /* שינוי צבע הטקסט לשחור */
     font-weight: bold;
     transition: color 0.3s;
 }
 
 .nav-links li a:hover {
-    color: #ffcc00;
+    color: #ffcc00; /* שינוי צבע בהצבעה */
 }
 
 /* עיצוב גלריה */
@@ -225,8 +225,7 @@ body {
     background-color: #3a6186;
 }
 
-
-  .fixed-buttons .whatsapp-button {
+.fixed-buttons .whatsapp-button {
     background: none; /* אין רקע */
     border: none; /* אין גבול */
     font-size: 70px; /* גודל האייקון */
@@ -243,9 +242,6 @@ body {
 .fixed-buttons .whatsapp-button:hover {
     transform: scale(1.1); /* אפקט מעבר */
     color: #1da851; /* שינוי צבע בהצבעה */
-}
-
-
 }
 
 /* טופס יצירת קשר */
@@ -374,127 +370,4 @@ body {
     background: rgba(255, 255, 255, 0.8);
     color: black;
 }
-.fixed-buttons {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    z-index: 1000;
-}
 
-.fixed-buttons a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 60px; /* גודל אחיד לכפתור */
-    height: 60px;
-    border-radius: 50%; /* צורה עגולה */
-    text-decoration: none;
-    background-color: #3a6186; /* צבע בסיס */
-    color: white;
-    font-size: 24px; /* גודל אייקון */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.fixed-buttons a:hover {
-    transform: scale(1.1);
-    background-color: #555; /* שינוי צבע במעבר עכבר */
-}
-
-.fixed-buttons .phone-button {
-    background-color: #3a6186;
-}
-
-.fixed-buttons .whatsapp-button {
-    background-color: #25d366;
-}
-.gallery-item img {
-    border: 2px solid #ddd; /* מסגרת דקה ומותאמת */
-    border-radius: 5px; /* פינות עגולות */
-    max-width: 90%; /* מתאים למובייל */
-    height: auto; /* שמירה על פרופורציות */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* הצללה קלה */
-    transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-.gallery-item img:hover {
-    transform: scale(1.05); /* אפקט הגדלה קל */
-    border-color: #3a6186; /* צבע מסגרת בהצבעה */
-}
-
-.gallery-grid {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px; /* ריווח בין התמונות */
-    padding: 10px;
-}
-
-@media (min-width: 768px) {
-    .gallery-item img {
-        max-width: 70%; /* התאמה למחשב */
-    }
-}
-.fixed-buttons a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 70px; /* גודל אחיד לכפתור */
-    height: 70px;
-    border-radius: 50%; /* צורה עגולה */
-    text-decoration: none;
-    background-color: #3a6186; /* צבע טלפון */
-    color: white;
-    font-size: 30px; /* גודל אייקון אחיד */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* הצללה */
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.fixed-buttons a:hover {
-    transform: scale(1.1);
-    background-color: #555; /* שינוי צבע במעבר עכבר */
-}
-
-.fixed-buttons .phone-button {
-    background-color: #3a6186;
-}
-
-.fixed-buttons .whatsapp-button {
-    background-color: #25d366;
-    font-size: 36px; /* גודל אייקון מותאם */
-}
-
-.gallery-item img {
-    border: 2px solid #ddd; /* מסגרת עדינה */
-    border-radius: 5px; /* פינות מעוגלות */
-    max-width: 100%; /* התאמה לכל המסכים */
-    height: auto; /* שמירה על יחס תמונה */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* הצללה */
-    transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-.gallery-item img:hover {
-    transform: scale(1.05); /* אפקט הגדלה קל */
-    border-color: #3a6186; /* צבע מסגרת בהצבעה */
-}
-.header-banner h1.gallery-title {
-    font-size: 3rem;
-    color: #ffcc00; /* צבע בולט */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* הצללה */
-    border-bottom: 5px solid #89253e; /* מסגרת תחתונה */
-    padding-bottom: 10px;
-    animation: glow 2s infinite alternate;
-}
-
-@keyframes glow {
-    from {
-        text-shadow: 2px 2px 10px rgba(255, 204, 0, 0.8);
-    }
-    to {
-        text-shadow: 2px 2px 20px rgba(255, 204, 0, 1);
-    }
-}
