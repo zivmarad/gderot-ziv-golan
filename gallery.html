@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>גלריה - גדרות זיו בגולן</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="images/larana camping2.png" type="image/png">
+    <link rel="icon" href="images/larana camping.png" type="image/png">
     <style>
         .header-banner {
             background-color: #fff;
@@ -59,11 +59,11 @@
         .nav-links .facebook-link {
             display: flex;
             align-items: center;
-            color: #3b5998;
         }
 
-        .nav-links .facebook-link i {
-            margin-left: 5px;
+        .nav-links .facebook-link img {
+            width: 25px;
+            height: auto;
         }
 
         .gallery-section {
@@ -72,17 +72,23 @@
         }
 
         .gallery-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .gallery-item {
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .gallery-item img {
-            width: 200px;
+            width: 100%;
             height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: block;
         }
     </style>
 </head>
@@ -97,7 +103,7 @@
                     <li><a href="about.html">אודות</a></li>
                     <li><a href="gallery.html">גלריה</a></li>
                     <li><a href="contact.html">צור קשר</a></li>
-                    <li><a href="https://www.facebook.com/profile.php?id=61570398886746" target="_blank" class="facebook-link"><i class="fab fa-facebook"></i> Facebook</a></li>
+                    <li><a href="https://www.facebook.com/profile.php?id=61570398886746" target="_blank" class="facebook-link"><img src="images/facebook-icon.png" alt="Facebook"></a></li>
                 </ul>
             </nav>
             <img src="images/larana camping2.png" alt="לוגו">
