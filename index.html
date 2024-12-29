@@ -9,34 +9,65 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
     <style>
-        .image-section {
-            width: 100%;
-            max-width: 600px;
-            margin: 20px auto;
+        .header-banner {
             text-align: center;
-            position: relative;
+            padding: 20px 0;
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
         }
 
-        .image-container {
+        .navbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            padding: 10px 0;
+        }
+
+        .nav-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #007bff;
+        }
+
+        .slider-section {
+            width: 100%;
+            max-width: 800px;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .slider-container {
+            position: relative;
             width: 100%;
             aspect-ratio: 16 / 9;
             overflow: hidden;
             border-radius: 10px;
-            background-color: #f4f4f4;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        .image-container img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-            transition: opacity 0.3s ease;
+        .slider-container img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
         }
 
-        .image-controls {
+        .slider-controls {
             position: absolute;
             top: 50%;
             width: 100%;
@@ -45,47 +76,56 @@
             transform: translateY(-50%);
         }
 
-        .image-button {
+        .slider-button {
             background-color: rgba(0, 0, 0, 0.6);
             border: none;
             color: white;
-            font-size: 1.5rem;
+            font-size: 2rem;
             padding: 10px;
             cursor: pointer;
             border-radius: 50%;
             transition: background-color 0.3s;
         }
 
-        .image-button:hover {
+        .slider-button:hover {
             background-color: rgba(0, 0, 0, 0.9);
         }
 
-        .header-banner {
-            text-align: center;
-            padding: 20px 0;
-            background-color: #fff;
-            border-bottom: 1px solid #ddd;
+        .services-section {
+            padding: 20px;
+            background-color: #f9f9f9;
         }
 
-        .nav-links {
-            list-style: none;
+        .services-grid {
             display: flex;
-            justify-content: center;
+            flex-wrap: wrap;
             gap: 20px;
-            padding: 0;
-            margin: 0;
+            justify-content: center;
         }
 
-        .nav-links a {
-            text-decoration: none;
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: #333;
-            transition: color 0.3s;
+        .service-item {
+            width: calc(33.33% - 20px);
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
         }
 
-        .nav-links a:hover {
-            color: #007bff;
+        .service-item h3 {
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .service-item {
+                width: calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .service-item {
+                width: 100%;
+            }
         }
 
         .footer {
@@ -94,27 +134,12 @@
             background-color: #f9f9f9;
             border-top: 1px solid #ddd;
         }
-
-        @media (max-width: 768px) {
-            .image-section {
-                max-width: 90%;
-            }
-
-            .image-container {
-                aspect-ratio: 4 / 3;
-            }
-
-            .image-button {
-                font-size: 1.2rem;
-                padding: 8px;
-            }
-        }
     </style>
 </head>
 
 <body>
     <header class="header-banner">
-        <nav>
+        <nav class="navbar">
             <ul class="nav-links">
                 <li><a href="index.html">דף הבית</a></li>
                 <li><a href="about.html">אודות</a></li>
@@ -124,14 +149,31 @@
         </nav>
     </header>
 
-    <section class="image-section">
-        <h2>תמונות מהגלריה</h2>
-        <div class="image-container">
-            <img id="displayed-image" src="images/1.jpg" alt="תמונה מהגלריה">
+    <section class="slider-section">
+        <div class="slider-container">
+            <img id="slider-image" src="images/1.jpg" alt="תמונה מהגלריה">
+            <div class="slider-controls">
+                <button class="slider-button" id="prev-button">❮</button>
+                <button class="slider-button" id="next-button">❯</button>
+            </div>
         </div>
-        <div class="image-controls">
-            <button class="image-button" id="prev-button" disabled>❮</button>
-            <button class="image-button" id="next-button">❯</button>
+    </section>
+
+    <section class="services-section">
+        <h2>השירותים שלנו</h2>
+        <div class="services-grid">
+            <div class="service-item">
+                <h3>עיצוב בהתאמה אישית</h3>
+                <p>אנו מציעים עיצוב גדרות מותאם אישית לצרכים ולסגנון שלכם.</p>
+            </div>
+            <div class="service-item">
+                <h3>התקנה מקצועית</h3>
+                <p>התקנה מדויקת על ידי צוות מומחים מיומן.</p>
+            </div>
+            <div class="service-item">
+                <h3>צביעה בתנור</h3>
+                <p>שירותי צביעה בתנור באיכות גבוהה לעמידות לטווח ארוך.</p>
+            </div>
         </div>
     </section>
 
@@ -158,17 +200,12 @@
 
             let currentIndex = 0;
 
-            const displayedImage = document.getElementById("displayed-image");
+            const sliderImage = document.getElementById("slider-image");
             const prevButton = document.getElementById("prev-button");
             const nextButton = document.getElementById("next-button");
 
-            function updateImage() {
-                displayedImage.style.opacity = 0;
-                setTimeout(() => {
-                    displayedImage.src = images[currentIndex];
-                    displayedImage.style.opacity = 1;
-                }, 300);
-
+            function updateSlider() {
+                sliderImage.src = images[currentIndex];
                 prevButton.disabled = currentIndex === 0;
                 nextButton.disabled = currentIndex === images.length - 1;
             }
@@ -176,18 +213,18 @@
             prevButton.addEventListener("click", () => {
                 if (currentIndex > 0) {
                     currentIndex--;
-                    updateImage();
+                    updateSlider();
                 }
             });
 
             nextButton.addEventListener("click", () => {
                 if (currentIndex < images.length - 1) {
                     currentIndex++;
-                    updateImage();
+                    updateSlider();
                 }
             });
 
-            updateImage();
+            updateSlider();
         });
     </script>
 </body>
