@@ -9,7 +9,7 @@
     <link rel="icon" href="images/larana camping.png" type="image/png">
     <style>
         .header-banner {
-            background-color: #fff; /* הפיכת הרקע ללבן מלא */
+            background-color: #fff;
             color: black;
             padding: 20px 0;
             text-align: center;
@@ -72,14 +72,14 @@
         }
 
         .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
             gap: 15px;
-            padding: 20px;
+            justify-content: center;
         }
 
         .gallery-item img {
-            width: 100%;
+            width: 200px;
             height: auto;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -100,15 +100,14 @@
                     <li><a href="https://www.facebook.com/profile.php?id=61570398886746" target="_blank" class="facebook-link"><i class="fab fa-facebook"></i> Facebook</a></li>
                 </ul>
             </nav>
-            <img src="images/larana camping2.png" alt="לוגו">
-            <h1>גלריה - פרויקטים נבחרים</h1>
+            <img src="images/larana camping.png" alt="לוגו">
         </div>
     </header>
 
     <!-- גלריה -->
     <main class="container">
         <section class="gallery-section">
-            <h2>תמונות מפרויקטים שביצענו</h2>
+            <h1>גלריית פרויקטים</h1>
             <div class="gallery-grid">
                 <div class="gallery-item"><img src="images/1.jpg" alt="תמונה 1"></div>
                 <div class="gallery-item"><img src="images/2.jpg" alt="תמונה 2"></div>
