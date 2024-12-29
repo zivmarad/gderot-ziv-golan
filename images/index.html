@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="images/larana camping.png" type="image/png">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <!-- Swiper.js Styles -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
     <style>
         /* עיצוב גלריה */
         .gallery-section {
@@ -60,46 +64,6 @@
             .gallery-item {
                 max-width: 100%;
             }
-        }
-
-        /* עיצוב שירותים */
-        .services {
-            padding: 20px;
-            background: #fff;
-            text-align: center;
-        }
-
-        .services h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: #333;
-        }
-
-        .values-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .value-item {
-            background: #f9f9f9;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            max-width: 300px;
-            text-align: center;
-        }
-
-        .value-item h3 {
-            color: #3a6186;
-            margin-bottom: 10px;
-        }
-
-        .value-item p {
-            color: #555;
-            font-size: 1rem;
-            line-height: 1.5;
         }
 
         /* עיצוב תפריט וכותרת */
@@ -160,107 +124,39 @@
             opacity: 0;
         }
 
-        /* עיצוב כפתורי קריאה לפעולה */
-        .cta-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            align-items: center;
-            margin-top: 20px;
-        }
-
-        .cta-buttons a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 200px;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            text-decoration: none;
-            transition: background-color 0.3s, transform 0.2s;
-        }
-
-        .cta-buttons a:hover {
-            transform: scale(1.05);
-        }
-
-        .cta-call {
-            background-color: #007bff;
-            color: white;
-        }
-
-        .cta-call:hover {
-            background-color: #0056b3;
-        }
-
-        .cta-whatsapp {
-            background-color: #25d366;
-            color: white;
-        }
-
-        .cta-whatsapp:hover {
-            background-color: #1da851;
-        }
-
-        .cta-contact {
-            background-color: #f9f9f9;
-            color: #333;
-            border: 2px solid #ddd;
-        }
-
-        .cta-contact:hover {
-            background-color: #e6e6e6;
-        }
-
         /* Slider Images */
-        .slider-section {
-            padding: 20px;
-            background: #fff;
-            text-align: center;
-        }
-
-        .slider {
-            position: relative;
+        .swiper-container {
+            width: 100%;
             max-width: 800px;
             margin: 0 auto;
-            overflow: hidden;
+        }
+
+        .swiper-slide img {
+            width: 100%;
+            height: auto;
             border-radius: 10px;
         }
 
-        .slider img {
-            width: 100%;
-            display: none;
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: #007bff;
         }
 
-        .slider img.active {
-            display: block;
+        .swiper-pagination-bullet {
+            background: #007bff;
+            opacity: 0.7;
         }
 
-        .slider-buttons {
-            position: absolute;
-            top: 50%;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            transform: translateY(-50%);
+        .swiper-pagination-bullet-active {
+            opacity: 1;
         }
 
-        .slider-buttons button {
-            background: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            padding: 10px;
-            border-radius: 50%;
+        .slider-section h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 1.8rem;
         }
-
-        .slider-buttons button:hover {
-            background: rgba(0, 0, 0, 0.7);
-        }
-
     </style>
 </head>
 
@@ -281,127 +177,53 @@
                     </li>
                 </ul>
             </nav>
-            <img src="images/larana camping2.png" alt="ברוכים הבאים לגדרות זיו בגולן" style="max-width: 100%; height: auto; margin-top: 10px;">
         </div>
     </header>
 
-    <!-- גלריה -->
-    <main class="container">
-        <section class="gallery-section">
-            <h2>תמונות מפרויקטים</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item"><img src="images/1.jpg" alt="תמונה 1"></div>
-                <div class="gallery-item"><img src="images/2.jpg" alt="תמונה 2"></div>
-                <div class="gallery-item"><img src="images/3.jpg" alt="תמונה 3"></div>
-                <div class="gallery-item"><img src="images/4.jpg" alt="תמונה 4"></div>
-                <div class="gallery-item"><img src="images/fance.jpg" alt="תמונה 5"></div>
-                <div class="gallery-item"><img src="images/IMG_20241121_142831.jpg" alt="תמונה 6"></div>
-                <div class="gallery-item"><img src="images/IMG_20241121_142836.jpg" alt="תמונה 7"></div>
+    <!-- Slider תמונות -->
+    <section class="slider-section">
+        <h2>תמונות נוספות מהגלריה</h2>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/1.jpg" alt="תמונה 1"></div>
+                <div class="swiper-slide"><img src="images/2.jpg" alt="תמונה 2"></div>
+                <div class="swiper-slide"><img src="images/3.jpg" alt="תמונה 3"></div>
+                <div class="swiper-slide"><img src="images/4.jpg" alt="תמונה 4"></div>
+                <div class="swiper-slide"><img src="images/fance.jpg" alt="תמונה 5"></div>
             </div>
-        </section>
-
-        <!-- שירותים -->
-        <section class="services">
-            <h2>השירותים שלנו</h2>
-            <div class="values-grid">
-                <div class="value-item">
-                    <h3>עיצוב בהתאמה אישית</h3>
-                    <p>אנו מציעים עיצוב גדרות מותאם אישית לצרכים ולסגנון שלכם, תוך שימת דגש על יופי ופונקציונליות.</p>
-                </div>
-                <div class="value-item">
-                    <h3>התקנה מקצועית</h3>
-                    <p>צוות מומחים מיומן ידאג להתקנה מדויקת ומקצועית, לשביעות רצונכם המלאה.</p>
-                </div>
-                <div class="value-item">
-                    <h3>צביעה בתנור</h3>
-                    <p>שירותי צביעה בתנור באיכות גבוהה, להבטחת עמידות ויופי לטווח ארוך.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- קריאה לפעולה -->
-        <section class="cta-section">
-            <h2>מוכנים לעשות את הצעד הבא?</h2>
-            <div class="cta-buttons">
-                <a href="tel:+972502218880" class="cta-call">
-                    <i class="fas fa-phone-alt"></i> חיוג עכשיו
-                </a>
-                <a href="https://wa.me/972502218880" class="cta-whatsapp">
-                    <i class="fab fa-whatsapp"></i> WhatsApp
-                </a>
-                <a href="contact.html" class="cta-contact">
-                    <i class="fas fa-envelope"></i> השארת פרטים
-                </a>
-            </div>
-        </section>
-
-        <!-- Slider תמונות -->
-        <section class="slider-section">
-            <h2>תמונות נוספות מהגלריה</h2>
-            <div class="slider">
-                <img src="images/1.jpg" alt="תמונה 1" class="active">
-                <img src="images/2.jpg" alt="תמונה 2">
-                <img src="images/3.jpg" alt="תמונה 3">
-                <img src="images/4.jpg" alt="תמונה 4">
-                <img src="images/fance.jpg" alt="תמונה 5">
-                <div class="slider-buttons">
-                    <button class="prev">❮</button>
-                    <button class="next">❯</button>
-                </div>
-            </div>
-        </section>
-    </main>
+            <!-- לחצני ניווט -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <!-- נקודות ניווט -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
 
     <!-- פוטר -->
     <footer class="footer">
         <p>© כל הזכויות שמורות - גדרות זיו בגולן</p>
     </footer>
 
-    <!-- סקריפט -->
+    <!-- סקריפט Swiper.js -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            const links = document.querySelectorAll("a");
-
-            links.forEach(link => {
-                link.addEventListener("click", (event) => {
-                    const href = link.getAttribute("href");
-
-                    // בדיקה אם זו קפיצה לדף חיצוני
-                    if (!href.includes(".html")) return;
-
-                    event.preventDefault();
-                    document.body.classList.add("fade-out");
-
-                    setTimeout(() => {
-                        window.location.href = href;
-                    }, 500); // משך האנימציה (חייב להתאים ל-CSS)
-                });
-            });
-
-            // Slider תמונות
-            const sliderImages = document.querySelectorAll(".slider img");
-            const prevButton = document.querySelector(".slider .prev");
-            const nextButton = document.querySelector(".slider .next");
-            let currentIndex = 0;
-
-            function updateSlider(index) {
-                sliderImages.forEach((img, i) => {
-                    img.classList.toggle("active", i === index);
-                });
-            }
-
-            prevButton.addEventListener("click", () => {
-                currentIndex = (currentIndex > 0) ? currentIndex - 1 : sliderImages.length - 1;
-                updateSlider(currentIndex);
-            });
-
-            nextButton.addEventListener("click", () => {
-                currentIndex = (currentIndex < sliderImages.length - 1) ? currentIndex + 1 : 0;
-                updateSlider(currentIndex);
+            const swiper = new Swiper('.swiper-container', {
+                loop: true, // לולאה אינסופית
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                autoplay: {
+                    delay: 3000, // זמן בין תמונה לתמונה (במילישניות)
+                },
             });
         });
     </script>
-
 </body>
 
 </html>
