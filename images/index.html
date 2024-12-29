@@ -160,26 +160,38 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            const images = Array.from(document.querySelectorAll('.gallery img')).map(img => img.src);
+            const galleryPage = "gallery.html";
+            let images = [];
 
-            let currentIndex = 0;
-            const displayedImage = document.getElementById("displayed-image");
-            const prevButton = document.getElementById("prev-button");
-            const nextButton = document.getElementById("next-button");
+            fetch(galleryPage)
+                .then(response => response.text())
+                .then(html => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, "text/html");
+                    images = Array.from(doc.querySelectorAll(".gallery-item img")).map(img => img.src);
 
-            function updateImage() {
-                displayedImage.src = images[currentIndex];
-            }
+                    let currentIndex = 0;
+                    const displayedImage = document.getElementById("displayed-image");
+                    const prevButton = document.getElementById("prev-button");
+                    const nextButton = document.getElementById("next-button");
 
-            prevButton.addEventListener("click", () => {
-                currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
-                updateImage();
-            });
+                    function updateImage() {
+                        displayedImage.src = images[currentIndex];
+                    }
 
-            nextButton.addEventListener("click", () => {
-                currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
-                updateImage();
-            });
+                    prevButton.addEventListener("click", () => {
+                        currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
+                        updateImage();
+                    });
+
+                    nextButton.addEventListener("click", () => {
+                        currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
+                        updateImage();
+                    });
+
+                    updateImage();
+                })
+                .catch(err => console.error("Error fetching gallery images:", err));
         });
     </script>
 </body>
