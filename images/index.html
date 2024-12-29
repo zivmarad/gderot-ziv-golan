@@ -12,7 +12,7 @@
     <style>
         .image-section {
             width: 100%;
-            max-width: 600px;
+            max-width: 500px;
             margin: 20px auto;
             text-align: center;
             position: relative;
@@ -127,7 +127,7 @@
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const galleryPage = "gallery.html";
-            const images = [];
+            let images = [];
             let currentIndex = 0;
 
             fetch(galleryPage)
@@ -137,7 +137,7 @@
                     const doc = parser.parseFromString(html, "text/html");
                     const imgElements = doc.querySelectorAll(".gallery-item img");
 
-                    imgElements.forEach(img => images.push(img.src));
+                    images = Array.from(imgElements).map(img => img.src);
 
                     const displayedImage = document.getElementById("displayed-image");
                     const prevButton = document.getElementById("prev-button");
