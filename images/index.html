@@ -214,67 +214,53 @@
             background-color: #e6e6e6;
         }
 
-        /* קרוסלת תמונות */
-        .carousel-section {
+        /* Slider Images */
+        .slider-section {
             padding: 20px;
             background: #fff;
             text-align: center;
         }
 
-        .carousel {
-            display: flex;
-            overflow: hidden;
+        .slider {
             position: relative;
             max-width: 800px;
             margin: 0 auto;
+            overflow: hidden;
+            border-radius: 10px;
         }
 
-        .carousel-track {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-        }
-
-        .carousel-track img {
+        .slider img {
             width: 100%;
-            max-width: 300px;
-            margin: 0 5px;
-            border-radius: 8px;
+            display: none;
         }
 
-        .carousel-button {
+        .slider img.active {
+            display: block;
+        }
+
+        .slider-buttons {
             position: absolute;
             top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
             transform: translateY(-50%);
+        }
+
+        .slider-buttons button {
             background: rgba(0, 0, 0, 0.5);
             color: white;
             border: none;
             font-size: 1.5rem;
-            padding: 10px;
             cursor: pointer;
+            padding: 10px;
+            border-radius: 50%;
         }
 
-        .carousel-button.prev {
-            left: 10px;
+        .slider-buttons button:hover {
+            background: rgba(0, 0, 0, 0.7);
         }
 
-        .carousel-button.next {
-            right: 10px;
-        }
-
-        @media (max-width: 768px) {
-            .carousel {
-                max-width: 100%;
-            }
-
-            .carousel-track img {
-                max-width: 100%;
-            }
-
-            .carousel-button {
-                font-size: 1.2rem;
-                padding: 8px;
-            }
-        }
     </style>
 </head>
 
@@ -349,19 +335,19 @@
             </div>
         </section>
 
-        <!-- קרוסלת תמונות -->
-        <section class="carousel-section">
+        <!-- Slider תמונות -->
+        <section class="slider-section">
             <h2>תמונות נוספות מהגלריה</h2>
-            <div class="carousel">
-                <button class="carousel-button prev">❮</button>
-                <div class="carousel-track">
-                    <img src="images/1.jpg" alt="תמונה 1">
-                    <img src="images/2.jpg" alt="תמונה 2">
-                    <img src="images/3.jpg" alt="תמונה 3">
-                    <img src="images/4.jpg" alt="תמונה 4">
-                    <img src="images/fance.jpg" alt="תמונה 5">
+            <div class="slider">
+                <img src="images/1.jpg" alt="תמונה 1" class="active">
+                <img src="images/2.jpg" alt="תמונה 2">
+                <img src="images/3.jpg" alt="תמונה 3">
+                <img src="images/4.jpg" alt="תמונה 4">
+                <img src="images/fance.jpg" alt="תמונה 5">
+                <div class="slider-buttons">
+                    <button class="prev">❮</button>
+                    <button class="next">❯</button>
                 </div>
-                <button class="carousel-button next">❯</button>
             </div>
         </section>
     </main>
@@ -392,23 +378,26 @@
                 });
             });
 
-            const track = document.querySelector(".carousel-track");
-            const prevButton = document.querySelector(".carousel-button.prev");
-            const nextButton = document.querySelector(".carousel-button.next");
-            let index = 0;
+            // Slider תמונות
+            const sliderImages = document.querySelectorAll(".slider img");
+            const prevButton = document.querySelector(".slider .prev");
+            const nextButton = document.querySelector(".slider .next");
+            let currentIndex = 0;
+
+            function updateSlider(index) {
+                sliderImages.forEach((img, i) => {
+                    img.classList.toggle("active", i === index);
+                });
+            }
 
             prevButton.addEventListener("click", () => {
-                if (index > 0) {
-                    index--;
-                    track.style.transform = `translateX(-${index * 100}%)`;
-                }
+                currentIndex = (currentIndex > 0) ? currentIndex - 1 : sliderImages.length - 1;
+                updateSlider(currentIndex);
             });
 
             nextButton.addEventListener("click", () => {
-                if (index < track.children.length - 1) {
-                    index++;
-                    track.style.transform = `translateX(-${index * 100}%)`;
-                }
+                currentIndex = (currentIndex < sliderImages.length - 1) ? currentIndex + 1 : 0;
+                updateSlider(currentIndex);
             });
         });
     </script>
