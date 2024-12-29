@@ -9,64 +9,57 @@
     <link rel="icon" href="images/larana camping.png" type="image/png">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
-    <!-- Swiper.js Styles -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-
     <style>
-        /* עיצוב גלריה */
-        .gallery-section {
-            padding: 20px;
-            background: #f9f9f9;
-            text-align: center;
-        }
-
-        .gallery-section h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: #333;
-        }
-
-        .gallery-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            align-items: center;
-        }
-
-        .gallery-item {
-            border: 2px solid #ccc;
-            border-radius: 8px;
-            overflow: hidden;
-            width: 90%;
+        /* Slider Section */
+        .slider-section {
+            width: 100%;
             max-width: 800px;
             margin: 0 auto;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
         }
 
-        .gallery-item img {
+        .slider-container {
             width: 100%;
-            height: auto;
-            max-height: 500px;
-            object-fit: cover;
+            overflow: hidden;
+            border-radius: 10px;
+            position: relative;
         }
 
-        @media (min-width: 1024px) {
-            .gallery-item {
-                max-width: 700px;
-            }
-
-            .gallery-item img {
-                max-height: 400px;
-            }
+        .slider-images {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
         }
 
-        @media (max-width: 768px) {
-            .gallery-item {
-                max-width: 100%;
-            }
+        .slider-images img {
+            width: 100%;
+            flex-shrink: 0;
         }
 
-        /* עיצוב תפריט וכותרת */
+        .slider-controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .slider-button {
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+        .slider-button:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        /* Page Styling */
         .header-banner {
             background-color: #fff !important;
             padding: 20px 0;
@@ -102,7 +95,13 @@
             text-decoration: underline;
         }
 
-        /* התאמה למובייל */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f9f9f9;
+            margin-top: 20px;
+        }
+
         @media (max-width: 768px) {
             .nav-links {
                 flex-wrap: nowrap;
@@ -113,55 +112,11 @@
                 font-size: 1rem;
             }
         }
-
-        body {
-            opacity: 1;
-            transition: opacity 0.5s ease-in-out;
-            background-color: #fff;
-        }
-
-        body.fade-out {
-            opacity: 0;
-        }
-
-        /* Slider Images */
-        .swiper-container {
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .swiper-slide img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-
-        .swiper-button-next,
-        .swiper-button-prev {
-            color: #007bff;
-        }
-
-        .swiper-pagination-bullet {
-            background: #007bff;
-            opacity: 0.7;
-        }
-
-        .swiper-pagination-bullet-active {
-            opacity: 1;
-        }
-
-        .slider-section h2 {
-            text-align: center;
-            margin-bottom: 20px;
-            color: #333;
-            font-size: 1.8rem;
-        }
     </style>
 </head>
 
 <body>
-    <!-- כותרת עליונה -->
+    <!-- Header Section -->
     <header class="header-banner">
         <div class="container">
             <nav class="navbar">
@@ -180,47 +135,50 @@
         </div>
     </header>
 
-    <!-- Slider תמונות -->
+    <!-- Slider Section -->
     <section class="slider-section">
         <h2>תמונות נוספות מהגלריה</h2>
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="images/1.jpg" alt="תמונה 1"></div>
-                <div class="swiper-slide"><img src="images/2.jpg" alt="תמונה 2"></div>
-                <div class="swiper-slide"><img src="images/3.jpg" alt="תמונה 3"></div>
-                <div class="swiper-slide"><img src="images/4.jpg" alt="תמונה 4"></div>
-                <div class="swiper-slide"><img src="images/fance.jpg" alt="תמונה 5"></div>
+        <div class="slider-container">
+            <div class="slider-images">
+                <img src="images/1.jpg" alt="תמונה 1">
+                <img src="images/2.jpg" alt="תמונה 2">
+                <img src="images/3.jpg" alt="תמונה 3">
+                <img src="images/4.jpg" alt="תמונה 4">
+                <img src="images/fance.jpg" alt="תמונה 5">
             </div>
-            <!-- לחצני ניווט -->
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-            <!-- נקודות ניווט -->
-            <div class="swiper-pagination"></div>
+            <div class="slider-controls">
+                <button class="slider-button" id="prev-button">❮</button>
+                <button class="slider-button" id="next-button">❯</button>
+            </div>
         </div>
     </section>
 
-    <!-- פוטר -->
+    <!-- Footer Section -->
     <footer class="footer">
         <p>© כל הזכויות שמורות - גדרות זיו בגולן</p>
     </footer>
 
-    <!-- סקריפט Swiper.js -->
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            const swiper = new Swiper('.swiper-container', {
-                loop: true, // לולאה אינסופית
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                },
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                },
-                autoplay: {
-                    delay: 3000, // זמן בין תמונה לתמונה (במילישניות)
-                },
+            const sliderImages = document.querySelector('.slider-images');
+            const images = document.querySelectorAll('.slider-images img');
+            const prevButton = document.getElementById('prev-button');
+            const nextButton = document.getElementById('next-button');
+
+            let currentIndex = 0;
+
+            function updateSlider() {
+                sliderImages.style.transform = `translateX(-${currentIndex * 100}%)`;
+            }
+
+            prevButton.addEventListener('click', () => {
+                currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
+                updateSlider();
+            });
+
+            nextButton.addEventListener('click', () => {
+                currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
+                updateSlider();
             });
         });
     </script>
