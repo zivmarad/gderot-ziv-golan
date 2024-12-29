@@ -299,22 +299,6 @@
             </div>
         </section>
 
-        <!-- קרוסלת תמונות -->
-        <section class="carousel-section">
-            <h2>תמונות נוספות מהגלריה</h2>
-            <div class="carousel">
-                <button class="carousel-button prev">❮</button>
-                <div class="carousel-track">
-                    <img src="images/1.jpg" alt="תמונה 1">
-                    <img src="images/2.jpg" alt="תמונה 2">
-                    <img src="images/3.jpg" alt="תמונה 3">
-                    <img src="images/4.jpg" alt="תמונה 4">
-                    <img src="images/fance.jpg" alt="תמונה 5">
-                </div>
-                <button class="carousel-button next">❯</button>
-            </div>
-        </section>
-
         <!-- שירותים -->
         <section class="services">
             <h2>השירותים שלנו</h2>
@@ -347,6 +331,22 @@
                 <a href="contact.html" class="cta-contact">
                     <i class="fas fa-envelope"></i> השארת פרטים
                 </a>
+            </div>
+        </section>
+
+        <!-- קרוסלת תמונות -->
+        <section class="carousel-section">
+            <h2>תמונות נוספות מהגלריה</h2>
+            <div class="carousel">
+                <button class="carousel-button prev">❮</button>
+                <div class="carousel-track">
+                    <img src="images/1.jpg" alt="תמונה 1">
+                    <img src="images/2.jpg" alt="תמונה 2">
+                    <img src="images/3.jpg" alt="תמונה 3">
+                    <img src="images/4.jpg" alt="תמונה 4">
+                    <img src="images/fance.jpg" alt="תמונה 5">
+                </div>
+                <button class="carousel-button next">❯</button>
             </div>
         </section>
     </main>
@@ -385,16 +385,48 @@
             prevButton.addEventListener("click", () => {
                 if (index > 0) {
                     index--;
-                    track.style.transform = `translateX(-${index * 300}px)`;
+                    track.style.transform = `translateX(-${index * 310}px)`;
                 }
             });
 
             nextButton.addEventListener("click", () => {
                 if (index < track.children.length - 1) {
                     index++;
-                    track.style.transform = `translateX(-${index * 300}px)`;
+                    track.style.transform = `translateX(-${index * 310}px)`;
                 }
             });
+
+            // תמיכה בגרירת עכבר או מגע
+            let isDragging = false;
+            let startPos = 0;
+            let currentTranslate = 0;
+            let prevTranslate = 0;
+
+            track.addEventListener("mousedown", startDrag);
+            track.addEventListener("touchstart", startDrag);
+            track.addEventListener("mouseup", endDrag);
+            track.addEventListener("mouseleave", endDrag);
+            track.addEventListener("touchend", endDrag);
+            track.addEventListener("mousemove", drag);
+            track.addEventListener("touchmove", drag);
+
+            function startDrag(event) {
+                isDragging = true;
+                startPos = event.type.includes("mouse") ? event.pageX : event.touches[0].clientX;
+            }
+
+            function endDrag() {
+                isDragging = false;
+                prevTranslate = currentTranslate;
+            }
+
+            function drag(event) {
+                if (!isDragging) return;
+                const currentPosition = event.type.includes("mouse") ? event.pageX : event.touches[0].clientX;
+                const distance = currentPosition - startPos;
+                currentTranslate = prevTranslate + distance;
+                track.style.transform = `translateX(${currentTranslate}px)`;
+            }
         });
     </script>
 
