@@ -6,22 +6,113 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>דף הבית - גדרות זיו בגולן</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images/larana camping.png" type="image/png">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-
     <style>
-        .header-banner {
+        /* עיצוב גלריה */
+        .gallery-section {
+            padding: 20px;
+            background: #f9f9f9;
             text-align: center;
+        }
+
+        .gallery-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .gallery-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .gallery-item {
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            overflow: hidden;
+            width: 90%;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            max-height: 500px;
+            object-fit: cover;
+        }
+
+        @media (min-width: 1024px) {
+            .gallery-item {
+                max-width: 700px;
+            }
+
+            .gallery-item img {
+                max-height: 400px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .gallery-item {
+                max-width: 100%;
+            }
+        }
+
+        /* עיצוב שירותים */
+        .services {
+            padding: 20px;
+            background: #fff;
+            text-align: center;
+        }
+
+        .services h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .values-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .value-item {
+            background: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 300px;
+            text-align: center;
+        }
+
+        .value-item h3 {
+            color: #3a6186;
+            margin-bottom: 10px;
+        }
+
+        .value-item p {
+            color: #555;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        /* עיצוב תפריט וכותרת */
+        .header-banner {
+            background-color: #fff !important;
             padding: 20px 0;
-            background-color: #fff;
-            border-bottom: 1px solid #ddd;
+            text-align: center;
         }
 
         .navbar {
-            display: flex;
-            justify-content: center;
-            align-items: center;
             background-color: #fff;
-            padding: 10px 0;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
         }
 
         .nav-links {
@@ -29,45 +120,125 @@
             padding: 0;
             margin: 0;
             display: flex;
-            gap: 20px;
+            justify-content: space-between;
             align-items: center;
+            flex-wrap: nowrap;
         }
 
         .nav-links a {
-            text-decoration: none;
             color: #333;
-            font-weight: bold;
+            text-decoration: none;
             font-size: 1.2rem;
-            transition: color 0.3s;
+            font-weight: bold;
+            padding: 0;
+            background: none;
         }
 
         .nav-links a:hover {
-            color: #007bff;
+            text-decoration: underline;
         }
 
+        /* התאמה למובייל */
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-wrap: nowrap;
+                justify-content: space-around;
+            }
+
+            .nav-links a {
+                font-size: 1rem;
+            }
+        }
+
+        body {
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
+            background-color: #fff;
+        }
+
+        body.fade-out {
+            opacity: 0;
+        }
+
+        /* עיצוב כפתורי קריאה לפעולה */
+        .cta-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .cta-buttons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 200px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .cta-buttons a:hover {
+            transform: scale(1.05);
+        }
+
+        .cta-call {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .cta-call:hover {
+            background-color: #0056b3;
+        }
+
+        .cta-whatsapp {
+            background-color: #25d366;
+            color: white;
+        }
+
+        .cta-whatsapp:hover {
+            background-color: #1da851;
+        }
+
+        .cta-contact {
+            background-color: #f9f9f9;
+            color: #333;
+            border: 2px solid #ddd;
+        }
+
+        .cta-contact:hover {
+            background-color: #e6e6e6;
+        }
+
+        /* Slider Images */
         .slider-section {
-            width: 100%;
-            max-width: 800px;
-            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
             text-align: center;
         }
 
-        .slider-container {
+        .slider {
             position: relative;
-            width: 100%;
-            aspect-ratio: 16 / 9;
+            max-width: 800px;
+            margin: 0 auto;
             overflow: hidden;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        .slider-container img {
+        .slider img {
             width: 100%;
-            height: auto;
-            object-fit: cover;
+            display: none;
         }
 
-        .slider-controls {
+        .slider img.active {
+            display: block;
+        }
+
+        .slider-buttons {
             position: absolute;
             top: 50%;
             width: 100%;
@@ -76,157 +247,161 @@
             transform: translateY(-50%);
         }
 
-        .slider-button {
-            background-color: rgba(0, 0, 0, 0.6);
-            border: none;
+        .slider-buttons button {
+            background: rgba(0, 0, 0, 0.5);
             color: white;
-            font-size: 2rem;
-            padding: 10px;
+            border: none;
+            font-size: 1.5rem;
             cursor: pointer;
+            padding: 10px;
             border-radius: 50%;
-            transition: background-color 0.3s;
         }
 
-        .slider-button:hover {
-            background-color: rgba(0, 0, 0, 0.9);
+        .slider-buttons button:hover {
+            background: rgba(0, 0, 0, 0.7);
         }
 
-        .services-section {
-            padding: 20px;
-            background-color: #f9f9f9;
-        }
-
-        .services-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
-
-        .service-item {
-            width: calc(33.33% - 20px);
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            text-align: center;
-        }
-
-        .service-item h3 {
-            margin-bottom: 10px;
-        }
-
-        @media (max-width: 768px) {
-            .service-item {
-                width: calc(50% - 20px);
-            }
-        }
-
-        @media (max-width: 480px) {
-            .service-item {
-                width: 100%;
-            }
-        }
-
-        .footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #f9f9f9;
-            border-top: 1px solid #ddd;
-        }
     </style>
 </head>
 
 <body>
+    <!-- כותרת עליונה -->
     <header class="header-banner">
-        <nav class="navbar">
-            <ul class="nav-links">
-                <li><a href="index.html">דף הבית</a></li>
-                <li><a href="about.html">אודות</a></li>
-                <li><a href="gallery.html">גלריה</a></li>
-                <li><a href="contact.html">צור קשר</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="index.html">דף הבית</a></li>
+                    <li><a href="about.html">אודות</a></li>
+                    <li><a href="gallery.html">גלריה</a></li>
+                    <li><a href="contact.html">צור קשר</a></li>
+                    <li>
+                        <a href="https://www.facebook.com/profile.php?id=61570398886746" target="_blank">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <img src="images/larana camping2.png" alt="ברוכים הבאים לגדרות זיו בגולן" style="max-width: 100%; height: auto; margin-top: 10px;">
+        </div>
     </header>
 
-    <section class="slider-section">
-        <div class="slider-container">
-            <img id="slider-image" src="images/1.jpg" alt="תמונה מהגלריה">
-            <div class="slider-controls">
-                <button class="slider-button" id="prev-button">❮</button>
-                <button class="slider-button" id="next-button">❯</button>
+    <!-- גלריה -->
+    <main class="container">
+        <section class="gallery-section">
+            <h2>תמונות מפרויקטים</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="images/1.jpg" alt="תמונה 1"></div>
+                <div class="gallery-item"><img src="images/2.jpg" alt="תמונה 2"></div>
+                <div class="gallery-item"><img src="images/3.jpg" alt="תמונה 3"></div>
+                <div class="gallery-item"><img src="images/4.jpg" alt="תמונה 4"></div>
+                <div class="gallery-item"><img src="images/fance.jpg" alt="תמונה 5"></div>
+                <div class="gallery-item"><img src="images/IMG_20241121_142831.jpg" alt="תמונה 6"></div>
+                <div class="gallery-item"><img src="images/IMG_20241121_142836.jpg" alt="תמונה 7"></div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="services-section">
-        <h2>השירותים שלנו</h2>
-        <div class="services-grid">
-            <div class="service-item">
-                <h3>עיצוב בהתאמה אישית</h3>
-                <p>אנו מציעים עיצוב גדרות מותאם אישית לצרכים ולסגנון שלכם.</p>
+        <!-- שירותים -->
+        <section class="services">
+            <h2>השירותים שלנו</h2>
+            <div class="values-grid">
+                <div class="value-item">
+                    <h3>עיצוב בהתאמה אישית</h3>
+                    <p>אנו מציעים עיצוב גדרות מותאם אישית לצרכים ולסגנון שלכם, תוך שימת דגש על יופי ופונקציונליות.</p>
+                </div>
+                <div class="value-item">
+                    <h3>התקנה מקצועית</h3>
+                    <p>צוות מומחים מיומן ידאג להתקנה מדויקת ומקצועית, לשביעות רצונכם המלאה.</p>
+                </div>
+                <div class="value-item">
+                    <h3>צביעה בתנור</h3>
+                    <p>שירותי צביעה בתנור באיכות גבוהה, להבטחת עמידות ויופי לטווח ארוך.</p>
+                </div>
             </div>
-            <div class="service-item">
-                <h3>התקנה מקצועית</h3>
-                <p>התקנה מדויקת על ידי צוות מומחים מיומן.</p>
-            </div>
-            <div class="service-item">
-                <h3>צביעה בתנור</h3>
-                <p>שירותי צביעה בתנור באיכות גבוהה לעמידות לטווח ארוך.</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
+        <!-- קריאה לפעולה -->
+        <section class="cta-section">
+            <h2>מוכנים לעשות את הצעד הבא?</h2>
+            <div class="cta-buttons">
+                <a href="tel:+972502218880" class="cta-call">
+                    <i class="fas fa-phone-alt"></i> חיוג עכשיו
+                </a>
+                <a href="https://wa.me/972502218880" class="cta-whatsapp">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+                <a href="contact.html" class="cta-contact">
+                    <i class="fas fa-envelope"></i> השארת פרטים
+                </a>
+            </div>
+        </section>
+
+        <!-- Slider תמונות -->
+        <section class="slider-section">
+            <h2>תמונות נוספות מהגלריה</h2>
+            <div class="slider">
+                <img src="images/1.jpg" alt="תמונה 1" class="active">
+                <img src="images/2.jpg" alt="תמונה 2">
+                <img src="images/3.jpg" alt="תמונה 3">
+                <img src="images/4.jpg" alt="תמונה 4">
+                <img src="images/fance.jpg" alt="תמונה 5">
+                <div class="slider-buttons">
+                    <button class="prev">❮</button>
+                    <button class="next">❯</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- פוטר -->
     <footer class="footer">
         <p>© כל הזכויות שמורות - גדרות זיו בגולן</p>
     </footer>
 
+    <!-- סקריפט -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            const images = [
-                "images/IMG_20241031_134058.jpg",
-                "images/IMG_20241121_142836.jpg",
-                "images/IMG_20241031_122522.jpg",
-                "images/IMG_20241031_132755.jpg",
-                "images/1.jpg",
-                "images/2.jpg",
-                "images/3.jpg",
-                "images/4.jpg",
-                "images/fance.jpg",
-                "images/IMG_20241121_142831.jpg",
-                "images/IMG_20241103_115628.jpg",
-                "images/larana camping.png"
-            ];
+            const links = document.querySelectorAll("a");
 
+            links.forEach(link => {
+                link.addEventListener("click", (event) => {
+                    const href = link.getAttribute("href");
+
+                    // בדיקה אם זו קפיצה לדף חיצוני
+                    if (!href.includes(".html")) return;
+
+                    event.preventDefault();
+                    document.body.classList.add("fade-out");
+
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 500); // משך האנימציה (חייב להתאים ל-CSS)
+                });
+            });
+
+            // Slider תמונות
+            const sliderImages = document.querySelectorAll(".slider img");
+            const prevButton = document.querySelector(".slider .prev");
+            const nextButton = document.querySelector(".slider .next");
             let currentIndex = 0;
 
-            const sliderImage = document.getElementById("slider-image");
-            const prevButton = document.getElementById("prev-button");
-            const nextButton = document.getElementById("next-button");
-
-            function updateSlider() {
-                sliderImage.src = images[currentIndex];
-                prevButton.disabled = currentIndex === 0;
-                nextButton.disabled = currentIndex === images.length - 1;
+            function updateSlider(index) {
+                sliderImages.forEach((img, i) => {
+                    img.classList.toggle("active", i === index);
+                });
             }
 
             prevButton.addEventListener("click", () => {
-                if (currentIndex > 0) {
-                    currentIndex--;
-                    updateSlider();
-                }
+                currentIndex = (currentIndex > 0) ? currentIndex - 1 : sliderImages.length - 1;
+                updateSlider(currentIndex);
             });
 
             nextButton.addEventListener("click", () => {
-                if (currentIndex < images.length - 1) {
-                    currentIndex++;
-                    updateSlider();
-                }
+                currentIndex = (currentIndex < sliderImages.length - 1) ? currentIndex + 1 : 0;
+                updateSlider(currentIndex);
             });
-
-            updateSlider();
         });
     </script>
+
 </body>
 
 </html>
