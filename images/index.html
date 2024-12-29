@@ -11,7 +11,7 @@
     <style>
         .image-section {
             width: 100%;
-            max-width: 600px;
+            max-width: 800px;
             margin: 20px auto;
             text-align: center;
             position: relative;
@@ -19,7 +19,7 @@
 
         .image-container {
             width: 100%;
-            aspect-ratio: 4 / 3;
+            aspect-ratio: 16 / 9;
             overflow: hidden;
             border-radius: 10px;
             background-color: #f4f4f4;
@@ -32,7 +32,7 @@
         .image-container img {
             max-width: 100%;
             max-height: 100%;
-            object-fit: contain;
+            object-fit: cover;
         }
 
         .image-controls {
@@ -111,7 +111,7 @@
     <section class="image-section">
         <h2>תמונות מהגלריה</h2>
         <div class="image-container">
-            <img id="displayed-image" src="" alt="תמונה מהגלריה">
+            <img id="displayed-image" src="images/1.jpg" alt="תמונה מהגלריה">
         </div>
         <div class="image-controls">
             <button class="image-button" id="prev-button" disabled>❮</button>
@@ -125,65 +125,48 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            const galleryPage = "gallery.html";
-            let images = [];
+            const images = [
+                "images/IMG_20241031_134058.jpg",
+                "images/IMG_20241121_142836.jpg",
+                "images/IMG_20241031_122522.jpg",
+                "images/IMG_20241031_132755.jpg",
+                "images/1.jpg",
+                "images/2.jpg",
+                "images/3.jpg",
+                "images/4.jpg",
+                "images/fance.jpg",
+                "images/IMG_20241121_142831.jpg",
+                "images/IMG_20241103_115628.jpg",
+                "images/larana camping.png"
+            ];
+
             let currentIndex = 0;
 
-            console.log("Attempting to fetch gallery from:", galleryPage);
+            const displayedImage = document.getElementById("displayed-image");
+            const prevButton = document.getElementById("prev-button");
+            const nextButton = document.getElementById("next-button");
 
-            fetch(galleryPage)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
-                    return response.text();
-                })
-                .then(html => {
-                    const parser = new DOMParser();
-                    const doc = parser.parseFromString(html, "text/html");
-                    const imgElements = doc.querySelectorAll(".gallery-item img");
+            function updateImage() {
+                displayedImage.src = images[currentIndex];
+                prevButton.disabled = currentIndex === 0;
+                nextButton.disabled = currentIndex === images.length - 1;
+            }
 
-                    if (imgElements.length === 0) {
-                        console.warn("No images found in gallery.html!");
-                    }
+            prevButton.addEventListener("click", () => {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateImage();
+                }
+            });
 
-                    images = Array.from(imgElements).map(img => img.src);
-                    console.log("Images loaded from gallery:", images);
+            nextButton.addEventListener("click", () => {
+                if (currentIndex < images.length - 1) {
+                    currentIndex++;
+                    updateImage();
+                }
+            });
 
-                    const displayedImage = document.getElementById("displayed-image");
-                    const prevButton = document.getElementById("prev-button");
-                    const nextButton = document.getElementById("next-button");
-
-                    function updateImage() {
-                        console.log(`Displaying image ${currentIndex + 1} of ${images.length}`);
-                        displayedImage.src = images[currentIndex];
-                        prevButton.disabled = currentIndex === 0;
-                        nextButton.disabled = currentIndex === images.length - 1;
-                    }
-
-                    prevButton.addEventListener("click", () => {
-                        if (currentIndex > 0) {
-                            currentIndex--;
-                            updateImage();
-                        }
-                    });
-
-                    nextButton.addEventListener("click", () => {
-                        if (currentIndex < images.length - 1) {
-                            currentIndex++;
-                            updateImage();
-                        }
-                    });
-
-                    if (images.length > 0) {
-                        updateImage();
-                    } else {
-                        displayedImage.alt = "לא נמצאו תמונות בגלריה";
-                    }
-                })
-                .catch(error => {
-                    console.error("Error loading gallery images:", error);
-                });
+            updateImage();
         });
     </script>
 </body>
