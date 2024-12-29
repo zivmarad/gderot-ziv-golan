@@ -260,7 +260,6 @@
         .slider-buttons button:hover {
             background: rgba(0, 0, 0, 0.7);
         }
-
     </style>
 </head>
 
@@ -285,72 +284,21 @@
         </div>
     </header>
 
-    <!-- גלריה -->
-    <main class="container">
-        <section class="gallery-section">
-            <h2>תמונות מפרויקטים</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item"><img src="images/1.jpg" alt="תמונה 1"></div>
-                <div class="gallery-item"><img src="images/2.jpg" alt="תמונה 2"></div>
-                <div class="gallery-item"><img src="images/3.jpg" alt="תמונה 3"></div>
-                <div class="gallery-item"><img src="images/4.jpg" alt="תמונה 4"></div>
-                <div class="gallery-item"><img src="images/fance.jpg" alt="תמונה 5"></div>
-                <div class="gallery-item"><img src="images/IMG_20241121_142831.jpg" alt="תמונה 6"></div>
-                <div class="gallery-item"><img src="images/IMG_20241121_142836.jpg" alt="תמונה 7"></div>
+    <!-- Slider תמונות -->
+    <section class="slider-section">
+        <h2>תמונות נוספות מהגלריה</h2>
+        <div class="slider">
+            <img src="images/1.jpg" alt="תמונה 1" class="active">
+            <img src="images/2.jpg" alt="תמונה 2">
+            <img src="images/3.jpg" alt="תמונה 3">
+            <img src="images/4.jpg" alt="תמונה 4">
+            <img src="images/fance.jpg" alt="תמונה 5">
+            <div class="slider-buttons">
+                <button class="prev">❮</button>
+                <button class="next">❯</button>
             </div>
-        </section>
-
-        <!-- שירותים -->
-        <section class="services">
-            <h2>השירותים שלנו</h2>
-            <div class="values-grid">
-                <div class="value-item">
-                    <h3>עיצוב בהתאמה אישית</h3>
-                    <p>אנו מציעים עיצוב גדרות מותאם אישית לצרכים ולסגנון שלכם, תוך שימת דגש על יופי ופונקציונליות.</p>
-                </div>
-                <div class="value-item">
-                    <h3>התקנה מקצועית</h3>
-                    <p>צוות מומחים מיומן ידאג להתקנה מדויקת ומקצועית, לשביעות רצונכם המלאה.</p>
-                </div>
-                <div class="value-item">
-                    <h3>צביעה בתנור</h3>
-                    <p>שירותי צביעה בתנור באיכות גבוהה, להבטחת עמידות ויופי לטווח ארוך.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- קריאה לפעולה -->
-        <section class="cta-section">
-            <h2>מוכנים לעשות את הצעד הבא?</h2>
-            <div class="cta-buttons">
-                <a href="tel:+972502218880" class="cta-call">
-                    <i class="fas fa-phone-alt"></i> חיוג עכשיו
-                </a>
-                <a href="https://wa.me/972502218880" class="cta-whatsapp">
-                    <i class="fab fa-whatsapp"></i> WhatsApp
-                </a>
-                <a href="contact.html" class="cta-contact">
-                    <i class="fas fa-envelope"></i> השארת פרטים
-                </a>
-            </div>
-        </section>
-
-        <!-- Slider תמונות -->
-        <section class="slider-section">
-            <h2>תמונות נוספות מהגלריה</h2>
-            <div class="slider">
-                <img src="images/1.jpg" alt="תמונה 1" class="active">
-                <img src="images/2.jpg" alt="תמונה 2">
-                <img src="images/3.jpg" alt="תמונה 3">
-                <img src="images/4.jpg" alt="תמונה 4">
-                <img src="images/fance.jpg" alt="תמונה 5">
-                <div class="slider-buttons">
-                    <button class="prev">❮</button>
-                    <button class="next">❯</button>
-                </div>
-            </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
     <!-- פוטר -->
     <footer class="footer">
@@ -360,25 +308,6 @@
     <!-- סקריפט -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            const links = document.querySelectorAll("a");
-
-            links.forEach(link => {
-                link.addEventListener("click", (event) => {
-                    const href = link.getAttribute("href");
-
-                    // בדיקה אם זו קפיצה לדף חיצוני
-                    if (!href.includes(".html")) return;
-
-                    event.preventDefault();
-                    document.body.classList.add("fade-out");
-
-                    setTimeout(() => {
-                        window.location.href = href;
-                    }, 500); // משך האנימציה (חייב להתאים ל-CSS)
-                });
-            });
-
-            // Slider תמונות
             const sliderImages = document.querySelectorAll(".slider img");
             const prevButton = document.querySelector(".slider .prev");
             const nextButton = document.querySelector(".slider .next");
@@ -399,9 +328,10 @@
                 currentIndex = (currentIndex < sliderImages.length - 1) ? currentIndex + 1 : 0;
                 updateSlider(currentIndex);
             });
+
+            updateSlider(currentIndex);
         });
     </script>
-
 </body>
 
 </html>
