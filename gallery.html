@@ -109,6 +109,48 @@
             display: block;
             margin: 0 auto;
         }
+
+        /* עיצוב כפתורים קבועים */
+        .fixed-buttons {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .fixed-buttons a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            background-color: #25d366;
+            border-radius: 50%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+            color: white;
+            font-size: 24px;
+            transition: transform 0.2s;
+        }
+
+        .fixed-buttons a:hover {
+            transform: scale(1.1);
+        }
+
+        .fixed-buttons .call-button {
+            background-color: #007bff;
+        }
+
+        .fixed-buttons .call-button i {
+            font-size: 22px;
+        }
+
+        .fixed-buttons .whatsapp-button {
+            background-color: #25d366;
+        }
     </style>
 </head>
 
@@ -148,6 +190,16 @@
             </div>
         </section>
     </main>
+
+    <!-- כפתורים קבועים -->
+    <div class="fixed-buttons">
+        <a href="tel:+972502218880" class="call-button">
+            <i class="fas fa-phone-alt"></i>
+        </a>
+        <a href="https://wa.me/972502218880" target="_blank" class="whatsapp-button">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
 
     <!-- פוטר -->
     <footer class="footer">
