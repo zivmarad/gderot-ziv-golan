@@ -260,6 +260,21 @@
         .carousel-button.next {
             right: 10px;
         }
+
+        @media (max-width: 768px) {
+            .carousel {
+                max-width: 100%;
+            }
+
+            .carousel-track img {
+                max-width: 100%;
+            }
+
+            .carousel-button {
+                font-size: 1.2rem;
+                padding: 8px;
+            }
+        }
     </style>
 </head>
 
@@ -385,48 +400,16 @@
             prevButton.addEventListener("click", () => {
                 if (index > 0) {
                     index--;
-                    track.style.transform = `translateX(-${index * 310}px)`;
+                    track.style.transform = `translateX(-${index * 100}%)`;
                 }
             });
 
             nextButton.addEventListener("click", () => {
                 if (index < track.children.length - 1) {
                     index++;
-                    track.style.transform = `translateX(-${index * 310}px)`;
+                    track.style.transform = `translateX(-${index * 100}%)`;
                 }
             });
-
-            // תמיכה בגרירת עכבר או מגע
-            let isDragging = false;
-            let startPos = 0;
-            let currentTranslate = 0;
-            let prevTranslate = 0;
-
-            track.addEventListener("mousedown", startDrag);
-            track.addEventListener("touchstart", startDrag);
-            track.addEventListener("mouseup", endDrag);
-            track.addEventListener("mouseleave", endDrag);
-            track.addEventListener("touchend", endDrag);
-            track.addEventListener("mousemove", drag);
-            track.addEventListener("touchmove", drag);
-
-            function startDrag(event) {
-                isDragging = true;
-                startPos = event.type.includes("mouse") ? event.pageX : event.touches[0].clientX;
-            }
-
-            function endDrag() {
-                isDragging = false;
-                prevTranslate = currentTranslate;
-            }
-
-            function drag(event) {
-                if (!isDragging) return;
-                const currentPosition = event.type.includes("mouse") ? event.pageX : event.touches[0].clientX;
-                const distance = currentPosition - startPos;
-                currentTranslate = prevTranslate + distance;
-                track.style.transform = `translateX(${currentTranslate}px)`;
-            }
         });
     </script>
 
