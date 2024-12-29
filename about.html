@@ -133,12 +133,80 @@
             line-height: 1.5;
         }
 
+        .team-section {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            max-width: 800px;
+        }
+
+        .team-section h2 {
+            font-size: 2rem;
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .team-section p {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
         .team-section img {
             width: 100%;
             max-width: 600px;
-            margin: 20px auto;
-            border-radius: 8px;
+            margin: 0 auto;
+            border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: block;
+        }
+
+        /* עיצוב כפתורים קבועים */
+        .fixed-buttons {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .fixed-buttons a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: transform 0.2s;
+        }
+
+        .fixed-buttons a:hover {
+            transform: scale(1.1);
+        }
+
+        .fixed-buttons .call-button {
+            background-color: #007bff;
+            color: white;
+            font-size: 22px;
+        }
+
+        .fixed-buttons .whatsapp-button {
+            background-color: transparent;
+            color: #25d366;
+            font-size: 24px;
+        }
+
+        .fixed-buttons .whatsapp-button i {
+            font-size: 50px;
+            color: #25d366;
         }
     </style>
 </head>
@@ -208,12 +276,22 @@
                 והגישה האישית שלנו, אנו מבטיחים לספק פתרונות מעולים המותאמים לצרכים הייחודיים שלכם.
             </p>
             <p>
-                כל אחד מחברי הצוות שלנו מחויב למצוינות, שירות ברמה הגבוהה ביותר ותוצאה שתשקף את החזון שלכם בצורה
-                המושלמת. יחד, אנחנו יוצרים גדרות שהן לא רק פונקציונליות, אלא גם חלק בלתי נפרד מהעיצוב של הבית או העסק.
+                כל אחד מחברי הצוות שלנו מחויב למצוינות, שירות ברמה הגבוהה ביותר, ותוצאה שתשקף את החזון שלכם בצורה
+                המושלמת. אנו שואפים ליצור גדרות שהן לא רק פונקציונליות, אלא גם תורמות לעיצוב האסתטי של הבית או העסק.
             </p>
             <img src="images/team.jpg" alt="צוות העובדים של גדרות זיו בגולן">
         </section>
     </main>
+
+    <!-- כפתורים קבועים -->
+    <div class="fixed-buttons">
+        <a href="tel:+972502218880" class="call-button">
+            <i class="fas fa-phone-alt"></i>
+        </a>
+        <a href="https://wa.me/972502218880" target="_blank" class="whatsapp-button">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
 
     <!-- פוטר -->
     <footer class="footer">
