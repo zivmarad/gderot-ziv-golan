@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>גלריה - גדרות זיו בגולן</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="images/larana camping2.png" type="image/png">
+    <link rel="icon" href="images/larana camping.png" type="image/png">
     <style>
         .header-banner {
             background-color: #fff;
@@ -17,7 +17,7 @@
         }
 
         .header-banner img {
-            max-width: 200px;
+            max-width: 250px;
             height: auto;
             margin-bottom: 10px;
         }
@@ -72,23 +72,23 @@
         }
 
         .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 20px;
+            display: block;
             padding: 20px;
         }
 
         .gallery-item {
-            border: 2px solid #ddd;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
         }
 
         .gallery-item img {
             width: 100%;
+            max-width: 800px;
             height: auto;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             display: block;
+            margin: 0 auto;
         }
     </style>
 </head>
