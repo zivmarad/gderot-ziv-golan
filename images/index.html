@@ -10,10 +10,9 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
     <style>
-        /* Image Display Section */
         .image-section {
             width: 100%;
-            max-width: 800px;
+            max-width: 600px;
             margin: 20px auto;
             text-align: center;
             position: relative;
@@ -21,22 +20,20 @@
 
         .image-container {
             width: 100%;
-            aspect-ratio: 16 / 9;
+            aspect-ratio: 4 / 3;
             overflow: hidden;
             border-radius: 10px;
-            position: relative;
-            background-color: #f9f9f9;
+            background-color: #f4f4f4;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         .image-container img {
             max-width: 100%;
             max-height: 100%;
-            object-fit: cover;
-            border-radius: 10px;
+            object-fit: contain;
         }
 
         .image-controls {
@@ -49,7 +46,7 @@
         }
 
         .image-button {
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.6);
             border: none;
             color: white;
             font-size: 1.5rem;
@@ -60,102 +57,69 @@
         }
 
         .image-button:hover {
-            background-color: rgba(0, 0, 0, 0.8);
+            background-color: rgba(0, 0, 0, 0.9);
         }
 
-        /* Page Styling */
         .header-banner {
-            background-color: #fff !important;
-            padding: 20px 0;
             text-align: center;
-        }
-
-        .navbar {
+            padding: 20px 0;
             background-color: #fff;
-            padding: 10px;
             border-bottom: 1px solid #ddd;
         }
 
         .nav-links {
             list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
             padding: 0;
             margin: 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: nowrap;
         }
 
         .nav-links a {
-            color: #333;
             text-decoration: none;
             font-size: 1.2rem;
             font-weight: bold;
-            padding: 0;
-            background: none;
+            color: #333;
+            transition: color 0.3s;
         }
 
         .nav-links a:hover {
-            text-decoration: underline;
+            color: #007bff;
         }
 
         .footer {
             text-align: center;
             padding: 20px;
             background-color: #f9f9f9;
-            margin-top: 20px;
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                flex-wrap: nowrap;
-                justify-content: space-around;
-            }
-
-            .nav-links a {
-                font-size: 1rem;
-            }
-
-            .image-container {
-                aspect-ratio: 4 / 3;
-            }
+            border-top: 1px solid #ddd;
         }
     </style>
 </head>
 
 <body>
-    <!-- Header Section -->
     <header class="header-banner">
-        <div class="container">
-            <nav class="navbar">
-                <ul class="nav-links">
-                    <li><a href="index.html">דף הבית</a></li>
-                    <li><a href="about.html">אודות</a></li>
-                    <li><a href="gallery.html">גלריה</a></li>
-                    <li><a href="contact.html">צור קשר</a></li>
-                    <li>
-                        <a href="https://www.facebook.com/profile.php?id=61570398886746" target="_blank">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">דף הבית</a></li>
+                <li><a href="about.html">אודות</a></li>
+                <li><a href="gallery.html">גלריה</a></li>
+                <li><a href="contact.html">צור קשר</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <!-- Image Display Section -->
     <section class="image-section">
-        <h2>תמונות נוספות מהגלריה</h2>
+        <h2>תמונות מהגלריה</h2>
         <div class="image-container">
-            <img id="displayed-image" src="images/1.jpg" alt="תמונה 1">
+            <img id="displayed-image" src="" alt="תמונה מהגלריה">
         </div>
         <div class="image-controls">
-            <button class="image-button" id="prev-button">❮</button>
+            <button class="image-button" id="prev-button" disabled>❮</button>
             <button class="image-button" id="next-button">❯</button>
         </div>
     </section>
 
-    <!-- Footer Section -->
     <footer class="footer">
         <p>© כל הזכויות שמורות - גדרות זיו בגולן</p>
     </footer>
@@ -163,16 +127,18 @@
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const galleryPage = "gallery.html";
-            let images = [];
+            const images = [];
+            let currentIndex = 0;
 
             fetch(galleryPage)
                 .then(response => response.text())
                 .then(html => {
                     const parser = new DOMParser();
                     const doc = parser.parseFromString(html, "text/html");
-                    images = Array.from(doc.querySelectorAll(".gallery-item img")).map(img => img.src);
+                    const imgElements = doc.querySelectorAll(".gallery-item img");
 
-                    let currentIndex = 0;
+                    imgElements.forEach(img => images.push(img.src));
+
                     const displayedImage = document.getElementById("displayed-image");
                     const prevButton = document.getElementById("prev-button");
                     const nextButton = document.getElementById("next-button");
@@ -185,21 +151,25 @@
 
                     prevButton.addEventListener("click", () => {
                         if (currentIndex > 0) {
-                            currentIndex -= 1;
+                            currentIndex--;
                             updateImage();
                         }
                     });
 
                     nextButton.addEventListener("click", () => {
                         if (currentIndex < images.length - 1) {
-                            currentIndex += 1;
+                            currentIndex++;
                             updateImage();
                         }
                     });
 
-                    updateImage();
+                    if (images.length > 0) {
+                        updateImage();
+                    } else {
+                        displayedImage.alt = "לא נמצאו תמונות בגלריה";
+                    }
                 })
-                .catch(err => console.error("Error fetching gallery images:", err));
+                .catch(error => console.error("Error loading gallery images:", error));
         });
     </script>
 </body>
