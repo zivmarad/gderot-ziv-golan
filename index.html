@@ -214,6 +214,52 @@
             background-color: #e6e6e6;
         }
 
+        /* קרוסלת תמונות */
+        .carousel-section {
+            padding: 20px;
+            background: #fff;
+            text-align: center;
+        }
+
+        .carousel {
+            display: flex;
+            overflow: hidden;
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-track img {
+            width: 100%;
+            max-width: 300px;
+            margin: 0 5px;
+            border-radius: 8px;
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            font-size: 1.5rem;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .carousel-button.prev {
+            left: 10px;
+        }
+
+        .carousel-button.next {
+            right: 10px;
+        }
     </style>
 </head>
 
@@ -250,6 +296,22 @@
                 <div class="gallery-item"><img src="images/fance.jpg" alt="תמונה 5"></div>
                 <div class="gallery-item"><img src="images/IMG_20241121_142831.jpg" alt="תמונה 6"></div>
                 <div class="gallery-item"><img src="images/IMG_20241121_142836.jpg" alt="תמונה 7"></div>
+            </div>
+        </section>
+
+        <!-- קרוסלת תמונות -->
+        <section class="carousel-section">
+            <h2>תמונות נוספות מהגלריה</h2>
+            <div class="carousel">
+                <button class="carousel-button prev">❮</button>
+                <div class="carousel-track">
+                    <img src="images/1.jpg" alt="תמונה 1">
+                    <img src="images/2.jpg" alt="תמונה 2">
+                    <img src="images/3.jpg" alt="תמונה 3">
+                    <img src="images/4.jpg" alt="תמונה 4">
+                    <img src="images/fance.jpg" alt="תמונה 5">
+                </div>
+                <button class="carousel-button next">❯</button>
             </div>
         </section>
 
@@ -294,33 +356,46 @@
         <p>© כל הזכויות שמורות - גדרות זיו בגולן</p>
     </footer>
 
-    <!-- חלון קופץ להגדלת תמונות -->
-    <div class="modal" id="imageModal">
-        <span class="modal-close" id="modalClose">&times;</span>
-        <img id="modalImage" alt="תמונה מוגדלת">
-    </div>
-
     <!-- סקריפט -->
     <script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const links = document.querySelectorAll("a");
+        document.addEventListener("DOMContentLoaded", () => {
+            const links = document.querySelectorAll("a");
 
-        links.forEach(link => {
-            link.addEventListener("click", (event) => {
-                const href = link.getAttribute("href");
+            links.forEach(link => {
+                link.addEventListener("click", (event) => {
+                    const href = link.getAttribute("href");
 
-                // בדיקה אם זו קפיצה לדף חיצוני
-                if (!href.includes(".html")) return;
+                    // בדיקה אם זו קפיצה לדף חיצוני
+                    if (!href.includes(".html")) return;
 
-                event.preventDefault();
-                document.body.classList.add("fade-out");
+                    event.preventDefault();
+                    document.body.classList.add("fade-out");
 
-                setTimeout(() => {
-                    window.location.href = href;
-                }, 500); // משך האנימציה (חייב להתאים ל-CSS)
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 500); // משך האנימציה (חייב להתאים ל-CSS)
+                });
+            });
+
+            const track = document.querySelector(".carousel-track");
+            const prevButton = document.querySelector(".carousel-button.prev");
+            const nextButton = document.querySelector(".carousel-button.next");
+            let index = 0;
+
+            prevButton.addEventListener("click", () => {
+                if (index > 0) {
+                    index--;
+                    track.style.transform = `translateX(-${index * 300}px)`;
+                }
+            });
+
+            nextButton.addEventListener("click", () => {
+                if (index < track.children.length - 1) {
+                    index++;
+                    track.style.transform = `translateX(-${index * 300}px)`;
+                }
             });
         });
-    });
     </script>
 
 </body>
