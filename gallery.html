@@ -28,12 +28,6 @@
             color: #333;
         }
 
-        .header-banner p {
-            font-size: 1.2rem;
-            color: #555;
-            margin: 10px 0 0;
-        }
-
         .navbar {
             display: flex;
             justify-content: center;
@@ -71,6 +65,25 @@
         .nav-links .facebook-link i {
             margin-left: 5px;
         }
+
+        .gallery-section {
+            text-align: center;
+            margin: 20px auto;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            padding: 20px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
     </style>
 </head>
 
@@ -88,14 +101,14 @@
                 </ul>
             </nav>
             <img src="images/larana camping2.png" alt="לוגו">
-            <h1>גלריית פרויקטים</h1>
+            <h1>גלריה - פרויקטים נבחרים</h1>
         </div>
     </header>
 
     <!-- גלריה -->
     <main class="container">
         <section class="gallery-section">
-            <h2>תמונות מפרויקטים</h2>
+            <h2>תמונות מפרויקטים שביצענו</h2>
             <div class="gallery-grid">
                 <div class="gallery-item"><img src="images/1.jpg" alt="תמונה 1"></div>
                 <div class="gallery-item"><img src="images/2.jpg" alt="תמונה 2"></div>
