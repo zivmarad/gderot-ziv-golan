@@ -4,26 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>דף הבית - גדרות זיו בגולן</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="images/larana camping2.png" type="image/png">
+    <title>סליידר תמונות מעוצב</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <style>
-        /* עיצוב סליידר */
+        /* עיצוב הסליידר */
         .slider-section {
             text-align: center;
             padding: 20px;
-            background-color: #fff;
+            background-color: #f4f4f4;
+        }
+
+        .slider-section h2 a {
+            text-decoration: none;
+            color: #007bff;
+            font-size: 1.8rem;
         }
 
         .slider {
             position: relative;
             width: 100%;
-            max-width: 600px;
+            max-width: 800px;
             margin: 0 auto;
             overflow: hidden;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
         .slider-images {
@@ -34,11 +38,10 @@
         .slider-images img {
             width: 100%;
             flex-shrink: 0;
-            border-radius: 8px;
+            border-radius: 10px;
         }
 
-        button.prev,
-        button.next {
+        .slider-button {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
@@ -48,32 +51,34 @@
             font-size: 2rem;
             cursor: pointer;
             z-index: 10;
-            padding: 5px 15px;
+            padding: 10px 15px;
             border-radius: 50%;
         }
 
-        button.prev {
-            left: 10px;
-        }
-
-        button.next {
-            right: 10px;
-        }
-
-        button.prev:hover,
-        button.next:hover {
+        .slider-button:hover {
             background-color: rgba(0, 0, 0, 0.7);
         }
 
+        .slider-button.prev {
+            right: 10px;
+        }
+
+        .slider-button.next {
+            left: 10px;
+        }
+
         @media (max-width: 768px) {
+            .slider-section h2 a {
+                font-size: 1.5rem;
+            }
+
             .slider {
                 max-width: 90%;
             }
 
-            button.prev,
-            button.next {
+            .slider-button {
                 font-size: 1.5rem;
-                padding: 5px 10px;
+                padding: 8px 12px;
             }
         }
     </style>
@@ -83,12 +88,10 @@
     <!-- סליידר -->
     <section class="slider-section">
         <h2>
-            <a href="gallery.html" style="text-decoration: underline; color: #007bff;">
-                תמונות מהגלריה
-            </a>
+            <a href="gallery.html">תמונות מהגלריה</a>
         </h2>
         <div class="slider">
-            <button class="prev">&#10094;</button>
+            <button class="slider-button next">&#10094;</button>
             <div class="slider-images">
                 <img src="images/1.jpg" alt="תמונה 1">
                 <img src="images/2.jpg" alt="תמונה 2">
@@ -105,24 +108,24 @@
                 <img src="images/larana camping.png" alt="תמונה 13">
                 <img src="images/wood.jpg" alt="תמונה 14">
             </div>
-            <button class="next">&#10095;</button>
+            <button class="slider-button prev">&#10095;</button>
         </div>
     </section>
 
     <script>
         const sliderImages = document.querySelector('.slider-images');
         const images = document.querySelectorAll('.slider-images img');
-        const prevButton = document.querySelector('.prev');
-        const nextButton = document.querySelector('.next');
+        const prevButton = document.querySelector('.slider-button.prev');
+        const nextButton = document.querySelector('.slider-button.next');
         let index = 0;
 
         prevButton.addEventListener('click', () => {
-            index = (index > 0) ? index - 1 : images.length - 1;
+            index = (index < images.length - 1) ? index + 1 : 0;
             updateSlider();
         });
 
         nextButton.addEventListener('click', () => {
-            index = (index < images.length - 1) ? index + 1 : 0;
+            index = (index > 0) ? index - 1 : images.length - 1;
             updateSlider();
         });
 
