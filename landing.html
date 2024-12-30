@@ -10,13 +10,16 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <style>
         /* עיצוב גלריה */
-        .gallery-item img {
-            width: 100%;
-            height: auto;
-            max-width: 800px;
-            object-fit: contain;
-            border-radius: 10px;
-            margin: 0 auto;
+        .gallery-section {
+            padding: 20px;
+            background: #f9f9f9;
+            text-align: center;
+        }
+
+        .gallery-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #333;
         }
 
         .gallery-grid {
@@ -24,6 +27,14 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            max-width: 600px;
+            border-radius: 10px;
+            object-fit: contain;
         }
 
         /* עיצוב דפדפן התמונות */
@@ -165,11 +176,50 @@
         .cta-contact:hover {
             background-color: #e6e6e6;
         }
+
+        /* עיצוב שירותים */
+        .services {
+            padding: 20px;
+            background: #fff;
+            text-align: center;
+        }
+
+        .services h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .values-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .value-item {
+            background: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 300px;
+            text-align: center;
+        }
+
+        .value-item h3 {
+            color: #3a6186;
+            margin-bottom: 10px;
+        }
+
+        .value-item p {
+            color: #555;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
     </style>
 </head>
 
 <body>
-    <!-- כותרת עליונה -->
     <header class="header-banner">
         <div class="container">
             <nav class="navbar">
@@ -211,6 +261,25 @@
                 <button class="navigation-button next" id="next-button" onclick="showNextImage()">
                     <i class="fas fa-chevron-right"></i>
                 </button>
+            </div>
+        </section>
+
+        <!-- שירותים -->
+        <section class="services">
+            <h2>השירותים שלנו</h2>
+            <div class="values-grid">
+                <div class="value-item">
+                    <h3>עיצוב בהתאמה אישית</h3>
+                    <p>אנו מציעים עיצוב גדרות מותאם אישית לצרכים ולסגנון שלכם, תוך שימת דגש על יופי ופונקציונליות.</p>
+                </div>
+                <div class="value-item">
+                    <h3>התקנה מקצועית</h3>
+                    <p>צוות מומחים מיומן ידאג להתקנה מדויקת ומקצועית, לשביעות רצונכם המלאה.</p>
+                </div>
+                <div class="value-item">
+                    <h3>צביעה בתנור</h3>
+                    <p>שירותי צביעה בתנור באיכות גבוהה, להבטחת עמידות ויופי לטווח ארוך.</p>
+                </div>
             </div>
         </section>
 
