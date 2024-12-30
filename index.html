@@ -9,54 +9,14 @@
     <link rel="icon" href="images/larana camping2.png" type="image/png">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <style>
-        /* עיצוב שירותים */
-        .services {
-            padding: 20px;
-            background: #fff;
-            text-align: center;
-        }
-
-        .services h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: #333;
-        }
-
-        .values-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .value-item {
-            background: #f9f9f9;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            max-width: 300px;
-            text-align: center;
-        }
-
-        .value-item h3 {
-            color: #3a6186;
-            margin-bottom: 10px;
-        }
-
-        .value-item p {
-            color: #555;
-            font-size: 1rem;
-            line-height: 1.5;
-        }
-
-        /* קרוסלה */
-        .carousel-section {
+        /* עיצוב סליידר */
+        .slider-section {
             text-align: center;
             padding: 20px;
             background-color: #fff;
         }
 
-        .carousel {
+        .slider {
             position: relative;
             width: 100%;
             max-width: 600px;
@@ -66,12 +26,12 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        .carousel-images {
+        .slider-images {
             display: flex;
             transition: transform 0.5s ease-in-out;
         }
 
-        .carousel-images img {
+        .slider-images img {
             width: 100%;
             flex-shrink: 0;
             border-radius: 8px;
@@ -106,7 +66,7 @@
         }
 
         @media (max-width: 768px) {
-            .carousel {
+            .slider {
                 max-width: 90%;
             }
 
@@ -116,155 +76,58 @@
                 padding: 5px 10px;
             }
         }
-
-        /* כפתורי קריאה לפעולה */
-        .cta-buttons a {
-            display: inline-block;
-            padding: 10px 20px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            text-decoration: none;
-            color: #fff;
-            border-radius: 5px;
-            margin: 5px;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-
-        .cta-call {
-            background-color: #007bff;
-        }
-
-        .cta-call:hover {
-            background-color: #0056b3;
-            transform: scale(1.05);
-        }
-
-        .cta-whatsapp {
-            background-color: #25d366;
-        }
-
-        .cta-whatsapp:hover {
-            background-color: #1da851;
-            transform: scale(1.05);
-        }
-
-        .cta-contact {
-            background-color: #f9f9f9;
-            color: #333;
-            border: 2px solid #ddd;
-        }
-
-        .cta-contact:hover {
-            background-color: #e6e6e6;
-            transform: scale(1.05);
-        }
     </style>
 </head>
 
 <body>
-    <!-- כותרת עליונה -->
-    <header class="header-banner">
-        <div class="container">
-            <nav class="navbar">
-                <ul class="nav-links">
-                    <li><a href="index.html">דף הבית</a></li>
-                    <li><a href="about.html">אודות</a></li>
-                    <li><a href="gallery.html">גלריה</a></li>
-                    <li><a href="contact.html">צור קשר</a></li>
-                    <li>
-                        <a href="https://www.facebook.com/profile.php?id=61570398886746" target="_blank">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+    <!-- סליידר -->
+    <section class="slider-section">
+        <h2>
+            <a href="gallery.html" style="text-decoration: underline; color: #007bff;">
+                תמונות מהגלריה
+            </a>
+        </h2>
+        <div class="slider">
+            <button class="prev">&#10094;</button>
+            <div class="slider-images">
+                <img src="images/1.jpg" alt="תמונה 1">
+                <img src="images/2.jpg" alt="תמונה 2">
+                <img src="images/3.jpg" alt="תמונה 3">
+                <img src="images/4.jpg" alt="תמונה 4">
+                <img src="images/470672110_122106598682679962_1230314204217679116_n.jpg" alt="תמונה 5">
+                <img src="images/IMG_20241031_122522.jpg" alt="תמונה 6">
+                <img src="images/IMG_20241031_132755.jpg" alt="תמונה 7">
+                <img src="images/IMG_20241031_134058.jpg" alt="תמונה 8">
+                <img src="images/IMG_20241103_115628.jpg" alt="תמונה 9">
+                <img src="images/IMG_20241121_142831.jpg" alt="תמונה 10">
+                <img src="images/IMG_20241121_142836.jpg" alt="תמונה 11">
+                <img src="images/fance.jpg" alt="תמונה 12">
+                <img src="images/larana camping.png" alt="תמונה 13">
+                <img src="images/wood.jpg" alt="תמונה 14">
+            </div>
+            <button class="next">&#10095;</button>
         </div>
-    </header>
-
-    <!-- תוכן -->
-    <main class="container">
-        <!-- שירותים -->
-        <section class="services">
-            <h2>השירותים שלנו</h2>
-            <div class="values-grid">
-                <div class="value-item">
-                    <h3>עיצוב בהתאמה אישית</h3>
-                    <p>אנו מציעים עיצוב גדרות מותאם אישית לצרכים ולסגנון שלכם, תוך שימת דגש על יופי ופונקציונליות.</p>
-                </div>
-                <div class="value-item">
-                    <h3>התקנה מקצועית</h3>
-                    <p>צוות מומחים מיומן ידאג להתקנה מדויקת ומקצועית, לשביעות רצונכם המלאה.</p>
-                </div>
-                <div class="value-item">
-                    <h3>צביעה בתנור</h3>
-                    <p>שירותי צביעה בתנור באיכות גבוהה, להבטחת עמידות ויופי לטווח ארוך.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- קריאה לפעולה -->
-        <section class="cta-section">
-            <h2>מוכנים לעשות את הצעד הבא?</h2>
-            <div class="cta-buttons">
-                <a href="tel:+972502218880" class="cta-call"><i class="fas fa-phone-alt"></i> חיוג עכשיו</a>
-                <a href="https://wa.me/972502218880" class="cta-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-                <a href="contact.html" class="cta-contact"><i class="fas fa-envelope"></i> השארת פרטים</a>
-            </div>
-        </section>
-
-        <!-- קרוסלה -->
-        <section class="carousel-section">
-            <h2>
-                <a href="gallery.html" style="text-decoration: underline; color: #007bff;">
-                    תמונות מהגלריה
-                </a>
-            </h2>
-            <div class="carousel">
-                <button class="prev">&#10094;</button>
-                <div class="carousel-images">
-                    <img src="images/1.jpg" alt="תמונה 1">
-                    <img src="images/2.jpg" alt="תמונה 2">
-                    <img src="images/3.jpg" alt="תמונה 3">
-                    <img src="images/4.jpg" alt="תמונה 4">
-                    <img src="images/470672110_122106598682679962_1230314204217679116_n.jpg" alt="תמונה 5">
-                    <img src="images/IMG_20241031_122522.jpg" alt="תמונה 6">
-                    <img src="images/IMG_20241031_132755.jpg" alt="תמונה 7">
-                    <img src="images/IMG_20241031_134058.jpg" alt="תמונה 8">
-                    <img src="images/IMG_20241103_115628.jpg" alt="תמונה 9">
-                    <img src="images/IMG_20241121_142831.jpg" alt="תמונה 10">
-                    <img src="images/IMG_20241121_142836.jpg" alt="תמונה 11">
-                    <img src="images/fance.jpg" alt="תמונה 12">
-                    <img src="images/larana camping.png" alt="תמונה 13">
-                    <img src="images/wood.jpg" alt="תמונה 14">
-                </div>
-                <button class="next">&#10095;</button>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <p>© כל הזכויות שמורות - גדרות זיו בגולן</p>
-    </footer>
+    </section>
 
     <script>
-        const carouselImages = document.querySelector('.carousel-images');
-        const images = document.querySelectorAll('.carousel-images img');
+        const sliderImages = document.querySelector('.slider-images');
+        const images = document.querySelectorAll('.slider-images img');
         const prevButton = document.querySelector('.prev');
         const nextButton = document.querySelector('.next');
         let index = 0;
 
         prevButton.addEventListener('click', () => {
             index = (index > 0) ? index - 1 : images.length - 1;
-            updateCarousel();
+            updateSlider();
         });
 
         nextButton.addEventListener('click', () => {
             index = (index < images.length - 1) ? index + 1 : 0;
-            updateCarousel();
+            updateSlider();
         });
 
-        function updateCarousel() {
-            carouselImages.style.transform = `translateX(-${index * 100}%)`;
+        function updateSlider() {
+            sliderImages.style.transform = `translateX(-${index * 100}%)`;
         }
     </script>
 </body>
