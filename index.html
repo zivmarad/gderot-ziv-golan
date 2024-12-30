@@ -4,199 +4,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>גלריית תמונות</title>
+    <title>תמונות - גדרות זיו בגולן</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <style>
-        /* עיצוב הגלריה */
-        .gallery-section {
+        /* עיצוב התצוגה */
+        .image-viewer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            padding: 20px;
             background-color: #f4f4f4;
+            height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
         }
 
-        .gallery-section h2 a {
-            text-decoration: none;
-            color: #007bff;
-            font-size: 1.5rem;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 10px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .gallery-item {
-            position: relative;
-            cursor: pointer;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: auto;
-            border-radius: 5px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .gallery-item img:hover {
-            transform: scale(1.05);
+        .image-viewer img {
+            max-width: 90%;
+            max-height: 70vh;
+            border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
-        /* עיצוב החלון הקופץ */
-        .lightbox {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            display: none;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-        }
-
-        .lightbox img {
-            max-width: 90%;
-            max-height: 90%;
-            border-radius: 5px;
-        }
-
-        .lightbox:target {
+        .navigation-buttons {
             display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
         }
 
-        .lightbox .close {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            color: #fff;
-            font-size: 2rem;
-            text-decoration: none;
-            background: rgba(0, 0, 0, 0.5);
-            padding: 5px 10px;
+        .navigation-buttons button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
             border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
         }
 
-        .lightbox .close:hover {
-            background: rgba(0, 0, 0, 0.8);
+        .navigation-buttons button:hover {
+            background-color: #0056b3;
+        }
+
+        .navigation-buttons button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
         }
     </style>
 </head>
 
 <body>
-    <!-- גלריה -->
-    <section class="gallery-section">
-        <h2>
-            <a href="gallery.html">תמונות מהגלריה</a>
-        </h2>
-        <div class="gallery-grid">
-            <!-- פריטים בגלריה -->
-            <a href="#img1" class="gallery-item">
-                <img src="images/1.jpg" alt="תמונה 1">
-            </a>
-            <a href="#img2" class="gallery-item">
-                <img src="images/2.jpg" alt="תמונה 2">
-            </a>
-            <a href="#img3" class="gallery-item">
-                <img src="images/3.jpg" alt="תמונה 3">
-            </a>
-            <a href="#img4" class="gallery-item">
-                <img src="images/4.jpg" alt="תמונה 4">
-            </a>
-            <a href="#img5" class="gallery-item">
-                <img src="images/470672110_122106598682679962_1230314204217679116_n.jpg" alt="תמונה 5">
-            </a>
-            <a href="#img6" class="gallery-item">
-                <img src="images/IMG_20241031_122522.jpg" alt="תמונה 6">
-            </a>
-            <a href="#img7" class="gallery-item">
-                <img src="images/IMG_20241031_132755.jpg" alt="תמונה 7">
-            </a>
-            <a href="#img8" class="gallery-item">
-                <img src="images/IMG_20241031_134058.jpg" alt="תמונה 8">
-            </a>
-            <a href="#img9" class="gallery-item">
-                <img src="images/IMG_20241103_115628.jpg" alt="תמונה 9">
-            </a>
-            <a href="#img10" class="gallery-item">
-                <img src="images/IMG_20241121_142831.jpg" alt="תמונה 10">
-            </a>
-            <a href="#img11" class="gallery-item">
-                <img src="images/IMG_20241121_142836.jpg" alt="תמונה 11">
-            </a>
-            <a href="#img12" class="gallery-item">
-                <img src="images/fance.jpg" alt="תמונה 12">
-            </a>
-            <a href="#img13" class="gallery-item">
-                <img src="images/larana camping.png" alt="תמונה 13">
-            </a>
-            <a href="#img14" class="gallery-item">
-                <img src="images/wood.jpg" alt="תמונה 14">
-            </a>
+    <div class="image-viewer">
+        <h2>תמונות מהגלריה</h2>
+        <img id="current-image" src="images/1.jpg" alt="תמונה 1">
+        <div class="navigation-buttons">
+            <button id="prev-button" onclick="showPrevImage()">תמונה קודמת</button>
+            <button id="next-button" onclick="showNextImage()">תמונה הבאה</button>
         </div>
-    </section>
+    </div>
 
-    <!-- חלונות קופצים -->
-    <div id="img1" class="lightbox">
-        <a href="#" class="close">&times;</a>
-        <img src="images/1.jpg" alt="תמונה 1">
-    </div>
-    <div id="img2" class="lightbox">
-        <a href="#" class="close">&times;</a>
-        <img src="images/2.jpg" alt="תמונה 2">
-    </div>
-    <div id="img3" class="lightbox">
-        <a href="#" class="close">&times;</a>
-        <img src="images/3.jpg" alt="תמונה 3">
-    </div>
-    <div id="img4" class="lightbox">
-        <a href="#" class="close">&times;</a>
-        <img src="images/4.jpg" alt="תמונה 4">
-    </div>
-    <div id="img5" class="lightbox">
-        <a href="#" class="close">&times;</a>
-        <img src="images/470672110_122106598682679962_1230314204217679116_n.jpg" alt="תמונה 5">
-    </div>
-    <div id="img6" class="lightbox">
-        <a href="#" class="close">&times;</a>
-        <img src="images/IMG_20241031_122522.jpg" alt="תמונה 6">
-    </div>
-    <div id="img7" class="lightbox">
-        <a href="#" class="close">&times;</a>
-        <img src="images/IMG_20241031_132755.jpg" alt="תמונה 7">
-    </div>
-    <div id="img8" class="lightbox">
-        <a href="#" class="close">&times;</a>
-        <img src="images/IMG_20241031_134058.jpg" alt="תמונה 8">
-    </div>
-    <div id="img9" class="lightbox">
-        <a href="#" class="close">&times;</a>
-        <img src="images/IMG_20241103_115628.jpg" alt="תמונה 9">
-    </div>
-    <div id="img10" class="lightbox">
-        <a href="#" class="close">&times;</a>
-        <img src="images/IMG_20241121_142831.jpg" alt="תמונה 10">
-    </div>
-    <div id="img11" class="lightbox">
-        <a href="#" class="close">&times;</a>
-        <img src="images/IMG_20241121_142836.jpg" alt="תמונה 11">
-    </div>
-    <div id="img12" class="lightbox">
-        <a href="#" class="close">&times;</a>
-        <img src="images/fance.jpg" alt="תמונה 12">
-    </div>
-    <div id="img13" class="lightbox">
-        <a href="#" class="close">&times;</a>
-        <img src="images/larana camping.png" alt="תמונה 13">
-    </div>
-    <div id="img14" class="lightbox">
-        <a href="#" class="close">&times;</a>
-        <img src="images/wood.jpg" alt="תמונה 14">
-    </div>
+    <script>
+        const images = [
+            "images/1.jpg",
+            "images/2.jpg",
+            "images/3.jpg",
+            "images/4.jpg",
+            "images/470672110_122106598682679962_1230314204217679116_n.jpg",
+            "images/IMG_20241031_122522.jpg",
+            "images/IMG_20241031_132755.jpg",
+            "images/IMG_20241031_134058.jpg",
+            "images/IMG_20241103_115628.jpg",
+            "images/IMG_20241121_142831.jpg",
+            "images/IMG_20241121_142836.jpg",
+            "images/fance.jpg",
+            "images/larana camping.png",
+            "images/wood.jpg"
+        ];
+
+        let currentIndex = 0;
+
+        function showImage(index) {
+            const imageElement = document.getElementById("current-image");
+            const prevButton = document.getElementById("prev-button");
+            const nextButton = document.getElementById("next-button");
+
+            imageElement.src = images[index];
+            imageElement.alt = `תמונה ${index + 1}`;
+
+            prevButton.disabled = index === 0;
+            nextButton.disabled = index === images.length - 1;
+        }
+
+        function showPrevImage() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                showImage(currentIndex);
+            }
+        }
+
+        function showNextImage() {
+            if (currentIndex < images.length - 1) {
+                currentIndex++;
+                showImage(currentIndex);
+            }
+        }
+
+        // הצגת התמונה הראשונה
+        showImage(currentIndex);
+    </script>
 </body>
 
 </html>
