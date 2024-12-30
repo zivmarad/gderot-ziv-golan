@@ -250,25 +250,16 @@
         }
 
         /* Slider Images */
-        .slider-section h2 a {
-            color: #007bff;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.5rem;
-            border-bottom: 2px solid #007bff;
-            padding-bottom: 4px;
-            transition: color 0.3s, border-bottom-color 0.3s;
-        }
-
-        .slider-section h2 a:hover {
-            color: #0056b3;
-            border-bottom-color: #0056b3;
+        .slider-section {
+            text-align: center;
+            padding: 20px;
+            background: #f9f9f9;
         }
 
         .slider {
             position: relative;
             max-width: 800px;
-            margin: 20px auto;
+            margin: 0 auto;
             overflow: hidden;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -307,6 +298,18 @@
 
         .slider-buttons button:hover {
             background: rgba(0, 0, 0, 0.7);
+        }
+
+        .slider-section h2 a {
+            color: #333;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .slider-section h2 a:hover {
+            color: #007bff;
+            text-decoration: underline;
         }
 
     </style>
@@ -440,7 +443,22 @@
             nextButton.addEventListener('click', nextSlide);
             prevButton.addEventListener('click', prevSlide);
 
-            setInterval(nextSlide, 5000); // סליידר אוטומטי כל 5 שניות
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            function handleSwipe() {
+                if (touchEndX < touchStartX) nextSlide();
+                if (touchEndX > touchStartX) prevSlide();
+            }
+
+            document.querySelector('.slider').addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            });
+
+            document.querySelector('.slider').addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            });
         });
     </script>
 </body>
