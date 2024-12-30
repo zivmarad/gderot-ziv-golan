@@ -410,7 +410,7 @@
             const nextButton = document.getElementById("next-button");
 
             imageElement.src = images[index];
-            imageElement.alt = תמונה ${index + 1};
+            imageElement.alt = `תמונה ${index + 1}`;
 
             prevButton.disabled = index === 0;
             nextButton.disabled = index === images.length - 1;
