@@ -4,67 +4,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>דף הבית - גדרות זיו בגולן</title>
+    <title>גלריה - גדרות זיו בגולן</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="images/larana camping.png" type="image/png">
+    <link rel="icon" href="images/larana camping2.png" type="image/png">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <style>
-        /* עיצוב גלריה */
-        .gallery-section {
-            padding: 20px;
-            background: #f9f9f9;
+        .header-banner {
+            background-color: #fff;
+            color: black;
+            padding: 20px 0;
             text-align: center;
+            border-bottom: 2px solid #ddd;
         }
 
-        .gallery-section h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
+        .header-banner img {
+            max-width: 250px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .header-banner h1 {
+            font-size: 2.5rem;
+            margin: 0;
             color: #333;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .nav-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: nowrap;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ffcc00;
+        }
+
+        .gallery-section {
+            text-align: center;
+            margin: 20px auto;
         }
 
         .gallery-grid {
             display: flex;
-            flex-direction: column;
+            flex-wrap: wrap;
             gap: 20px;
-            align-items: center;
+            justify-content: center;
         }
 
         .gallery-item {
-            border: 2px solid #ccc;
-            border-radius: 8px;
-            overflow: hidden;
-            width: 90%;
-            max-width: 800px;
-            margin: 0 auto;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             cursor: pointer;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            max-width: 300px;
         }
 
         .gallery-item img {
             width: 100%;
             height: auto;
-            max-height: 500px;
-            object-fit: cover;
-        }
-
-        @media (min-width: 1024px) {
-            .gallery-item {
-                max-width: 700px;
-            }
-
-            .gallery-item img {
-                max-height: 400px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .gallery-item {
-                max-width: 100%;
-            }
-
-            .gallery-item img {
-                max-height: 1000px;
-            }
+            display: block;
         }
 
         /* Lightbox */
@@ -96,228 +116,10 @@
             color: white;
             cursor: pointer;
         }
-
-        /* עיצוב שירותים */
-        .services {
-            padding: 20px;
-            background: #fff;
-            text-align: center;
-        }
-
-        .services h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: #333;
-        }
-
-        .values-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .value-item {
-            background: #f9f9f9;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            max-width: 300px;
-            text-align: center;
-        }
-
-        .value-item h3 {
-            color: #3a6186;
-            margin-bottom: 10px;
-        }
-
-        .value-item p {
-            color: #555;
-            font-size: 1rem;
-            line-height: 1.5;
-        }
-
-        /* עיצוב תפריט וכותרת */
-        .header-banner {
-            background-color: #fff !important;
-            padding: 20px 0;
-            text-align: center;
-        }
-
-        .navbar {
-            background-color: #fff;
-            padding: 10px;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .nav-links {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: nowrap;
-        }
-
-        .nav-links a {
-            color: #333;
-            text-decoration: none;
-            font-size: 1.2rem;
-            font-weight: bold;
-            padding: 0;
-            background: none;
-        }
-
-        .nav-links a:hover {
-            text-decoration: underline;
-        }
-
-        /* התאמה למובייל */
-        @media (max-width: 768px) {
-            .nav-links {
-                flex-wrap: nowrap;
-                justify-content: space-around;
-            }
-
-            .nav-links a {
-                font-size: 1rem;
-            }
-        }
-
-        body {
-            opacity: 1;
-            transition: opacity 0.5s ease-in-out;
-            background-color: #fff;
-        }
-
-        body.fade-out {
-            opacity: 0;
-        }
-
-        /* עיצוב כפתורי קריאה לפעולה */
-        .cta-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            align-items: center;
-            margin-top: 20px;
-        }
-
-        .cta-buttons a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 200px;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            text-decoration: none;
-            transition: background-color 0.3s, transform 0.2s;
-        }
-
-        .cta-buttons a:hover {
-            transform: scale(1.05);
-        }
-
-        .cta-call {
-            background-color: #007bff;
-            color: white;
-        }
-
-        .cta-call:hover {
-            background-color: #0056b3;
-        }
-
-        .cta-whatsapp {
-            background-color: #25d366;
-            color: white;
-        }
-
-        .cta-whatsapp:hover {
-            background-color: #1da851;
-        }
-
-        .cta-contact {
-            background-color: #f9f9f9;
-            color: #333;
-            border: 2px solid #ddd;
-        }
-
-        .cta-contact:hover {
-            background-color: #e6e6e6;
-        }
-
-        /* Slider Images */
-        .slider-section {
-            padding: 20px;
-            background: #fff;
-            text-align: center;
-        }
-
-        .slider {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
-            overflow: hidden;
-            border-radius: 10px;
-        }
-
-        .slider img {
-            width: 100%;
-            display: none;
-        }
-
-        .slider img.active {
-            display: block;
-        }
-
-        .slider-buttons {
-            position: absolute;
-            top: 50%;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            transform: translateY(-50%);
-        }
-
-        .slider-buttons button {
-            background: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            padding: 10px;
-            border-radius: 50%;
-        }
-
-        .slider-buttons button:hover {
-            background: rgba(0, 0, 0, 0.7);
-        }
-
-        .gallery-link {
-            display: inline-block;
-            margin-bottom: 20px;
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: white;
-            text-decoration: none;
-            font-size: 1.2rem;
-            font-weight: bold;
-            border-radius: 5px;
-            transition: background-color 0.3s ease-in-out;
-        }
-
-        .gallery-link:hover {
-            background-color: #0056b3;
-        }
-
     </style>
 </head>
 
 <body>
-    <!-- כותרת עליונה -->
     <header class="header-banner">
         <div class="container">
             <nav class="navbar">
@@ -326,29 +128,20 @@
                     <li><a href="about.html">אודות</a></li>
                     <li><a href="gallery.html">גלריה</a></li>
                     <li><a href="contact.html">צור קשר</a></li>
-                    <li>
-                        <a href="https://www.facebook.com/profile.php?id=61570398886746" target="_blank">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                    </li>
                 </ul>
             </nav>
-            <img src="images/larana camping2.png" alt="ברוכים הבאים לגדרות זיו בגולן" style="max-width: 100%; height: auto; margin-top: 10px;">
+            <img src="images/larana camping2.png" alt="לוגו">
         </div>
     </header>
 
-    <!-- גלריה -->
     <main class="container">
         <section class="gallery-section">
-            <h2>תמונות מפרויקטים</h2>
-            <a href="gallery.html" class="gallery-link">תמונות נוספות מהגלריה</a>
+            <h1>גלריית פרויקטים</h1>
             <div class="gallery-grid">
-                <div class="gallery-item"><img src="images/1.jpg" alt="תמונה 1"></div>
-                <div class="gallery-item"><img src="images/2.jpg" alt="תמונה 2"></div>
-                <div class="gallery-item"><img src="images/3.jpg" alt="תמונה 3"></div>
-                <div class="gallery-item"><img src="images/4.jpg" alt="תמונה 4"></div>
-                <div class="gallery-item"><img src="images/fance.jpg" alt="תמונה 5"></div>
-                <div class="gallery-item"><img src="images/IMG_20241121_142831.jpg" alt="תמונה 6"></div>
+                <div class="gallery-item"><img src="images/IMG_20241031_134058.jpg" alt="תמונה 12"></div>
+                <div class="gallery-item"><img src="images/IMG_20241121_142836.jpg" alt="תמונה 7"></div>
+                <div class="gallery-item"><img src="images/IMG_20241031_122522.jpg" alt="תמונה 8"></div>
+                <div class="gallery-item"><img src="images/IMG_20241031_132755.jpg" alt="תמונה 9"></div>
             </div>
         </section>
 
@@ -357,115 +150,14 @@
             <span class="close">&times;</span>
             <img src="" alt="">
         </div>
-
-        <!-- שירותים -->
-        <section class="services">
-            <h2>השירותים שלנו</h2>
-            <div class="values-grid">
-                <div class="value-item">
-                    <h3>עיצוב בהתאמה אישית</h3>
-                    <p>אנו מציעים עיצוב גדרות מותאם אישית לצרכים ולסגנון שלכם, תוך שימת דגש על יופי ופונקציונליות.</p>
-                </div>
-                <div class="value-item">
-                    <h3>התקנה מקצועית</h3>
-                    <p>צוות מומחים מיומן ידאג להתקנה מדויקת ומקצועית, לשביעות רצונכם המלאה.</p>
-                </div>
-                <div class="value-item">
-                    <h3>צביעה בתנור</h3>
-                    <p>שירותי צביעה בתנור באיכות גבוהה, להבטחת עמידות ויופי לטווח ארוך.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- קריאה לפעולה -->
-        <section class="cta-section">
-            <h2>מוכנים לעשות את הצעד הבא?</h2>
-            <div class="cta-buttons">
-                <a href="tel:+972502218880" class="cta-call">
-                    <i class="fas fa-phone-alt"></i> חיוג עכשיו
-                </a>
-                <a href="https://wa.me/972502218880" class="cta-whatsapp">
-                    <i class="fab fa-whatsapp"></i> WhatsApp
-                </a>
-                <a href="contact.html" class="cta-contact">
-                    <i class="fas fa-envelope"></i> השארת פרטים
-                </a>
-            </div>
-        </section>
-
-        <!-- Slider תמונות -->
-        <section class="slider-section">
-            <h2>תמונות נוספות מהגלריה</h2>
-            <div class="slider">
-                <img src="images/IMG_20241031_134058.jpg" alt="תמונה 12" class="active">
-                <img src="images/IMG_20241121_142836.jpg" alt="תמונה 7">
-                <img src="images/IMG_20241031_122522.jpg" alt="תמונה 8">
-                <img src="images/IMG_20241031_132755.jpg" alt="תמונה 9">
-                <img src="images/1.jpg" alt="תמונה 1">
-                <img src="images/2.jpg" alt="תמונה 2">
-                <img src="images/3.jpg" alt="תמונה 3">
-                <img src="images/4.jpg" alt="תמונה 4">
-                <img src="images/fance.jpg" alt="תמונה 5">
-                <img src="images/IMG_20241121_142831.jpg" alt="תמונה 6">
-                <img src="images/IMG_20241103_115628.jpg" alt="תמונה 10">
-                <img src="images/larana camping.png" alt="תמונה 11">
-                <div class="slider-buttons">
-                    <button class="prev">❮</button>
-                    <button class="next">❯</button>
-                </div>
-            </div>
-        </section>
     </main>
 
-    <!-- פוטר -->
     <footer class="footer">
         <p>© כל הזכויות שמורות - גדרות זיו בגולן</p>
     </footer>
 
-    <!-- סקריפט -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            const links = document.querySelectorAll("a");
-
-            links.forEach(link => {
-                link.addEventListener("click", (event) => {
-                    const href = link.getAttribute("href");
-
-                    // בדיקה אם זו קפיצה לדף חיצוני
-                    if (!href.includes(".html")) return;
-
-                    event.preventDefault();
-                    document.body.classList.add("fade-out");
-
-                    setTimeout(() => {
-                        window.location.href = href;
-                    }, 500); // משך האנימציה (חייב להתאים ל-CSS)
-                });
-            });
-
-            // Slider תמונות
-            const sliderImages = document.querySelectorAll(".slider img");
-            const prevButton = document.querySelector(".slider .prev");
-            const nextButton = document.querySelector(".slider .next");
-            let currentIndex = 0;
-
-            function updateSlider(index) {
-                sliderImages.forEach((img, i) => {
-                    img.classList.toggle("active", i === index);
-                });
-            }
-
-            prevButton.addEventListener("click", () => {
-                currentIndex = (currentIndex > 0) ? currentIndex - 1 : sliderImages.length - 1;
-                updateSlider(currentIndex);
-            });
-
-            nextButton.addEventListener("click", () => {
-                currentIndex = (currentIndex < sliderImages.length - 1) ? currentIndex + 1 : 0;
-                updateSlider(currentIndex);
-            });
-
-            // Lightbox
             const galleryItems = document.querySelectorAll(".gallery-item img");
             const lightbox = document.getElementById("lightbox");
             const lightboxImg = lightbox.querySelector("img");
@@ -486,7 +178,6 @@
                 if (e.target === lightbox) {
                     lightbox.style.display = "none";
                 }
-           
             });
         });
     </script>
