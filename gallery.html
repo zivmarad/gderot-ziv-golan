@@ -52,10 +52,14 @@
             text-decoration: underline;
         }
 
-        @media (max-width: 768px) {
-            .nav-links {
-                flex-wrap: nowrap;
-                justify-content: space-around;
+        @media (min-width: 1024px) {
+    .gallery-item img {
+        max-width: 1000px;
+        max-height: 700px;
+        object-fit: cover;
+    }
+}
+
             }
 
             .nav-links a {
