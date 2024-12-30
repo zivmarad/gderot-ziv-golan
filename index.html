@@ -199,74 +199,39 @@
             background-color: #e6e6e6;
         }
 
-        /* Slider Images */
-.slider-section {
-    text-align: center;
-    padding: 20px;
-    background: #f9f9f9;
-}
-
-.slider {
-    position: relative;
-    max-width: 700px;
-    margin: 0 auto;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.slider img {
-    width: 100%;
-    display: none;
-    transition: opacity 0.8s ease-in-out;
-}
-
-.slider img.active {
-    display: block;
-    opacity: 1;
-}
-
-/* כפתורי הניווט בתוך הסליידר */
-.slider-buttons {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    transform: translateY(-50%);
-    padding: 0 20px;  /* מרווח בין הכפתורים לדפדפן */
-}
-
-.slider-buttons button {
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    font-size: 2rem;
-    cursor: pointer;
-    padding: 10px;
-    border-radius: 50%;
-    transition: background 0.3s;
-    width: 50px;
-    height: 50px;
-}
-
-.slider-buttons button:hover {
-    background: rgba(0, 0, 0, 0.7);
-}
-
+        /* גלריה */
+        .gallery-section {
+            text-align: center;
+            padding: 20px;
+            background: #f9f9f9;
         }
 
-        .slider-section h2 a {
-            color: #e17d3d;
-            text-decoration: none;
-            font-size: 1.5rem;
-            font-weight: bold;
-            border-bottom: 2px solid #e17d3d;
+        .gallery-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
         }
 
-        .slider-section h2 a:hover {
-            color: #333;
-            text-decoration: none;
+        .gallery-item {
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            overflow: hidden;
+            width: 90%;
+            max-width: 800px;
+            margin: 10px auto;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
         }
 
     </style>
@@ -341,29 +306,6 @@
                 </a>
             </div>
         </section>
-
-        <!-- Slider תמונות -->
-        <section class="slider-section">
-            <h2><a href="gallery.html">תמונות נוספות מהגלריה</a></h2>
-            <div class="slider">
-                <img src="images/IMG_20241031_134058.jpg" alt="תמונה 12" class="active">
-                <img src="images/IMG_20241121_142836.jpg" alt="תמונה 7">
-                <img src="images/IMG_20241031_122522.jpg" alt="תמונה 8">
-                <img src="images/IMG_20241031_132755.jpg" alt="תמונה 9">
-                <img src="images/1.jpg" alt="תמונה 1">
-                <img src="images/2.jpg" alt="תמונה 2">
-                <img src="images/3.jpg" alt="תמונה 3">
-                <img src="images/4.jpg" alt="תמונה 4">
-                <img src="images/fance.jpg" alt="תמונה 5">
-                <img src="images/IMG_20241121_142831.jpg" alt="תמונה 6">
-                <img src="images/IMG_20241103_115628.jpg" alt="תמונה 10">
-                <img src="images/larana camping.png" alt="תמונה 11">
-            </div>
-            <div class="slider-buttons">
-                <button class="prev">❮</button>
-                <button class="next">❯</button>
-            </div>
-        </section>
     </main>
 
     <!-- פוטר -->
@@ -371,53 +313,6 @@
         <p>© כל הזכויות שמורות - גדרות זיו בגולן</p>
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const slides = document.querySelectorAll('.slider img');
-            const prevButton = document.querySelector('.slider-buttons .prev');
-            const nextButton = document.querySelector('.slider-buttons .next');
-            let currentSlide = 0;
-
-            function showSlide(index) {
-                slides.forEach((slide, i) => {
-                    slide.classList.remove('active');
-                    if (i === index) {
-                        slide.classList.add('active');
-                    }
-                });
-            }
-
-            function nextSlide() {
-                currentSlide = (currentSlide + 1) % slides.length;
-                showSlide(currentSlide);
-            }
-
-            function prevSlide() {
-                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-                showSlide(currentSlide);
-            }
-
-            nextButton.addEventListener('click', nextSlide);
-            prevButton.addEventListener('click', prevSlide);
-
-            let touchStartX = 0;
-            let touchEndX = 0;
-
-            function handleSwipe() {
-                if (touchEndX < touchStartX) nextSlide();
-                if (touchEndX > touchStartX) prevSlide();
-            }
-
-            document.querySelector('.slider').addEventListener('touchstart', (e) => {
-                touchStartX = e.changedTouches[0].screenX;
-            });
-
-            document.querySelector('.slider').addEventListener('touchend', (e) => {
-                touchEndX = e.changedTouches[0].screenX;
-                handleSwipe();
-            });
-        });
-    </script>
 </body>
 
 </html>
