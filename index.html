@@ -107,11 +107,17 @@
         ];
 
         let currentIndex = 0;
+        let isTransitioning = false; // מנע לחיצה כפולה בזמן מעבר
 
         function showImage(index) {
             const imageElement = document.getElementById("current-image");
             const prevButton = document.getElementById("prev-button");
             const nextButton = document.getElementById("next-button");
+
+            isTransitioning = true; // מנע לחיצה נוספת
+            setTimeout(() => {
+                isTransitioning = false; // אפשר לחיצה לאחר המעבר
+            }, 300);
 
             imageElement.src = images[index];
             imageElement.alt = `תמונה ${index + 1}`;
@@ -121,14 +127,14 @@
         }
 
         function showPrevImage() {
-            if (currentIndex > 0) {
+            if (!isTransitioning && currentIndex > 0) {
                 currentIndex--;
                 showImage(currentIndex);
             }
         }
 
         function showNextImage() {
-            if (currentIndex < images.length - 1) {
+            if (!isTransitioning && currentIndex < images.length - 1) {
                 currentIndex++;
                 showImage(currentIndex);
             }
