@@ -9,7 +9,193 @@
     <link rel="icon" href="images/larana camping2.png" type="image/png">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <style>
-        /* עיצוב כפתורי דפדוף */
+        /* עיצוב גלריה */
+        .gallery-section {
+            padding: 20px;
+            background: #f9f9f9;
+            text-align: center;
+        }
+
+        .gallery-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .gallery-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .gallery-item {
+            width: 300px;
+            height: 200px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        /* עיצוב lightbox */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1000;
+        }
+
+        .lightbox.active {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+        }
+
+        .lightbox .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2rem;
+            color: white;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .lightbox .close-btn:hover {
+            color: #ccc;
+        }
+
+        /* עיצוב שירותים */
+        .services {
+            padding: 20px;
+            background: #fff;
+            text-align: center;
+        }
+
+        .services h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .values-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .value-item {
+            background: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 300px;
+            text-align: center;
+        }
+
+        .value-item h3 {
+            color: #3a6186;
+            margin-bottom: 10px;
+        }
+
+        .value-item p {
+            color: #555;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        /* עיצוב כפתורי יצירת קשר */
+        .cta-section {
+            background-color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .cta-buttons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 200px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .cta-buttons a:hover {
+            transform: scale(1.05);
+        }
+
+        .cta-call {
+            background-color: #007bff;
+        }
+
+        .cta-call:hover {
+            background-color: #0056b3;
+        }
+
+        .cta-whatsapp {
+            background-color: #25d366;
+        }
+
+        .cta-whatsapp:hover {
+            background-color: #1da851;
+        }
+
+        .cta-contact {
+            background-color: #ffc107;
+            color: #333;
+        }
+
+        .cta-contact:hover {
+            background-color: #e0a800;
+        }
+
+        /* דפדפן התמונות */
         .image-viewer {
             display: flex;
             flex-direction: column;
@@ -23,15 +209,22 @@
 
         .image-container {
             position: relative;
-            max-width: 400px;
-            width: 90%;
+            width: 80%;
+            max-width: 800px;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
         }
 
         .image-container img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
         }
 
         .navigation-button {
@@ -66,16 +259,30 @@
             cursor: not-allowed;
         }
 
-        .image-viewer h2 {
-            margin-bottom: 20px;
-            font-size: 1.5rem;
-            color: #333;
+        /* התאמות למובייל */
+        @media (max-width: 768px) {
+            .gallery-item {
+                width: 100%;
+                height: auto;
+            }
+
+            .gallery-item img {
+                height: auto;
+            }
+
+            .image-container {
+                width: 100%;
+                height: auto;
+            }
+
+            .image-container img {
+                object-fit: contain;
+            }
         }
     </style>
 </head>
 
 <body>
-    <!-- כל התוכן הקיים שלך נשמר -->
     <header class="header-banner">
         <div class="container">
             <nav class="navbar">
@@ -96,19 +303,25 @@
     </header>
 
     <main class="container">
-        <!-- קוד קיים של גלריה, שירותים וקריאה לפעולה -->
+        <!-- גלריה -->
         <section class="gallery-section">
             <h2>תמונות מפרויקטים</h2>
             <div class="gallery-grid">
-                <div class="gallery-item"><img src="images/1.jpg" alt="תמונה 1"></div>
-                <div class="gallery-item"><img src="images/2.jpg" alt="תמונה 2"></div>
-                <div class="gallery-item"><img src="images/3.jpg" alt="תמונה 3"></div>
-                <div class="gallery-item"><img src="images/4.jpg" alt="תמונה 4"></div>
-                <div class="gallery-item"><img src="images/fance.jpg" alt="תמונה 5"></div>
-                <div class="gallery-item"><img src="images/IMG_20241121_142831.jpg" alt="תמונה 6"></div>
+                <div class="gallery-item"><img src="images/1.jpg" alt="תמונה 1" onclick="openLightbox('images/1.jpg')"></div>
+                <div class="gallery-item"><img src="images/2.jpg" alt="תמונה 2" onclick="openLightbox('images/2.jpg')"></div>
+                <div class="gallery-item"><img src="images/3.jpg" alt="תמונה 3" onclick="openLightbox('images/3.jpg')"></div>
+                <div class="gallery-item"><img src="images/IMG_20241230_095906.jpg" alt="תמונה 4" onclick="openLightbox('images/IMG_20241230_095906.jpg')"></div>
+                <div class="gallery-item"><img src="images/IMG_20241230_095845.jpg" alt="תמונה 5" onclick="openLightbox('images/IMG_20241230_095845.jpg')"></div>
             </div>
         </section>
 
+        <!-- lightbox -->
+        <div class="lightbox" id="lightbox">
+            <button class="close-btn" onclick="closeLightbox()">&times;</button>
+            <img id="lightbox-img" src="" alt="תמונה מוגדלת">
+        </div>
+
+        <!-- שירותים -->
         <section class="services">
             <h2>השירותים שלנו</h2>
             <div class="values-grid">
@@ -127,8 +340,9 @@
             </div>
         </section>
 
+        <!-- יצירת קשר -->
         <section class="cta-section">
-            <h2>מוכנים לעשות את הצעד הבא?</h2>
+            <p>מוכנים לעשות את הצעד הבא? פנו אלינו עכשיו!</p>
             <div class="cta-buttons">
                 <a href="tel:+972502218880" class="cta-call">
                     <i class="fas fa-phone-alt"></i> חיוג עכשיו
@@ -142,9 +356,9 @@
             </div>
         </section>
 
-        <!-- תצוגת התמונות -->
+        <!-- דפדפן התמונות -->
         <section class="image-viewer">
-            <h2>תמונות מהגלריה</h2>
+            <h2><a href="gallery.html">תמונות מהגלריה</a></h2>
             <div class="image-container">
                 <button class="navigation-button prev" id="prev-button" onclick="showPrevImage()">
                     <i class="fas fa-chevron-left"></i>
@@ -157,7 +371,6 @@
         </section>
     </main>
 
-    <!-- פוטר -->
     <footer class="footer">
         <p>© כל הזכויות שמורות - גדרות זיו בגולן</p>
     </footer>
@@ -167,9 +380,20 @@
             "images/1.jpg",
             "images/2.jpg",
             "images/3.jpg",
+            "images/IMG_20241230_095906.jpg",
+            "images/IMG_20241230_095845.jpg",
             "images/4.jpg",
             "images/fance.jpg",
-            "images/IMG_20241121_142831.jpg"
+            "images/IMG_20241121_142831.jpg",
+            "images/IMG_20241031_122522.jpg",
+            "images/IMG_20241031_132755.jpg",
+            "images/IMG_20241031_134058.jpg",
+            "images/IMG_20241103_115628.jpg",
+            "images/IMG_20241121_142836.jpg",
+            "images/IMG_20241230_095842.jpg",
+            "images/IMG_20241230_095855.jpg",
+            "images/IMG_20241230_095857.jpg",
+            "images/IMG_20241230_095905.jpg"
         ];
 
         let currentIndex = 0;
@@ -200,8 +424,27 @@
             }
         }
 
-        // הצגת התמונה הראשונה
-        showImage(currentIndex);
+        function openLightbox(imageSrc) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightboxImg.src = imageSrc;
+            lightbox.classList.add('active');
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+        }
+
+        document.getElementById('lightbox').addEventListener('click', (e) => {
+            if (e.target === e.currentTarget) {
+                closeLightbox();
+            }
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+            showImage(currentIndex);
+        });
     </script>
 </body>
 
