@@ -35,7 +35,6 @@
             border-radius: 10px;
             object-fit: cover;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            border: none;
             cursor: pointer;
             transition: transform 0.3s ease;
         }
@@ -286,6 +285,12 @@
                 <div class="gallery-item"><img src="images/3.jpg" alt="תמונה 3" onclick="openLightbox('images/3.jpg')"></div>
             </div>
         </section>
+
+        <!-- lightbox -->
+        <div class="lightbox" id="lightbox">
+            <button class="close-btn" onclick="closeLightbox()">&times;</button>
+            <img id="lightbox-img" src="" alt="תמונה מוגדלת">
+        </div>
 
         <!-- שירותים -->
         <section class="services">
