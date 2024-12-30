@@ -78,6 +78,7 @@
                 font-size: 0.9rem;
             }
         }
+        /* שאר העיצובים נשמרים */
     </style>
 </head>
 
@@ -104,15 +105,23 @@
 
     <!-- תוכן ראשי -->
     <main class="container">
+        <!-- גלריה -->
         <section class="gallery-section">
             <h2>תמונות מפרויקטים</h2>
             <div class="gallery-grid">
-                <div class="gallery-item"><img src="images/1.jpg" alt="תמונה 1"></div>
-                <div class="gallery-item"><img src="images/2.jpg" alt="תמונה 2"></div>
-                <div class="gallery-item"><img src="images/3.jpg" alt="תמונה 3"></div>
+                <div class="gallery-item"><img src="images/1.jpg" alt="תמונה 1" onclick="openLightbox('images/1.jpg')"></div>
+                <div class="gallery-item"><img src="images/2.jpg" alt="תמונה 2" onclick="openLightbox('images/2.jpg')"></div>
+                <div class="gallery-item"><img src="images/3.jpg" alt="תמונה 3" onclick="openLightbox('images/3.jpg')"></div>
             </div>
         </section>
 
+        <!-- lightbox -->
+        <div class="lightbox" id="lightbox">
+            <button class="close-btn" onclick="closeLightbox()">&times;</button>
+            <img id="lightbox-img" src="" alt="תמונה מוגדלת">
+        </div>
+
+        <!-- שירותים -->
         <section class="services">
             <h2>השירותים שלנו</h2>
             <div class="values-grid">
@@ -131,6 +140,22 @@
             </div>
         </section>
 
+        <!-- יצירת קשר -->
+        <section class="cta-section">
+            <p>מוכנים לעשות את הצעד הבא? פנו אלינו עכשיו!</p>
+            <div class="cta-buttons">
+                <a href="tel:+972502218880" class="cta-call">
+                    <i class="fas fa-phone-alt"></i> חיוג עכשיו
+                </a>
+                <a href="https://wa.me/972502218880" class="cta-whatsapp">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+                <a href="contact.html" class="cta-contact">
+                    <i class="fas fa-envelope"></i> השארת פרטים
+                </a>
+            </div>
+        </section>
+
         <!-- דפדפן התמונות -->
         <section class="image-viewer">
             <h2><a href="gallery.html">תמונות מהגלריה</a></h2>
@@ -146,12 +171,30 @@
         </section>
     </main>
 
-    <!-- פוטר -->
     <footer class="footer">
         <p>© כל הזכויות שמורות - גדרות זיו בגולן</p>
     </footer>
 
     <script>
+        function openLightbox(imageSrc) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightboxImg.src = imageSrc;
+            lightbox.classList.add('active');
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+        }
+
+        // סגירת lightbox בלחיצה מחוץ לתמונה
+        document.getElementById('lightbox').addEventListener('click', (e) => {
+            if (e.target === e.currentTarget) {
+                closeLightbox();
+            }
+        });
+
         const images = [
             "images/1.jpg",
             "images/2.jpg",
