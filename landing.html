@@ -155,10 +155,63 @@
             background-color: rgba(0, 0, 0, 0.2);
             cursor: not-allowed;
         }
+
+        /* שירותים */
+        .services {
+            padding: 20px;
+            background: #fff;
+            text-align: center;
+        }
+
+        .services h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .values-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .value-item {
+            background: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 300px;
+            text-align: center;
+        }
+
+        .value-item h3 {
+            color: #3a6186;
+            margin-bottom: 10px;
+        }
+
+        .value-item p {
+            color: #555;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
     </style>
 </head>
 
 <body>
+    <header class="header-banner">
+        <div class="container">
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="index.html">דף הבית</a></li>
+                    <li><a href="about.html">אודות</a></li>
+                    <li><a href="gallery.html">גלריה</a></li>
+                    <li><a href="contact.html">צור קשר</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
     <main class="container">
         <!-- גלריה -->
         <section class="gallery-section">
@@ -167,6 +220,27 @@
                 <div class="gallery-item"><img src="images/1.jpg" alt="תמונה 1" onclick="openLightbox('images/1.jpg')"></div>
                 <div class="gallery-item"><img src="images/2.jpg" alt="תמונה 2" onclick="openLightbox('images/2.jpg')"></div>
                 <div class="gallery-item"><img src="images/3.jpg" alt="תמונה 3" onclick="openLightbox('images/3.jpg')"></div>
+                <div class="gallery-item"><img src="images/IMG_20241230_095906.jpg" alt="תמונה 4" onclick="openLightbox('images/IMG_20241230_095906.jpg')"></div>
+                <div class="gallery-item"><img src="images/IMG_20241230_095845.jpg" alt="תמונה 5" onclick="openLightbox('images/IMG_20241230_095845.jpg')"></div>
+            </div>
+        </section>
+
+        <!-- שירותים -->
+        <section class="services">
+            <h2>השירותים שלנו</h2>
+            <div class="values-grid">
+                <div class="value-item">
+                    <h3>עיצוב בהתאמה אישית</h3>
+                    <p>אנו מציעים עיצוב גדרות מותאם אישית לצרכים ולסגנון שלכם, תוך שימת דגש על יופי ופונקציונליות.</p>
+                </div>
+                <div class="value-item">
+                    <h3>התקנה מקצועית</h3>
+                    <p>צוות מומחים מיומן ידאג להתקנה מדויקת ומקצועית, לשביעות רצונכם המלאה.</p>
+                </div>
+                <div class="value-item">
+                    <h3>צביעה בתנור</h3>
+                    <p>שירותי צביעה בתנור באיכות גבוהה, להבטחת עמידות ויופי לטווח ארוך.</p>
+                </div>
             </div>
         </section>
 
@@ -191,11 +265,17 @@
         </section>
     </main>
 
+    <footer class="footer">
+        <p>© כל הזכויות שמורות - גדרות זיו בגולן</p>
+    </footer>
+
     <script>
         const images = [
             "images/1.jpg",
             "images/2.jpg",
             "images/3.jpg",
+            "images/IMG_20241230_095906.jpg",
+            "images/IMG_20241230_095845.jpg",
             "images/4.jpg",
             "images/fance.jpg",
             "images/IMG_20241121_142831.jpg",
@@ -205,11 +285,9 @@
             "images/IMG_20241103_115628.jpg",
             "images/IMG_20241121_142836.jpg",
             "images/IMG_20241230_095842.jpg",
-            "images/IMG_20241230_095845.jpg",
             "images/IMG_20241230_095855.jpg",
             "images/IMG_20241230_095857.jpg",
-            "images/IMG_20241230_095905.jpg",
-            "images/IMG_20241230_095906.jpg"
+            "images/IMG_20241230_095905.jpg"
         ];
 
         let currentIndex = 0;
