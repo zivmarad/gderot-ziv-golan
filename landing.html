@@ -92,6 +92,109 @@
             color: #ccc;
         }
 
+        /* עיצוב שירותים */
+        .services {
+            padding: 20px;
+            background: #fff;
+            text-align: center;
+        }
+
+        .services h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .values-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .value-item {
+            background: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 300px;
+            text-align: center;
+        }
+
+        .value-item h3 {
+            color: #3a6186;
+            margin-bottom: 10px;
+        }
+
+        .value-item p {
+            color: #555;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        /* עיצוב כפתורי יצירת קשר */
+        .cta-section {
+            background-color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .cta-buttons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 200px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .cta-buttons a:hover {
+            transform: scale(1.05);
+        }
+
+        .cta-call {
+            background-color: #007bff;
+        }
+
+        .cta-call:hover {
+            background-color: #0056b3;
+        }
+
+        .cta-whatsapp {
+            background-color: #25d366;
+        }
+
+        .cta-whatsapp:hover {
+            background-color: #1da851;
+        }
+
+        .cta-contact {
+            background-color: #ffc107;
+            color: #333;
+        }
+
+        .cta-contact:hover {
+            background-color: #e0a800;
+        }
+
         /* דפדפן התמונות */
         .image-viewer {
             display: flex;
@@ -156,44 +259,25 @@
             cursor: not-allowed;
         }
 
-        /* שירותים */
-        .services {
-            padding: 20px;
-            background: #fff;
-            text-align: center;
-        }
+        /* התאמות למובייל */
+        @media (max-width: 768px) {
+            .gallery-item {
+                width: 100%;
+                height: auto;
+            }
 
-        .services h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: #333;
-        }
+            .gallery-item img {
+                height: auto;
+            }
 
-        .values-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
+            .image-container {
+                width: 100%;
+                height: auto;
+            }
 
-        .value-item {
-            background: #f9f9f9;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            max-width: 300px;
-            text-align: center;
-        }
-
-        .value-item h3 {
-            color: #3a6186;
-            margin-bottom: 10px;
-        }
-
-        .value-item p {
-            color: #555;
-            font-size: 1rem;
-            line-height: 1.5;
+            .image-container img {
+                object-fit: contain;
+            }
         }
     </style>
 </head>
@@ -207,8 +291,14 @@
                     <li><a href="about.html">אודות</a></li>
                     <li><a href="gallery.html">גלריה</a></li>
                     <li><a href="contact.html">צור קשר</a></li>
+                    <li>
+                        <a href="https://www.facebook.com/profile.php?id=61570398886746" target="_blank">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </li>
                 </ul>
             </nav>
+            <img src="images/larana camping2.png" alt="ברוכים הבאים לגדרות זיו בגולן" style="max-width: 100%; height: auto; margin-top: 10px;">
         </div>
     </header>
 
@@ -224,6 +314,12 @@
                 <div class="gallery-item"><img src="images/IMG_20241230_095845.jpg" alt="תמונה 5" onclick="openLightbox('images/IMG_20241230_095845.jpg')"></div>
             </div>
         </section>
+
+        <!-- lightbox -->
+        <div class="lightbox" id="lightbox">
+            <button class="close-btn" onclick="closeLightbox()">&times;</button>
+            <img id="lightbox-img" src="" alt="תמונה מוגדלת">
+        </div>
 
         <!-- שירותים -->
         <section class="services">
@@ -244,15 +340,25 @@
             </div>
         </section>
 
-        <!-- lightbox -->
-        <div class="lightbox" id="lightbox">
-            <button class="close-btn" onclick="closeLightbox()">&times;</button>
-            <img id="lightbox-img" src="" alt="תמונה מוגדלת">
-        </div>
+        <!-- יצירת קשר -->
+        <section class="cta-section">
+            <p>מוכנים לעשות את הצעד הבא? פנו אלינו עכשיו!</p>
+            <div class="cta-buttons">
+                <a href="tel:+972502218880" class="cta-call">
+                    <i class="fas fa-phone-alt"></i> חיוג עכשיו
+                </a>
+                <a href="https://wa.me/972502218880" class="cta-whatsapp">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+                <a href="contact.html" class="cta-contact">
+                    <i class="fas fa-envelope"></i> השארת פרטים
+                </a>
+            </div>
+        </section>
 
         <!-- דפדפן התמונות -->
         <section class="image-viewer">
-            <h2>דפדפן תמונות</h2>
+            <h2><a href="gallery.html">תמונות מהגלריה</a></h2>
             <div class="image-container">
                 <button class="navigation-button prev" id="prev-button" onclick="showPrevImage()">
                     <i class="fas fa-chevron-left"></i>
@@ -329,6 +435,12 @@
             const lightbox = document.getElementById('lightbox');
             lightbox.classList.remove('active');
         }
+
+        document.getElementById('lightbox').addEventListener('click', (e) => {
+            if (e.target === e.currentTarget) {
+                closeLightbox();
+            }
+        });
 
         document.addEventListener("DOMContentLoaded", () => {
             showImage(currentIndex);
