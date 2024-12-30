@@ -22,7 +22,7 @@
 
         .image-container {
             position: relative;
-            max-width: 600px;
+            max-width: 400px;
             width: 90%;
         }
 
@@ -41,7 +41,7 @@
             background-color: rgba(0, 0, 0, 0.5);
             color: white;
             border: none;
-            font-size: 2rem;
+            font-size: 1.5rem;
             cursor: pointer;
             z-index: 10;
             padding: 10px;
@@ -70,7 +70,7 @@
 
         h2 {
             margin-bottom: 20px;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             color: #333;
         }
     </style>
@@ -81,11 +81,11 @@
         <h2>תמונות מהגלריה</h2>
         <div class="image-container">
             <button class="navigation-button prev" id="prev-button" onclick="showPrevImage()">
-                &#10094;
+                <i class="fas fa-chevron-left"></i>
             </button>
             <img id="current-image" src="images/1.jpg" alt="תמונה 1">
             <button class="navigation-button next" id="next-button" onclick="showNextImage()">
-                &#10095;
+                <i class="fas fa-chevron-right"></i>
             </button>
         </div>
     </div>
