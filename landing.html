@@ -30,11 +30,11 @@
         }
 
         .gallery-item img {
-            width: 100%;
-            height: auto;
-            max-width: 600px;
+            width: 300px;
+            height: 200px;
             border-radius: 10px;
-            object-fit: contain;
+            object-fit: cover;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         /* עיצוב דפדפן התמונות */
@@ -124,12 +124,17 @@
             padding: 20px;
         }
 
+        .cta-section p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
         .cta-buttons {
             display: flex;
-            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 15px;
-            align-items: center;
-            margin-top: 20px;
         }
 
         .cta-buttons a {
@@ -139,9 +144,10 @@
             width: 200px;
             padding: 10px 20px;
             border-radius: 5px;
-            font-size: 1.2rem;
+            font-size: 1rem;
             font-weight: bold;
             text-decoration: none;
+            color: white;
             transition: background-color 0.3s, transform 0.2s;
         }
 
@@ -151,7 +157,6 @@
 
         .cta-call {
             background-color: #007bff;
-            color: white;
         }
 
         .cta-call:hover {
@@ -160,7 +165,6 @@
 
         .cta-whatsapp {
             background-color: #25d366;
-            color: white;
         }
 
         .cta-whatsapp:hover {
@@ -168,13 +172,12 @@
         }
 
         .cta-contact {
-            background-color: #f9f9f9;
+            background-color: #ffc107;
             color: #333;
-            border: 2px solid #ddd;
         }
 
         .cta-contact:hover {
-            background-color: #e6e6e6;
+            background-color: #e0a800;
         }
 
         /* עיצוב שירותים */
@@ -250,20 +253,6 @@
             </div>
         </section>
 
-        <!-- דפדפן התמונות -->
-        <section class="image-viewer">
-            <h2><a href="gallery.html">תמונות מהגלריה</a></h2>
-            <div class="image-container">
-                <button class="navigation-button prev" id="prev-button" onclick="showPrevImage()">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <img id="current-image" src="images/1.jpg" alt="תמונה 1">
-                <button class="navigation-button next" id="next-button" onclick="showNextImage()">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-            </div>
-        </section>
-
         <!-- שירותים -->
         <section class="services">
             <h2>השירותים שלנו</h2>
@@ -285,7 +274,7 @@
 
         <!-- יצירת קשר -->
         <section class="cta-section">
-            <h2>צרו קשר</h2>
+            <p>מוכנים לעשות את הצעד הבא? פנו אלינו עכשיו!</p>
             <div class="cta-buttons">
                 <a href="tel:+972502218880" class="cta-call">
                     <i class="fas fa-phone-alt"></i> חיוג עכשיו
@@ -296,6 +285,20 @@
                 <a href="contact.html" class="cta-contact">
                     <i class="fas fa-envelope"></i> השארת פרטים
                 </a>
+            </div>
+        </section>
+
+        <!-- דפדפן התמונות -->
+        <section class="image-viewer">
+            <h2><a href="gallery.html">תמונות מהגלריה</a></h2>
+            <div class="image-container">
+                <button class="navigation-button prev" id="prev-button" onclick="showPrevImage()">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <img id="current-image" src="images/1.jpg" alt="תמונה 1">
+                <button class="navigation-button next" id="next-button" onclick="showNextImage()">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
             </div>
         </section>
     </main>
