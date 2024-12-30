@@ -256,6 +256,18 @@
             text-align: center;
         }
 
+        .slider-section h2 a {
+            color: #007bff;
+            text-decoration: underline;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .slider-section h2 a:hover {
+            color: #0056b3;
+            text-decoration: none;
+        }
+
         .slider {
             position: relative;
             max-width: 800px;
@@ -335,31 +347,6 @@
         
         </section>
 
-        <!-- Lightbox -->
-        <div class="lightbox" id="lightbox">
-            <span class="close">&times;</span>
-            <img src="" alt="">
-        </div>
-
-        <!-- שירותים -->
-        <section class="services">
-            <h2>השירותים שלנו</h2>
-            <div class="values-grid">
-                <div class="value-item">
-                    <h3>עיצוב בהתאמה אישית</h3>
-                    <p>אנו מציעים עיצוב גדרות מותאם אישית לצרכים ולסגנון שלכם, תוך שימת דגש על יופי ופונקציונליות.</p>
-                </div>
-                <div class="value-item">
-                    <h3>התקנה מקצועית</h3>
-                    <p>צוות מומחים מיומן ידאג להתקנה מדויקת ומקצועית, לשביעות רצונכם המלאה.</p>
-                </div>
-                <div class="value-item">
-                    <h3>צביעה בתנור</h3>
-                    <p>שירותי צביעה בתנור באיכות גבוהה, להבטחת עמידות ויופי לטווח ארוך.</p>
-                </div>
-            </div>
-        </section>
-
         <!-- קריאה לפעולה -->
         <section class="cta-section">
             <h2>מוכנים לעשות את הצעד הבא?</h2>
@@ -378,7 +365,7 @@
 
         <!-- Slider תמונות -->
         <section class="slider-section">
-            <h2><a href="gallery.html" style="text-decoration: none; color: inherit;">תמונות נוספות מהגלריה</a></h2>
+            <h2><a href="gallery.html">תמונות נוספות מהגלריה</a></h2>
             <div class="slider">
                 <img src="images/IMG_20241031_134058.jpg" alt="תמונה 12" class="active">
                 <img src="images/IMG_20241121_142836.jpg" alt="תמונה 7">
@@ -404,74 +391,6 @@
     <footer class="footer">
         <p>© כל הזכויות שמורות - גדרות זיו בגולן</p>
     </footer>
-
-    <!-- סקריפט -->
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const links = document.querySelectorAll("a");
-
-            links.forEach(link => {
-                link.addEventListener("click", (event) => {
-                    const href = link.getAttribute("href");
-
-                    // בדיקה אם זו קפיצה לדף חיצוני
-                    if (!href.includes(".html")) return;
-
-                    event.preventDefault();
-                    document.body.classList.add("fade-out");
-
-                    setTimeout(() => {
-                        window.location.href = href;
-                    }, 500); // משך האנימציה (חייב להתאים ל-CSS)
-                });
-            });
-
-            // Slider תמונות
-            const sliderImages = document.querySelectorAll(".slider img");
-            const prevButton = document.querySelector(".slider .prev");
-            const nextButton = document.querySelector(".slider .next");
-            let currentIndex = 0;
-
-            function updateSlider(index) {
-                sliderImages.forEach((img, i) => {
-                    img.classList.toggle("active", i === index);
-                });
-            }
-
-            prevButton.addEventListener("click", () => {
-                currentIndex = (currentIndex > 0) ? currentIndex - 1 : sliderImages.length - 1;
-                updateSlider(currentIndex);
-            });
-
-            nextButton.addEventListener("click", () => {
-                currentIndex = (currentIndex < sliderImages.length - 1) ? currentIndex + 1 : 0;
-                updateSlider(currentIndex);
-            });
-
-            // Lightbox
-            const galleryItems = document.querySelectorAll(".gallery-item img");
-            const lightbox = document.getElementById("lightbox");
-            const lightboxImg = lightbox.querySelector("img");
-            const closeBtn = lightbox.querySelector(".close");
-
-            galleryItems.forEach(item => {
-                item.addEventListener("click", () => {
-                    lightboxImg.src = item.src;
-                    lightbox.style.display = "flex";
-                });
-            });
-
-            closeBtn.addEventListener("click", () => {
-                lightbox.style.display = "none";
-            });
-
-            lightbox.addEventListener("click", (e) => {
-                if (e.target === lightbox) {
-                    lightbox.style.display = "none";
-                }
-            });
-        });
-    </script>
 </body>
 
 </html>
