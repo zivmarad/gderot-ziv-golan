@@ -23,6 +23,36 @@
             margin-bottom: 10px;
         }
 
+        .navbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .nav-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ffcc00;
+        }
+
         .gallery-section {
             text-align: center;
             margin: 20px auto;
@@ -84,7 +114,18 @@
 
 <body>
     <header class="header-banner">
-        <img src="images/larana camping2.png" alt="לוגו">
+        <div class="container">
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="index.html">דף הבית</a></li>
+                    <li><a href="about.html">אודות</a></li>
+                    <li><a href="gallery.html">גלריה</a></li>
+                    <li><a href="contact.html">צור קשר</a></li>
+                    <li><a href="https://www.facebook.com/profile.php?id=61570398886746" target="_blank"><i class="fab fa-facebook"></i></a></li>
+                </ul>
+            </nav>
+            <img src="images/larana camping2.png" alt="לוגו">
+        </div>
     </header>
 
     <main class="container">
