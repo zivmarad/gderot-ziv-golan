@@ -87,153 +87,69 @@
             line-height: 1.5;
         }
 
-        /* עיצוב תפריט וכותרת */
-        .header-banner {
-            background-color: #fff !important;
-            padding: 20px 0;
-            text-align: center;
-        }
-
-        .navbar {
-            background-color: #fff;
-            padding: 10px;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .nav-links {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: nowrap;
-        }
-
-        .nav-links a {
-            color: #333;
-            text-decoration: none;
-            font-size: 1.2rem;
-            font-weight: bold;
-            padding: 0;
-            background: none;
-        }
-
-        .nav-links a:hover {
-            text-decoration: underline;
-        }
-
-        /* התאמה למובייל */
-        @media (max-width: 768px) {
-            .nav-links {
-                flex-wrap: nowrap;
-                justify-content: space-around;
-            }
-
-            .nav-links a {
-                font-size: 1rem;
-            }
-        }
-
-        body {
-            opacity: 1;
-            transition: opacity 0.5s ease-in-out;
-            background-color: #fff;
-        }
-
-        body.fade-out {
-            opacity: 0;
-        }
-
-        /* עיצוב כפתורי קריאה לפעולה */
-        .cta-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            align-items: center;
-            margin-top: 20px;
-        }
-
-        .cta-buttons a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 200px;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            text-decoration: none;
-            transition: background-color 0.3s, transform 0.2s;
-        }
-
-        .cta-buttons a:hover {
-            transform: scale(1.05);
-        }
-
-        .cta-call {
-            background-color: #007bff;
-            color: white;
-        }
-
-        .cta-call:hover {
-            background-color: #0056b3;
-        }
-
-        .cta-whatsapp {
-            background-color: #25d366;
-            color: white;
-        }
-
-        .cta-whatsapp:hover {
-            background-color: #1da851;
-        }
-
-        .cta-contact {
-            background-color: #f9f9f9;
-            color: #333;
-            border: 2px solid #ddd;
-        }
-
-        .cta-contact:hover {
-            background-color: #e6e6e6;
-        }
-
-        /* גלריה */
-        .gallery-section {
+        /* קרוסלה */
+        .carousel-section {
             text-align: center;
             padding: 20px;
-            background: #f9f9f9;
+            background-color: #fff;
         }
 
-        .gallery-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .gallery-item {
-            border: 2px solid #ccc;
-            border-radius: 8px;
-            overflow: hidden;
+        .carousel {
+            position: relative;
             width: 90%;
             max-width: 800px;
-            margin: 10px auto;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            cursor: pointer;
         }
 
-        .gallery-item img {
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-images img {
             width: 100%;
-            height: auto;
-            object-fit: cover;
+            flex-shrink: 0;
+            border-radius: 8px;
         }
 
-        .gallery-item:hover {
-            transform: scale(1.05);
+        button.prev,
+        button.next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            z-index: 10;
+            padding: 5px 15px;
+            border-radius: 50%;
         }
 
+        button.prev {
+            left: 10px;
+        }
+
+        button.next {
+            right: 10px;
+        }
+
+        button.prev:hover,
+        button.next:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        @media (max-width: 768px) {
+            button.prev,
+            button.next {
+                font-size: 1.5rem;
+                padding: 5px 10px;
+            }
+        }
     </style>
 </head>
 
@@ -306,6 +222,27 @@
                 </a>
             </div>
         </section>
+
+        <!-- קרוסלה -->
+        <section class="carousel-section">
+            <h2>
+                <a href="gallery.html" style="text-decoration: none; color: #333;">
+                    גלריית תמונות
+                </a>
+            </h2>
+            <div class="carousel">
+                <div class="carousel-images">
+                    <img src="images/1.jpg" alt="תמונה 1">
+                    <img src="images/2.jpg" alt="תמונה 2">
+                    <img src="images/3.jpg" alt="תמונה 3">
+                    <img src="images/4.jpg" alt="תמונה 4">
+                    <img src="images/470672110_122106598682679962_1230314204217679116_n.jpg" alt="תמונה 5">
+                    <img src="images/IMG_20241031_122522.jpg" alt="תמונה 6">
+                </div>
+                <button class="prev" aria-label="תמונה קודמת">&#10094;</button>
+                <button class="next" aria-label="תמונה הבאה">&#10095;</button>
+            </div>
+        </section>
     </main>
 
     <!-- פוטר -->
@@ -313,6 +250,27 @@
         <p>© כל הזכויות שמורות - גדרות זיו בגולן</p>
     </footer>
 
+    <script>
+        const carouselImages = document.querySelector('.carousel-images');
+        const images = document.querySelectorAll('.carousel-images img');
+        const prevButton = document.querySelector('.prev');
+        const nextButton = document.querySelector('.next');
+        let index = 0;
+
+        prevButton.addEventListener('click', () => {
+            index = (index > 0) ? index - 1 : images.length - 1;
+            updateCarousel();
+        });
+
+        nextButton.addEventListener('click', () => {
+            index = (index < images.length - 1) ? index + 1 : 0;
+            updateCarousel();
+        });
+
+        function updateCarousel() {
+            carouselImages.style.transform = `translateX(-${index * 100}%)`;
+        }
+    </script>
 </body>
 
 </html>
