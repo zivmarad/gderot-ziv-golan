@@ -13,12 +13,20 @@
         .gallery-item img {
             width: 100%;
             height: auto;
-            max-width: 600px; /* הגבלה לגודל תמונה */
-            object-fit: cover;
+            max-width: 800px;
+            object-fit: contain;
+            border-radius: 10px;
             margin: 0 auto;
         }
 
-        /* עיצוב תצוגת התמונות */
+        .gallery-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        /* עיצוב דפדפן התמונות */
         .image-viewer {
             display: flex;
             flex-direction: column;
@@ -34,7 +42,7 @@
             position: relative;
             width: 80%;
             max-width: 800px;
-            height: 500px; /* גודל גדול ומותאם */
+            height: 500px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -47,7 +55,7 @@
         .image-container img {
             max-width: 100%;
             max-height: 100%;
-            object-fit: contain; /* שמירה על פרופורציות */
+            object-fit: contain;
         }
 
         .navigation-button {
@@ -87,7 +95,6 @@
             font-size: 1.5rem;
             color: #007bff;
             text-decoration: underline;
-            cursor: pointer;
         }
 
         .image-viewer h2 a {
@@ -158,50 +165,11 @@
         .cta-contact:hover {
             background-color: #e6e6e6;
         }
-
-        /* עיצוב שירותים */
-        .services {
-            padding: 20px;
-            background: #fff;
-            text-align: center;
-        }
-
-        .services h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: #333;
-        }
-
-        .values-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .value-item {
-            background: #f9f9f9;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            max-width: 300px;
-            text-align: center;
-        }
-
-        .value-item h3 {
-            color: #3a6186;
-            margin-bottom: 10px;
-        }
-
-        .value-item p {
-            color: #555;
-            font-size: 1rem;
-            line-height: 1.5;
-        }
     </style>
 </head>
 
 <body>
+    <!-- כותרת עליונה -->
     <header class="header-banner">
         <div class="container">
             <nav class="navbar">
@@ -222,26 +190,17 @@
     </header>
 
     <main class="container">
-        <!-- תוכן שירותים -->
-        <section class="services">
-            <h2>השירותים שלנו</h2>
-            <div class="values-grid">
-                <div class="value-item">
-                    <h3>עיצוב בהתאמה אישית</h3>
-                    <p>אנו מציעים עיצוב גדרות מותאם אישית לצרכים ולסגנון שלכם, תוך שימת דגש על יופי ופונקציונליות.</p>
-                </div>
-                <div class="value-item">
-                    <h3>התקנה מקצועית</h3>
-                    <p>צוות מומחים מיומן ידאג להתקנה מדויקת ומקצועית, לשביעות רצונכם המלאה.</p>
-                </div>
-                <div class="value-item">
-                    <h3>צביעה בתנור</h3>
-                    <p>שירותי צביעה בתנור באיכות גבוהה, להבטחת עמידות ויופי לטווח ארוך.</p>
-                </div>
+        <!-- גלריה -->
+        <section class="gallery-section">
+            <h2>תמונות מפרויקטים</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="images/1.jpg" alt="תמונה 1"></div>
+                <div class="gallery-item"><img src="images/2.jpg" alt="תמונה 2"></div>
+                <div class="gallery-item"><img src="images/3.jpg" alt="תמונה 3"></div>
             </div>
         </section>
 
-        <!-- תצוגת תמונות -->
+        <!-- דפדפן התמונות -->
         <section class="image-viewer">
             <h2><a href="gallery.html">תמונות מהגלריה</a></h2>
             <div class="image-container">
