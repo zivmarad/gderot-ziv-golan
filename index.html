@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>סליידר תמונות מעוצב</title>
+    <title>סליידר תמונות</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <style>
         /* עיצוב הסליידר */
@@ -17,17 +17,17 @@
         .slider-section h2 a {
             text-decoration: none;
             color: #007bff;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
         }
 
         .slider {
             position: relative;
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
+            width: 90%;
+            max-width: 600px;
+            margin: 20px auto;
             overflow: hidden;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .slider-images {
@@ -37,6 +37,7 @@
 
         .slider-images img {
             width: 100%;
+            height: auto;
             flex-shrink: 0;
             border-radius: 10px;
         }
@@ -48,10 +49,10 @@
             background-color: rgba(0, 0, 0, 0.5);
             color: #fff;
             border: none;
-            font-size: 2rem;
+            font-size: 1.5rem;
             cursor: pointer;
             z-index: 10;
-            padding: 10px 15px;
+            padding: 10px;
             border-radius: 50%;
         }
 
@@ -60,16 +61,16 @@
         }
 
         .slider-button.prev {
-            right: 10px;
+            left: 10px;
         }
 
         .slider-button.next {
-            left: 10px;
+            right: 10px;
         }
 
         @media (max-width: 768px) {
             .slider-section h2 a {
-                font-size: 1.5rem;
+                font-size: 1.2rem;
             }
 
             .slider {
@@ -77,8 +78,8 @@
             }
 
             .slider-button {
-                font-size: 1.5rem;
-                padding: 8px 12px;
+                font-size: 1.2rem;
+                padding: 8px;
             }
         }
     </style>
@@ -91,7 +92,7 @@
             <a href="gallery.html">תמונות מהגלריה</a>
         </h2>
         <div class="slider">
-            <button class="slider-button next">&#10094;</button>
+            <button class="slider-button prev">&#10094;</button>
             <div class="slider-images">
                 <img src="images/1.jpg" alt="תמונה 1">
                 <img src="images/2.jpg" alt="תמונה 2">
@@ -108,7 +109,7 @@
                 <img src="images/larana camping.png" alt="תמונה 13">
                 <img src="images/wood.jpg" alt="תמונה 14">
             </div>
-            <button class="slider-button prev">&#10095;</button>
+            <button class="slider-button next">&#10095;</button>
         </div>
     </section>
 
@@ -120,12 +121,12 @@
         let index = 0;
 
         prevButton.addEventListener('click', () => {
-            index = (index < images.length - 1) ? index + 1 : 0;
+            index = (index > 0) ? index - 1 : images.length - 1;
             updateSlider();
         });
 
         nextButton.addEventListener('click', () => {
-            index = (index > 0) ? index - 1 : images.length - 1;
+            index = (index < images.length - 1) ? index + 1 : 0;
             updateSlider();
         });
 
