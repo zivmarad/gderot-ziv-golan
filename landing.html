@@ -9,6 +9,77 @@
     <link rel="icon" href="images/larana camping2.png" type="image/png">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <style>
+        /* עיצוב תפריט מתוך דף האודות */
+        .header-banner {
+            background-color: #fff;
+            color: black;
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .header-banner img {
+            max-width: 250px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .nav-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: nowrap;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ffcc00;
+        }
+
+        .nav-links .facebook-link a {
+            color: #3b5998;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links .facebook-link a i {
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 15px;
+            }
+
+            .nav-links a {
+                font-size: 1rem;
+            }
+
+            .nav-links .facebook-link a i {
+                font-size: 0.9rem;
+            }
+        }
+
         /* עיצוב גלריה */
         .gallery-section {
             padding: 20px;
@@ -194,91 +265,6 @@
         .cta-contact:hover {
             background-color: #e0a800;
         }
-
-        /* דפדפן התמונות */
-        .image-viewer {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            background-color: #f4f4f4;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-
-        .image-container {
-            position: relative;
-            width: 80%;
-            max-width: 450px;
-            height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #ddd;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            overflow: hidden;
-        }
-
-        .image-container img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-        }
-
-        .navigation-button {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            z-index: 10;
-            padding: 10px;
-            border-radius: 50%;
-            transition: background-color 0.3s ease;
-        }
-
-        .navigation-button:hover {
-            background-color: rgba(0, 0, 0, 0.8);
-        }
-
-        .navigation-button.prev {
-            left: 10px;
-        }
-
-        .navigation-button.next {
-            right: 10px;
-        }
-
-        .navigation-button:disabled {
-            background-color: rgba(0, 0, 0, 0.2);
-            cursor: not-allowed;
-        }
-
-        /* התאמות למובייל */
-        @media (max-width: 768px) {
-            .gallery-item {
-                width: 100%;
-                height: auto;
-            }
-
-            .gallery-item img {
-                height: auto;
-            }
-
-            .image-container {
-                width: 100%;
-                height: auto;
-            }
-
-            .image-container img {
-                object-fit: contain;
-            }
-        }
     </style>
 </head>
 
@@ -451,4 +437,3 @@
 </body>
 
 </html>
-
