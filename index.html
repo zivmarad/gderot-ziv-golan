@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>תמונות - גדרות זיו בגולן</title>
+    <title>תמונות מהגלריה</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <style>
         /* עיצוב התצוגה */
@@ -20,38 +20,58 @@
             box-sizing: border-box;
         }
 
-        .image-viewer img {
-            max-width: 90%;
-            max-height: 70vh;
+        .image-container {
+            position: relative;
+            max-width: 600px;
+            width: 90%;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
-        .navigation-buttons {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 20px;
-        }
-
-        .navigation-buttons button {
-            background-color: #007bff;
+        /* עיצוב הכפתורים */
+        .navigation-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
             color: white;
             border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-size: 1.2rem;
+            font-size: 2rem;
             cursor: pointer;
-            transition: background-color 0.3s;
+            z-index: 10;
+            padding: 10px;
+            border-radius: 50%;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
-        .navigation-buttons button:hover {
-            background-color: #0056b3;
+        .navigation-button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+            transform: scale(1.1);
         }
 
-        .navigation-buttons button:disabled {
-            background-color: #ccc;
+        .navigation-button.prev {
+            left: 10px;
+        }
+
+        .navigation-button.next {
+            right: 10px;
+        }
+
+        .navigation-button:disabled {
+            background-color: rgba(0, 0, 0, 0.2);
             cursor: not-allowed;
+            transform: none;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            color: #333;
         }
     </style>
 </head>
@@ -59,10 +79,14 @@
 <body>
     <div class="image-viewer">
         <h2>תמונות מהגלריה</h2>
-        <img id="current-image" src="images/1.jpg" alt="תמונה 1">
-        <div class="navigation-buttons">
-            <button id="prev-button" onclick="showPrevImage()">תמונה קודמת</button>
-            <button id="next-button" onclick="showNextImage()">תמונה הבאה</button>
+        <div class="image-container">
+            <button class="navigation-button prev" id="prev-button" onclick="showPrevImage()">
+                &#10094;
+            </button>
+            <img id="current-image" src="images/1.jpg" alt="תמונה 1">
+            <button class="navigation-button next" id="next-button" onclick="showNextImage()">
+                &#10095;
+            </button>
         </div>
     </div>
 
