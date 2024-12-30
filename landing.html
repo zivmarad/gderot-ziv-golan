@@ -9,7 +9,16 @@
     <link rel="icon" href="images/larana camping2.png" type="image/png">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <style>
-        /* עיצוב כפתורי דפדוף */
+        /* עיצוב גלריה */
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            max-width: 600px; /* הגבלה לגודל תמונה */
+            object-fit: cover;
+            margin: 0 auto;
+        }
+
+        /* עיצוב תצוגת התמונות */
         .image-viewer {
             display: flex;
             flex-direction: column;
@@ -23,8 +32,9 @@
 
         .image-container {
             position: relative;
-            width: 400px;
-            height: 300px; /* גודל קבוע לתצוגה */
+            width: 80%;
+            max-width: 800px;
+            height: 500px; /* גודל גדול ומותאם */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -88,11 +98,70 @@
         .image-viewer h2 a:hover {
             color: #0056b3;
         }
+
+        /* עיצוב כפתורי יצירת קשר */
+        .cta-section {
+            background-color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .cta-buttons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 200px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .cta-buttons a:hover {
+            transform: scale(1.05);
+        }
+
+        .cta-call {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .cta-call:hover {
+            background-color: #0056b3;
+        }
+
+        .cta-whatsapp {
+            background-color: #25d366;
+            color: white;
+        }
+
+        .cta-whatsapp:hover {
+            background-color: #1da851;
+        }
+
+        .cta-contact {
+            background-color: #f9f9f9;
+            color: #333;
+            border: 2px solid #ddd;
+        }
+
+        .cta-contact:hover {
+            background-color: #e6e6e6;
+        }
     </style>
 </head>
 
 <body>
-    <!-- כותרת עליונה -->
     <header class="header-banner">
         <div class="container">
             <nav class="navbar">
@@ -113,39 +182,16 @@
     </header>
 
     <main class="container">
-        <!-- כל התוכן הקודם -->
+        <!-- תוכן קודם -->
         <section class="gallery-section">
             <h2>תמונות מפרויקטים</h2>
             <div class="gallery-grid">
                 <div class="gallery-item"><img src="images/1.jpg" alt="תמונה 1"></div>
                 <div class="gallery-item"><img src="images/2.jpg" alt="תמונה 2"></div>
-                <div class="gallery-item"><img src="images/3.jpg" alt="תמונה 3"></div>
-                <div class="gallery-item"><img src="images/4.jpg" alt="תמונה 4"></div>
-                <div class="gallery-item"><img src="images/fance.jpg" alt="תמונה 5"></div>
-                <div class="gallery-item"><img src="images/IMG_20241121_142831.jpg" alt="תמונה 6"></div>
             </div>
         </section>
 
-        <!-- שירותים -->
-        <section class="services">
-            <h2>השירותים שלנו</h2>
-            <div class="values-grid">
-                <div class="value-item">
-                    <h3>עיצוב בהתאמה אישית</h3>
-                    <p>אנו מציעים עיצוב גדרות מותאם אישית לצרכים ולסגנון שלכם, תוך שימת דגש על יופי ופונקציונליות.</p>
-                </div>
-                <div class="value-item">
-                    <h3>התקנה מקצועית</h3>
-                    <p>צוות מומחים מיומן ידאג להתקנה מדויקת ומקצועית, לשביעות רצונכם המלאה.</p>
-                </div>
-                <div class="value-item">
-                    <h3>צביעה בתנור</h3>
-                    <p>שירותי צביעה בתנור באיכות גבוהה, להבטחת עמידות ויופי לטווח ארוך.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- תצוגת התמונות -->
+        <!-- תצוגת תמונות -->
         <section class="image-viewer">
             <h2><a href="gallery.html">תמונות מהגלריה</a></h2>
             <div class="image-container">
@@ -158,9 +204,24 @@
                 </button>
             </div>
         </section>
+
+        <!-- יצירת קשר -->
+        <section class="cta-section">
+            <h2>צרו קשר</h2>
+            <div class="cta-buttons">
+                <a href="tel:+972502218880" class="cta-call">
+                    <i class="fas fa-phone-alt"></i> חיוג עכשיו
+                </a>
+                <a href="https://wa.me/972502218880" class="cta-whatsapp">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+                <a href="contact.html" class="cta-contact">
+                    <i class="fas fa-envelope"></i> השארת פרטים
+                </a>
+            </div>
+        </section>
     </main>
 
-    <!-- פוטר -->
     <footer class="footer">
         <p>© כל הזכויות שמורות - גדרות זיו בגולן</p>
     </footer>
@@ -203,7 +264,6 @@
             }
         }
 
-        // הצגת התמונה הראשונה
         showImage(currentIndex);
     </script>
 </body>
