@@ -47,56 +47,6 @@
             object-fit: cover;
         }
 
-        @media (min-width: 1024px) {
-            .gallery-item {
-                max-width: 700px;
-            }
-
-            .gallery-item img {
-                max-height: 400px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .gallery-item {
-                max-width: 100%;
-            }
-
-            .gallery-item img {
-                max-height: 1000px;
-            }
-        }
-
-        /* Lightbox */
-        .lightbox {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
-
-        .lightbox img {
-            max-width: 90%;
-            max-height: 90%;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-        }
-
-        .lightbox .close {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 2rem;
-            color: white;
-            cursor: pointer;
-        }
-
         /* עיצוב שירותים */
         .services {
             padding: 20px;
@@ -336,25 +286,6 @@
         </div>
     </header>
 
-    <!-- שירותים -->
-    <section class="services">
-        <h2>השירותים שלנו</h2>
-        <div class="values-grid">
-            <div class="value-item">
-                <h3>עיצוב בהתאמה אישית</h3>
-                <p>אנו מציעים עיצוב גדרות מותאם אישית לצרכים ולסגנון שלכם, תוך שימת דגש על יופי ופונקציונליות.</p>
-            </div>
-            <div class="value-item">
-                <h3>התקנה מקצועית</h3>
-                <p>צוות מומחים מיומן ידאג להתקנה מדויקת ומקצועית, לשביעות רצונכם המלאה.</p>
-            </div>
-            <div class="value-item">
-                <h3>צביעה בתנור</h3>
-                <p>שירותי צביעה בתנור באיכות גבוהה, להבטחת עמידות ויופי לטווח ארוך.</p>
-            </div>
-        </div>
-    </section>
-
     <!-- גלריה -->
     <main class="container">
         <section class="gallery-section">
@@ -366,6 +297,41 @@
                 <div class="gallery-item"><img src="images/4.jpg" alt="תמונה 4"></div>
                 <div class="gallery-item"><img src="images/fance.jpg" alt="תמונה 5"></div>
                 <div class="gallery-item"><img src="images/IMG_20241121_142831.jpg" alt="תמונה 6"></div>
+            </div>
+        </section>
+
+        <!-- שירותים -->
+        <section class="services">
+            <h2>השירותים שלנו</h2>
+            <div class="values-grid">
+                <div class="value-item">
+                    <h3>עיצוב בהתאמה אישית</h3>
+                    <p>אנו מציעים עיצוב גדרות מותאם אישית לצרכים ולסגנון שלכם, תוך שימת דגש על יופי ופונקציונליות.</p>
+                </div>
+                <div class="value-item">
+                    <h3>התקנה מקצועית</h3>
+                    <p>צוות מומחים מיומן ידאג להתקנה מדויקת ומקצועית, לשביעות רצונכם המלאה.</p>
+                </div>
+                <div class="value-item">
+                    <h3>צביעה בתנור</h3>
+                    <p>שירותי צביעה בתנור באיכות גבוהה, להבטחת עמידות ויופי לטווח ארוך.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- קריאה לפעולה -->
+        <section class="cta-section">
+            <h2>מוכנים לעשות את הצעד הבא?</h2>
+            <div class="cta-buttons">
+                <a href="tel:+972502218880" class="cta-call">
+                    <i class="fas fa-phone-alt"></i> חיוג עכשיו
+                </a>
+                <a href="https://wa.me/972502218880" class="cta-whatsapp">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+                <a href="contact.html" class="cta-contact">
+                    <i class="fas fa-envelope"></i> השארת פרטים
+                </a>
             </div>
         </section>
 
@@ -392,6 +358,11 @@
             </div>
         </section>
     </main>
+
+    <!-- פוטר -->
+    <footer class="footer">
+        <p>© כל הזכויות שמורות - גדרות זיו בגולן</p>
+    </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
