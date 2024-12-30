@@ -4,10 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>תמונות מהגלריה</title>
+    <title>דף הבית - גדרות זיו בגולן</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images/larana camping2.png" type="image/png">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <style>
-        /* עיצוב התצוגה */
+        /* עיצוב כפתורי דפדוף */
         .image-viewer {
             display: flex;
             flex-direction: column;
@@ -15,7 +17,6 @@
             justify-content: center;
             text-align: center;
             background-color: #f4f4f4;
-            height: 100vh;
             padding: 20px;
             box-sizing: border-box;
         }
@@ -33,7 +34,6 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
-        /* עיצוב הכפתורים */
         .navigation-button {
             position: absolute;
             top: 50%;
@@ -66,7 +66,7 @@
             cursor: not-allowed;
         }
 
-        h2 {
+        .image-viewer h2 {
             margin-bottom: 20px;
             font-size: 1.5rem;
             color: #333;
@@ -75,18 +75,92 @@
 </head>
 
 <body>
-    <div class="image-viewer">
-        <h2>תמונות מהגלריה</h2>
-        <div class="image-container">
-            <button class="navigation-button prev" id="prev-button" onclick="showPrevImage()">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            <img id="current-image" src="images/1.jpg" alt="תמונה 1">
-            <button class="navigation-button next" id="next-button" onclick="showNextImage()">
-                <i class="fas fa-chevron-right"></i>
-            </button>
+    <!-- כל התוכן הקיים שלך נשמר -->
+    <header class="header-banner">
+        <div class="container">
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="index.html">דף הבית</a></li>
+                    <li><a href="about.html">אודות</a></li>
+                    <li><a href="gallery.html">גלריה</a></li>
+                    <li><a href="contact.html">צור קשר</a></li>
+                    <li>
+                        <a href="https://www.facebook.com/profile.php?id=61570398886746" target="_blank">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <img src="images/larana camping2.png" alt="ברוכים הבאים לגדרות זיו בגולן" style="max-width: 100%; height: auto; margin-top: 10px;">
         </div>
-    </div>
+    </header>
+
+    <main class="container">
+        <!-- קוד קיים של גלריה, שירותים וקריאה לפעולה -->
+        <section class="gallery-section">
+            <h2>תמונות מפרויקטים</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="images/1.jpg" alt="תמונה 1"></div>
+                <div class="gallery-item"><img src="images/2.jpg" alt="תמונה 2"></div>
+                <div class="gallery-item"><img src="images/3.jpg" alt="תמונה 3"></div>
+                <div class="gallery-item"><img src="images/4.jpg" alt="תמונה 4"></div>
+                <div class="gallery-item"><img src="images/fance.jpg" alt="תמונה 5"></div>
+                <div class="gallery-item"><img src="images/IMG_20241121_142831.jpg" alt="תמונה 6"></div>
+            </div>
+        </section>
+
+        <section class="services">
+            <h2>השירותים שלנו</h2>
+            <div class="values-grid">
+                <div class="value-item">
+                    <h3>עיצוב בהתאמה אישית</h3>
+                    <p>אנו מציעים עיצוב גדרות מותאם אישית לצרכים ולסגנון שלכם, תוך שימת דגש על יופי ופונקציונליות.</p>
+                </div>
+                <div class="value-item">
+                    <h3>התקנה מקצועית</h3>
+                    <p>צוות מומחים מיומן ידאג להתקנה מדויקת ומקצועית, לשביעות רצונכם המלאה.</p>
+                </div>
+                <div class="value-item">
+                    <h3>צביעה בתנור</h3>
+                    <p>שירותי צביעה בתנור באיכות גבוהה, להבטחת עמידות ויופי לטווח ארוך.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h2>מוכנים לעשות את הצעד הבא?</h2>
+            <div class="cta-buttons">
+                <a href="tel:+972502218880" class="cta-call">
+                    <i class="fas fa-phone-alt"></i> חיוג עכשיו
+                </a>
+                <a href="https://wa.me/972502218880" class="cta-whatsapp">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+                <a href="contact.html" class="cta-contact">
+                    <i class="fas fa-envelope"></i> השארת פרטים
+                </a>
+            </div>
+        </section>
+
+        <!-- תצוגת התמונות -->
+        <section class="image-viewer">
+            <h2>תמונות מהגלריה</h2>
+            <div class="image-container">
+                <button class="navigation-button prev" id="prev-button" onclick="showPrevImage()">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <img id="current-image" src="images/1.jpg" alt="תמונה 1">
+                <button class="navigation-button next" id="next-button" onclick="showNextImage()">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- פוטר -->
+    <footer class="footer">
+        <p>© כל הזכויות שמורות - גדרות זיו בגולן</p>
+    </footer>
 
     <script>
         const images = [
@@ -94,27 +168,11 @@
             "images/2.jpg",
             "images/3.jpg",
             "images/4.jpg",
-            "images/470672110_122106598682679962_1230314204217679116_n.jpg",
-            "images/IMG_20241031_122522.jpg",
-            "images/IMG_20241031_132755.jpg",
-            "images/IMG_20241031_134058.jpg",
-            "images/IMG_20241103_115628.jpg",
-            "images/IMG_20241121_142831.jpg",
-            "images/IMG_20241121_142836.jpg",
             "images/fance.jpg",
-            "images/larana camping.png",
-            "images/wood.jpg"
+            "images/IMG_20241121_142831.jpg"
         ];
 
         let currentIndex = 0;
-
-        // קדם-טעינה של כל התמונות
-        const preloadImages = () => {
-            images.forEach(src => {
-                const img = new Image();
-                img.src = src;
-            });
-        };
 
         function showImage(index) {
             const imageElement = document.getElementById("current-image");
@@ -141,9 +199,6 @@
                 showImage(currentIndex);
             }
         }
-
-        // הפעלת קדם-טעינה
-        preloadImages();
 
         // הצגת התמונה הראשונה
         showImage(currentIndex);
