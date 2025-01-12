@@ -10,86 +10,81 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9;
+            background-color: #ffffff;
+            color: #333333;
+            text-align: center;
         }
         header {
-            background-color: #333;
-            color: #fff;
+            background-color: #f0f0f0;
             padding: 20px;
-            text-align: center;
         }
         header img {
-            max-width: 300px;
-            margin: 0 auto;
-            display: block;
+            max-width: 200px;
         }
         .container {
-            max-width: 800px;
             margin: 20px auto;
-            background: #fff;
             padding: 20px;
+            max-width: 600px;
+            border: 1px solid #e0e0e0;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
         }
         h1 {
-            color: #333;
-            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #444444;
         }
-        .features {
+        p {
+            font-size: 18px;
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
             margin: 20px 0;
         }
-        .features li {
-            margin-bottom: 10px;
-            font-size: 18px;
-            color: #555;
+        ul li {
+            font-size: 16px;
+            margin: 10px 0;
+            color: #555555;
+        }
+        .images img {
+            max-width: 100%;
+            margin: 10px 0;
+            border-radius: 5px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
         }
         .cta {
-            text-align: center;
             margin: 20px 0;
         }
         .cta a {
             display: inline-block;
-            background: #ff6600;
-            color: #fff;
-            padding: 15px 25px;
-            text-decoration: none;
+            background-color: #007BFF;
+            color: #ffffff;
+            padding: 10px 20px;
             border-radius: 5px;
-            font-size: 20px;
-            transition: background 0.3s;
+            text-decoration: none;
+            font-size: 18px;
+            transition: background-color 0.3s;
         }
         .cta a:hover {
-            background: #e65500;
-        }
-        .contact {
-            margin: 20px 0;
-            text-align: center;
-            font-size: 18px;
+            background-color: #0056b3;
         }
         footer {
-            background-color: #333;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
             margin-top: 20px;
+            padding: 10px 0;
+            background-color: #f0f0f0;
+            color: #777777;
         }
-        .footer-links a {
-            color: #ff6600;
-            margin: 0 10px;
+        footer a {
+            color: #007BFF;
             text-decoration: none;
+            margin: 0 5px;
         }
-        .footer-links a:hover {
+        footer a:hover {
             text-decoration: underline;
-        }
-        .images {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin: 20px 0;
-        }
-        .images img {
-            max-width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
@@ -101,9 +96,8 @@
 
 <div class="container">
     <h1>🎉 מבצע מיוחד לתושבי הגולן! 🎉</h1>
-    <p>גדרות אלומיניום איכותיות החל מ-670 ש"ח למ"ר בלבד, כולל התקנה!</p>
-
-    <ul class="features">
+    <p><strong>גדרות אלומיניום איכותיות</strong> החל מ-670 ש"ח למ"ר בלבד, כולל התקנה!</p>
+    <ul>
         <li>✅ עבודה עברית וייצור כחול-לבן</li>
         <li>✅ צביעה בתנור בהתאמה אישית - מתוך מניפת צבעים רחבה (RAL)</li>
         <li>✅ עמידות גבוהה לכל תנאי מזג האוויר</li>
@@ -119,17 +113,11 @@
         <a href="tel:0502218880">התקשר עכשיו: 050-221-8880</a>
     </div>
 
-    <div class="contact">
-        או השאירו פרטים בטלפון או וואטסאפ ונחזור אליכם בהקדם.
-    </div>
+    <p>או השאירו פרטים בטלפון או בוואטסאפ ונחזור אליכם בהקדם.</p>
 </div>
 
 <footer>
-    <p>© 2025 גדרות זיו בגולן | עיצוב וייצור גדרות אלומיניום איכותיות</p>
-    <div class="footer-links">
-        <a href="https://gderot-ziv.co.il/" target="_blank">אתר העסק</a> |
-        <a href="https://www.facebook.com/profile.php?id=61570398886746&locale=he_IL" target="_blank">עמוד הפייסבוק</a>
-    </div>
+    <p>© 2025 גדרות זיו בגולן | <a href="https://gderot-ziv.co.il/" target="_blank">אתר העסק</a> | <a href="https://www.facebook.com/profile.php?id=61570398886746&locale=he_IL" target="_blank">עמוד הפייסבוק</a></p>
 </footer>
 
 </body>
