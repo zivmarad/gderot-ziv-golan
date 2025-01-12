@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="he" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,11 +15,13 @@
             text-align: center;
         }
         header {
-            background-color: #f0f0f0;
-            padding: 20px;
+            background-color: #ffffff;
+            padding: 20px 0;
         }
         header img {
-            max-width: 200px;
+            max-width: 100%;
+            height: auto;
+            max-height: 150px;
         }
         .container {
             margin: 20px auto;
@@ -82,9 +84,20 @@
             color: #007BFF;
             text-decoration: none;
             margin: 0 5px;
+            display: inline-block;
         }
         footer a:hover {
             text-decoration: underline;
+        }
+        footer a.facebook {
+            background: url('https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg') no-repeat left center;
+            background-size: 16px;
+            padding-left: 20px;
+        }
+        footer a.website {
+            background: url('https://upload.wikimedia.org/wikipedia/commons/a/a9/Font_Awesome_5_solid_globe.svg') no-repeat left center;
+            background-size: 16px;
+            padding-left: 20px;
         }
     </style>
 </head>
@@ -117,7 +130,9 @@
 </div>
 
 <footer>
-    <p>© 2025 גדרות זיו בגולן | <a href="https://gderot-ziv.co.il/" target="_blank">אתר העסק</a> | <a href="https://www.facebook.com/profile.php?id=61570398886746&locale=he_IL" target="_blank">עמוד הפייסבוק</a></p>
+    <p>© 2025 גדרות זיו בגולן</p>
+    <a href="https://gderot-ziv.co.il/" target="_blank" class="website">אתר העסק</a>
+    <a href="https://www.facebook.com/profile.php?id=61570398886746&locale=he_IL" target="_blank" class="facebook">עמוד הפייסבוק</a>
 </footer>
 
 </body>
